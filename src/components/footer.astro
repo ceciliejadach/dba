@@ -2,7 +2,7 @@
 import "../styles/style.css";
 ---
 
-<div>
+<div class="footer-container">
   <div class="grid-container">
     <div class="content">
       <h3>Lær os at kende</h3>
@@ -25,39 +25,38 @@ import "../styles/style.css";
       <a href="https://boost.dba.dk/">DBA Boost</a>
       <a href="https://schibstedmedia.dk/">Bannerannoncering</a>
     </div>
-    <div class="content">
+    <!-- <div class="content">
       <h3>Andre links</h3>
       <a href="https://www.bilbasen.dk/">Brugte biler fra Bilbasen</a>
-    </div>
+    </div> -->
   </div>
   <div class="flex-container">
-    <img src="./png/dba-logo.png" alt="dba logo" />
-    <div>
-      <p>Følg os på</p>
-      <div class="some_links">
-        <a href="https://www.instagram.com/dbadk/" target="_blank">
-          <ion-icon class="icon" name="logo-instagram"></ion-icon>
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=100064680731751" target="_blank">
-          <ion-icon class="icon" name="logo-facebook"></ion-icon>
-        </a>
-        <a href="https://www.linkedin.com/company/dbadk/" target="_blank">
-          <ion-icon class="icon" name="logo-linkedin"></ion-icon>
-        </a>
-        <a href="https://twitter.com/dba_dk" target="_blank">
-          <ion-icon class="icon" name="logo-twitter"></ion-icon>
-        </a>
-      </div>
+    <img src="./svg/dba-logo.svg" alt="dba logo" />
+    <div class="some_container">
+      <a href="https://www.facebook.com/profile.php?id=100064680731751" target="_blank"> <img src="./svg/facebook.svg" alt="facebook ikon" /></a>
+      <a href="https://www.instagram.com/dbadk/" target="_blank">
+        <img src="./svg/instagram.svg" alt="instagram ikon" />
+      </a>
+      <a href="https://www.linkedin.com/company/dbadk/" target="_blank">
+        <img src="./svg/linkedin.svg" alt="linkedin ikon" />
+      </a>
     </div>
   </div>
 </div>
 
 <style>
+  .footer-container {
+    display: grid;
+    gap: 50px;
+    background-color: var(--light-grey-100);
+  }
+
   .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     padding-left: 1rem;
+    padding-top: 2rem;
   }
 
   .content {
@@ -70,7 +69,7 @@ import "../styles/style.css";
   }
   .content a {
     text-decoration: none;
-    color: gray;
+    color: var(--dark-grey-100);
     line-height: 1.3rem;
   }
 
@@ -85,13 +84,19 @@ import "../styles/style.css";
     margin-top: 2rem;
   }
 
-  img {
-    max-width: 150px;
+  .flex-container img {
+    padding-bottom: 2rem;
+    max-width: 90px;
   }
 
-  .some_links > * {
-    text-decoration: none;
-    color: darkblue;
+  .some_container {
+    display: grid;
+    grid-template-columns: repeat(3, 40px);
+  }
+
+  .some_container img {
+    max-width: 30px;
+    padding-bottom: 2rem;
   }
 
   @media (min-width: 500px) {
@@ -100,8 +105,11 @@ import "../styles/style.css";
       flex-direction: row;
       align-items: center;
     }
+
+    .footer-container {
+      max-width: 930px;
+      margin-inline: auto;
+      padding: 2rem 5rem;
+    }
   }
 </style>
-
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

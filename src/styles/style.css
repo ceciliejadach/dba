@@ -4,12 +4,41 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* colors */
+  --main-white: white;
+  --light-blue-100: #e0eefa;
+  --blue-20: #80a7e0;
+  --dark-blue-100: #000a8c;
+  --light-grey-100: #f2f2f2;
+  --dark-grey-100: #737373;
+  --black-100: #000000;
+
+  /* farver til text */
+  --primary-btn-text-color: white;
+  --secondary-btn-text-color: #000a8c;
+}
+
 body {
-  font-family: Helvetica, sans-serif;
+  font-family: Plus Jakarta Sans;
 }
 
 img {
   width: 100%;
   display: block;
   height: auto;
+}
+
+button img {
+  max-width: 20px;
+  padding-right: 8px;
+}
+
+button a {
+  text-decoration: none;
+  color: var(--main-white);
+}
+
+#secondary-color {
+  color: var(--dark-blue-100);
 }

@@ -1,6 +1,8 @@
 ---
 import "../styles/style.css";
 import Footer from "../components/Footer.astro";
+import Button from "../components/Button.astro";
+import Marquee from "../components/Marquee.astro";
 ---
 
 <html lang="en">
@@ -9,9 +11,13 @@ import Footer from "../components/Footer.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
     <title>Astro</title>
   </head>
   <body>
+    <Marquee />
     <header>
       <nav>
         <ul>
@@ -25,6 +31,18 @@ import Footer from "../components/Footer.astro";
     </header>
     <main>
       <h1>Astro</h1>
+      <Button variant="primary" size="small">
+        <img src="./svg/plus.svg" alt="plus ikon" />
+        <a href="">Opret annonce</a>
+      </Button>
+      <Button variant="secondary" size="large" color="var(--secondary-btn-text-color)">
+        <img src="./svg/category.svg" alt="kategori ikon" />
+        <p>Kategorier</p>
+      </Button>
+      <Button variant="tertiary" size="small">
+        <img src="./svg/box.svg" alt="box ikon" />
+        <p>Køb fragt</p>
+      </Button>
     </main>
     <footer>
       <Footer />

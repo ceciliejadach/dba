@@ -1,0 +1,57 @@
+---
+const { variant, size } = Astro.props;
+---
+
+<button class={variant + " " + size}>
+  <slot />
+</button>
+
+<style>
+  /* styling af primær knap (CTA) */
+  .primary {
+    background-color: var(--dark-blue-100);
+    color: var(--primary-btn-text-color);
+    display: flex;
+    border-radius: 20px;
+    appearance: none;
+    justify-content: center;
+    border: none;
+    padding: 10px 12px;
+    width: 160px;
+    align-items: center;
+  }
+
+  /* styling af sekundær knap */
+  .secondary {
+    border: 1px solid var(--dark-blue-100);
+    background-color: var(--main-white);
+    border-radius: 25px;
+    appearance: none;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--dark-blue-100);
+  }
+
+  /* styling af tertiære knap  */
+  .tertiary {
+    padding: 8px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--dark-blue-100);
+    background-color: var(--main-white);
+    border: none;
+  }
+
+  /* styling størrelse af knap til mobil  */
+  .small {
+    font-size: 1rem;
+  }
+
+  /* styling størrelse af knap til desktop  */
+  .large {
+    font-size: 1rem;
+  }
+</style>
