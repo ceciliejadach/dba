@@ -1,0 +1,14 @@
+---
+const { data } = Astro.props;
+---
+
+<a href={`product/${data.slug}`}>
+  <article>
+    <img src={`imgs/${data.image}`} alt={data.titel} />
+    <h2>{data.titel}</h2>
+    <div>
+      <p>{data.price} kr</p>
+      <p>{data.location}</p>
+    </div>
+  </article>
+</a>

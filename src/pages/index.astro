@@ -1,51 +1,21 @@
 ---
-import "../styles/style.css";
-import Footer from "../components/Footer.astro";
-import Button from "../components/Button.astro";
-import Marquee from "../components/Marquee.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import Card from "../components/Card.astro";
+
+const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1ZWRoZHJha3N3cXNxdWh0amt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUyNTEyNDYsImV4cCI6MjAzMDgyNzI0Nn0.mXDwiwon4LDuspPMmUhUACpS8eCG3AZ7Ttf8Dd2wwu0",
+  },
+}).then((res) => res.json());
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
-    <title>Astro</title>
-  </head>
-  <body>
-    <Marquee />
-    <header>
-      <nav>
-        <ul>
-          <li><a href="/">Forside</a></li>
-          <li><a href="/ad">Opret annonce</a></li>
-          <li><a href="">Køb fragt</a></li>
-          <li><a href="">Kundeservice</a></li>
-          <li><a href="">DBA Guide</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <h1>Astro</h1>
-      <Button variant="primary" size="small">
-        <img src="./svg/plus.svg" alt="plus ikon" />
-        <a href="">Opret annonce</a>
-      </Button>
-      <Button variant="secondary" size="large" color="var(--secondary-btn-text-color)">
-        <img src="./svg/category.svg" alt="kategori ikon" />
-        <p>Kategorier</p>
-      </Button>
-      <Button variant="tertiary" size="small">
-        <img src="./svg/box.svg" alt="box ikon" />
-        <p>Køb fragt</p>
-      </Button>
-    </main>
-    <footer>
-      <Footer />
-    </footer>
-  </body>
-</html>
+<MainLayout titel="Forside">
+  <section class="cards">
+    {
+      data.map((card) => {
+        return <Card data={card} />;
+      })
+    }
+  </section>
+</MainLayout>
