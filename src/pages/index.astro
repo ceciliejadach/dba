@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Card from "../components/Card.astro";
+import Navigation from "../components/Navigation.astro";
 
 const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products", {
   method: "GET",
@@ -11,6 +12,7 @@ const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/produ
 ---
 
 <MainLayout titel="Forside">
+  <h1>Forsideannoncer</h1>
   <section class="cards">
     {
       data.map((card) => {
