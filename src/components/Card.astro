@@ -4,11 +4,79 @@ const { data } = Astro.props;
 
 <a href={`product/${data.slug}`}>
   <article>
-    <img src={`imgs/${data.image}`} alt={data.titel} />
+    <div class="shipping hide"><img src="./svg/box.svg" alt="shipping box" /></div>
+    <div class="like"><img src="./svg/heart.svg" alt="heart" /></div>
+
+    <img class="product" src={`imgs/${data.image}`} alt={data.titel} />
     <h2>{data.titel}</h2>
     <div>
-      <p>{data.price} kr</p>
-      <p>{data.location}</p>
+      <p class="pris">{data.price} kr</p>
+      <p class="lokation">{data.location}</p>
     </div>
   </article>
 </a>
+
+<style>
+  a {
+    text-decoration: none;
+    color: var(--black-100);
+  }
+
+  h2 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+  article {
+    max-width: 208px;
+    position: relative;
+  }
+  .product {
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+
+  .pris {
+    font-size: 0.875rem;
+    color: var(--dark-grey-100);
+  }
+
+  .lokation {
+    font-size: 0.75rem;
+    color: var(--dark-grey-100);
+  }
+
+  article div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .shipping,
+  .like {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    padding: 6px;
+    border-radius: 50%;
+    background-color: var(--main-white);
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .like {
+    right: 5px;
+    top: 5px;
+  }
+  .shipping {
+    top: 5px;
+    left: 5px;
+  }
+  /* 
+  @media (max-width: 430px;) {
+    .article {
+      width: 208px;
+    }
+  } */
+</style>

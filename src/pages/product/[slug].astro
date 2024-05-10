@@ -22,6 +22,8 @@ console.log(myData);
 ---
 
 <MainLayout>
+  <img src={`/imgs/${myData.image}`} alt={myData.titel} />
   <h2>{myData.titel}</h2>
   <p>{myData.description}</p>
+  <p>{myData.condition}</p>
 </MainLayout>

@@ -23,6 +23,11 @@ body {
   font-family: Plus Jakarta Sans;
 }
 
+main {
+  max-width: 980px;
+  margin-inline: auto;
+}
+
 img {
   width: 100%;
   display: block;
@@ -41,4 +46,13 @@ button a {
 
 #secondary-color {
   color: var(--dark-blue-100);
+}
+
+/* opstilling af annoncer i grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(171px, 1fr));
+  justify-items: center;
+  gap: 1rem;
+  margin-inline: 0.5rem;
 }
