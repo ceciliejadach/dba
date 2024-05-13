@@ -1,0 +1,56 @@
+---
+const { variant } = Astro.props;
+const { title, description, background } = Astro.props;
+---
+
+<a href="https://guide.dba.dk/">
+  <div id="guide_card" class={variant + " "}>
+    <div class="guide_title">
+      <p>{title}</p>
+      <img src="../svg/white_arrow.svg" alt="hvid pil" />
+    </div>
+    <p class="description">{description}</p>
+  </div>
+</a>
+
+<style define:vars={{ background: `url("${background}")` }}>
+  #guide_card {
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-image: var(--background);
+    background-size: cover;
+    max-width: 333px;
+    height: 420px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+  }
+
+  .guide_title {
+    display: flex;
+    margin-top: auto;
+    justify-items: center;
+  }
+
+  .guide_title p {
+    align-self: center;
+    color: var(--main-white);
+    font-size: 1.75rem;
+    padding: 0 20px;
+  }
+
+  .guide_title img {
+    max-width: 20px;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--main-white);
+  }
+
+  .description {
+    padding: 0 20px;
+    margin: 10px 0 20px;
+    font-size: 0.875rem;
+  }
+</style>

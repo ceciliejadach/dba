@@ -1,7 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Card from "../components/Card.astro";
-import Navigation from "../components/Navigation.astro";
+import ArticleCard from "../components/ArticleCard.astro";
 
 const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products", {
   method: "GET",
@@ -16,8 +16,118 @@ const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/produ
   <section class="cards">
     {
       data.map((card) => {
-        return <Card data={card} />;
+        return <Card class="ad" data={card} />;
       })
     }
   </section>
+
+  <section>
+    <div class="guide-wrap">
+      <img src="./svg/back.svg" id="backBtn" alt="tilbage pil" />
+      <div class="guide">
+        <div>
+          <ArticleCard class="guide_img" background="./imgs/training_guide.webp" title="Træningstøj" description="Bliv klogere på, hvordan du sælger og køber træningstøj og udstyr, samt hvad du skal være opmærksom på." />
+          <ArticleCard class="guide_img" background="./imgs/car_guide.webp" title="Hurtige biler" description="Hvordan finder du den bedste bil, der passer præcis til dine behov og forventninger?" />
+          <ArticleCard class="guide_img" background="./imgs/bag_guide.webp" title="Store tasker" description="Få hjælp til at finde den perfekte taske til dine behov og bliv klogere på, hvordan du hurtigst muligt får solgt din gamle." />
+        </div>
+        <div>
+          <ArticleCard class="guide_img" background="./imgs/chair_guide.webp" title="Møbler" description="Der er ikke de møbler som DBA ikke sælger. Find en masse brugte møbler og vær med til at give dem et nyt liv og hjem." />
+        </div>
+      </div>
+      <img src="./svg/forward.svg" id="nextBtn" alt="næste pil" />
+    </div>
+  </section>
 </MainLayout>
+
+<style>
+  /* opstilling af annoncer i grid */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(171px, 1fr));
+    justify-items: center;
+    gap: 1rem;
+    margin-inline: 0.5rem;
+  }
+
+  /* .guide {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    justify-items: center;
+    gap: 1rem;
+    margin: 4rem 0.5rem;
+  } */
+  #backBtn,
+  #nextBtn {
+    display: none;
+  }
+
+  @media (min-width: 868px) {
+    .guide {
+      display: flex;
+      overflow-x: scroll;
+    }
+
+    .guide div {
+      width: 100%;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-gap: 10px;
+      flex: none;
+      margin-right: 10px;
+    }
+
+    .guide div .guide_img {
+      width: 100%;
+    }
+
+    .guide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .guide-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #backBtn {
+      width: 45px;
+      cursor: pointer;
+
+      background-color: var(--main-white);
+      padding: 13px 10px;
+      border-radius: 50%;
+    }
+
+    #nextBtn {
+      width: 45px;
+      cursor: pointer;
+
+      background-color: var(--main-white);
+      padding: 13px 10px;
+      border-radius: 50%;
+    }
+  }
+</style>
+
+<script>
+  let scrollContainer = document.querySelector(".guide");
+  let backBtn = document.getElementById("backBtn");
+  let nextBtn = document.getElementById("nextBtn");
+
+  // scrollContainer.addEventListener("wheel", (evt) => {
+  //   evt.preventDefault();
+  //   scrollContainer.scrollLeft += evt.deltaY;
+  //   scrollContainer.style.scrollBehavior = "auto";
+  // });
+
+  nextBtn.addEventListener("click", () => {
+    scrollContainer.style.scrollBehavior = "smooth";
+    scrollContainer.scrollLeft += 320;
+  });
+
+  backBtn.addEventListener("click", () => {
+    scrollContainer.style.scrollBehavior = "smooth";
+    scrollContainer.scrollLeft -= 320;
+  });
+</script>
