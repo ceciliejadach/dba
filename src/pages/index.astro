@@ -3,7 +3,13 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Card from "../components/Card.astro";
 import ArticleCard from "../components/ArticleCard.astro";
 
-const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products", {
+const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products?limit=8", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1ZWRoZHJha3N3cXNxdWh0amt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUyNTEyNDYsImV4cCI6MjAzMDgyNzI0Nn0.mXDwiwon4LDuspPMmUhUACpS8eCG3AZ7Ttf8Dd2wwu0",
+  },
+}).then((res) => res.json());
+const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products?limit=4&offset=4", {
   method: "GET",
   headers: {
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1ZWRoZHJha3N3cXNxdWh0amt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUyNTEyNDYsImV4cCI6MjAzMDgyNzI0Nn0.mXDwiwon4LDuspPMmUhUACpS8eCG3AZ7Ttf8Dd2wwu0",
@@ -20,8 +26,17 @@ const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/produ
       })
     }
   </section>
+  <h1>Annoncer som kunne være noget for dig</h1>
+  <section class="cards">
+    {
+      moreData.map((card) => {
+        return <Card class="ad" data={card} />;
+      })
+    }
+  </section>
 
   <section>
+    <h1 class="dba-guide-headline">Find inspiration fra DBA Guide</h1>
     <div class="gallery-wrap">
       <img src="./svg/back.svg" id="backBtn" alt="tilbage pil" />
       <div class="gallery">
@@ -48,6 +63,7 @@ const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/produ
     gap: 2rem;
     margin-inline: 0.5rem;
     max-width: 980px;
+    margin-bottom: 5rem;
   }
 
   .gallery {
@@ -68,6 +84,9 @@ const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/produ
   }
 
   @media (min-width: 868px) {
+    .dba-guide-headline {
+      font-size: 2.25rem;
+    }
     .gallery {
       width: 980px;
     }
