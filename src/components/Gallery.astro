@@ -1,0 +1,109 @@
+---
+import ArticleCard from "./ArticleCard.astro";
+---
+
+<section>
+  <h1 class="dba-guide-headline">Find inspiration fra DBA Guide</h1>
+  <div class="gallery-wrap">
+    <img src="./svg/back.svg" id="backBtn" alt="tilbage pil" />
+    <div class="gallery">
+      <div>
+        <ArticleCard class="gallery_img" background="../imgs/training_guide.webp" title="Træningstøj" description="Bliv klogere på, hvordan du sælger og køber træningstøj og udstyr, samt hvad du skal være opmærksom på." />
+        <ArticleCard class="gallery_img" background="../imgs/car_guide.webp" title="Hurtige biler" description="Hvordan finder du den bedste bil, der passer præcis til dine behov og forventninger?" />
+        <ArticleCard class="gallery_img" background="../imgs/bag_guide.webp" title="Store tasker" description="Få hjælp til at finde den perfekte taske til dine behov og bliv klogere på, hvordan du hurtigst muligt får solgt din gamle." />
+        <ArticleCard class="gallery_img" background="../imgs/chair_guide.webp" title="Møbler" description="Der er ikke de møbler som DBA ikke sælger. Find en masse brugte møbler og vær med til at give dem et nyt liv og hjem." />
+        <ArticleCard class="gallery_img" background="../imgs/chair_guide.webp" title="Møbler" description="Der er ikke de møbler som DBA ikke sælger. Find en masse brugte møbler og vær med til at give dem et nyt liv og hjem." />
+        <ArticleCard class="gallery_img" background="../imgs/chair_guide.webp" title="Møbler" description="Der er ikke de møbler som DBA ikke sælger. Find en masse brugte møbler og vær med til at give dem et nyt liv og hjem." />
+      </div>
+    </div>
+    <img src="./svg/forward.svg" id="nextBtn" alt="næste pil" />
+  </div>
+</section>
+
+<style>
+  .gallery {
+    display: flex;
+    overflow-x: scroll;
+    margin-inline: 0.5rem;
+  }
+
+  .gallery div {
+    width: 100%;
+    display: flex;
+    grid-gap: 10px;
+  }
+
+  #backBtn,
+  #nextBtn {
+    display: none;
+  }
+
+  @media (min-width: 868px) {
+    .dba-guide-headline {
+      font-size: 2.25rem;
+    }
+    .gallery {
+      width: 980px;
+    }
+
+    .gallery div {
+      margin-right: 135px;
+    }
+
+    .gallery div .gallery_img {
+      width: 100%;
+    }
+
+    .gallery::-webkit-scrollbar {
+      display: none;
+    }
+
+    .gallery-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    #backBtn,
+    #nextBtn {
+      display: block;
+      width: 45px;
+      cursor: pointer;
+      position: absolute;
+      background-color: var(--main-white);
+      padding: 13px 10px;
+      border-radius: 50%;
+    }
+
+    #backBtn {
+      left: 2%;
+    }
+
+    #nextBtn {
+      right: 2%;
+    }
+  }
+</style>
+
+<script>
+  let scrollContainer = document.querySelector(".gallery");
+  let backBtn = document.getElementById("backBtn");
+  let nextBtn = document.getElementById("nextBtn");
+
+  // scrollContainer.addEventListener("wheel", (evt) => {
+  //   evt.preventDefault();
+  //   scrollContainer.scrollLeft += evt.deltaY;
+  //   scrollContainer.style.scrollBehavior = "auto";
+  // });
+
+  nextBtn.addEventListener("click", () => {
+    scrollContainer.style.scrollBehavior = "smooth";
+    scrollContainer.scrollLeft += 320;
+  });
+
+  backBtn.addEventListener("click", () => {
+    scrollContainer.style.scrollBehavior = "smooth";
+    scrollContainer.scrollLeft -= 320;
+  });
+</script>
