@@ -1,0 +1,29 @@
+---
+import "../styles/style.css";
+---
+
+<img class="burger-ad-small" src="../imgs/burger-king-ad.webp" alt="annonce for burger" />
+<img class="burger-ad-big" src="../imgs/burger-ad-big.webp" alt="annonce for burger" />
+
+<style>
+  .burger-ad-small {
+    padding-inline: 0.5rem;
+    margin: 50px 0;
+  }
+
+  .burger-ad-big {
+    display: none;
+  }
+
+  @media (min-width: 868px) {
+    .burger-ad-big {
+      display: block;
+      margin: 50px 0;
+      padding-inline: 0.5rem;
+    }
+
+    .burger-ad-small {
+      display: none;
+    }
+  }
+</style>

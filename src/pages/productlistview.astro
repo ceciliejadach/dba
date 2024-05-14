@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Card from "../components/Card.astro";
+import Gallery from "../components/Gallery.astro";
 
 const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products", {
   method: "GET",
@@ -18,4 +19,6 @@ const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/produ
       })
     }
   </section>
+  <img src="./img/burger-king-ad.webp" alt="annonce for burger" />
+  <Gallery />
 </MainLayout>

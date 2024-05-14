@@ -2,6 +2,7 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Card from "../components/Card.astro";
 import Gallery from "../components/Gallery.astro";
+import BurgerAd from "../components/BurgerAd.astro";
 import "../styles/style.css";
 
 const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products?limit=8", {
@@ -36,4 +37,5 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
     }
   </section>
   <Gallery />
+  <BurgerAd />
 </MainLayout>
