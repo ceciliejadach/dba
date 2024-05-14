@@ -45,16 +45,6 @@ img {
   height: auto;
 }
 
-button img {
-  width: 27px;
-  padding-right: 8px;
-}
-
-button a {
-  text-decoration: none;
-  color: var(--main-white);
-}
-
 #secondary-color {
   color: var(--dark-blue-100);
 }
