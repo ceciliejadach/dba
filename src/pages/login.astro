@@ -1,0 +1,54 @@
+---
+import "../styles/style.css";
+import Button from "../components/Button.astro";
+---
+
+<div class="login-wrapper">
+  <div class="wrapper">
+    <img src="./png/dba-logo.png" alt="dba logo" />
+    <h2>Log ind for en bedre oplevelse</h2>
+    <ul>
+      <li>Gem dine favoritter</li>
+      <li>Få besked når annoncer matcher din søgning</li>
+      <li>Følg interessante DBA-sælgere</li>
+    </ul>
+    <p>Problemer med at logge ind? <a href="https://support.dba.dk/">Få hjælp her</a></p>
+  </div>
+  <div class="container">
+    <div>
+      <img src="./png/dba-logo.png" alt="dba logo" />
+      <img src="./svg/schibsted-logo-small.svg" alt="schibsted logo" />
+    </div>
+    <form>
+      <label for="email">E-mail</label>
+      <input type="text" id="email" name="email" placeholder="olivia@untitledui.com" />
+      <label for="fPassword">Adgangskode</label>
+      <input type="text" id="fPassword" name="fPassword" />
+      <p>*Påkrævet</p>
+      <label for="sPassword">Adgangskode</label>
+      <input type="text" id="sPassword" name="sPassword" />
+      <p>*Påkrævet</p>
+    </form>
+    <p>DBA samarbejder med Schibsted. Du skal bruge en Schibsted-konto for at fortsætte. Du kan bruge denne konto på alle Schibsteds tjenester.</p><br />
+    <p>Hvad er en Schibsted-konto?</p>
+    <Button variant="primary" size="small"><a href="/loginConfirm.astro">Opret profil</a></Button>
+    <div>
+      <p>Hjælp</p>
+      <p>Fortrolighedspolitik</p>
+      <p>Vilkår</p>
+      <p>Om Schibsted-konto</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .wrapper {
+    display: none;
+  }
+
+  @media (min-width: 868px) {
+    .wrapper {
+      display: block;
+    }
+  }
+</style>
