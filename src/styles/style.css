@@ -35,6 +35,10 @@ h1 {
   margin-bottom: 1rem;
 }
 
+h2 {
+  font-weight: 100;
+}
+
 img {
   width: 100%;
   display: block;
@@ -53,6 +57,17 @@ button a {
 
 #secondary-color {
   color: var(--dark-blue-100);
+}
+
+/* opstilling af annoncer i grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(171px, 1fr));
+  justify-items: center;
+  gap: 2rem;
+  margin-inline: 0.5rem;
+  max-width: 980px;
+  margin-bottom: 5rem;
 }
 
 @media (min-width: 868px) {

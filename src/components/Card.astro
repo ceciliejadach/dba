@@ -4,10 +4,10 @@ const { data } = Astro.props;
 
 <a href={`product/${data.slug}`}>
   <article>
-    <div class="shipping hide"><img src="./svg/box.svg" alt="shipping box" /></div>
-    <div class="like"><img src="./svg/heart.svg" alt="heart" /></div>
+    <div class="shipping hide"><img src="../svg/box.svg" alt="shipping box" /></div>
+    <div class="like"><img src="../svg/heart.svg" alt="heart" /></div>
 
-    <img class="product" src={`imgs/${data.image}`} alt={data.titel} />
+    <img class="product" src={`../imgs/${data.image}`} alt={data.titel} />
     <h2>{data.titel}</h2>
     <div>
       <p class="pris">{data.price} kr</p>

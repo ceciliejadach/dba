@@ -2,7 +2,11 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import Button from "../../components/Button.astro";
 import Gallery from "../../components/Gallery.astro";
+import Card from "../../components/Card.astro";
+import "../../styles/style.css";
 
+// fetchning af singleview informationer
+const { myData } = Astro.props;
 export async function getStaticPaths() {
   const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products", {
     method: "GET",
@@ -19,106 +23,286 @@ export async function getStaticPaths() {
   });
 }
 
-const { myData } = Astro.props;
-console.log(myData);
+// visning af lignende annoncer hentet fra supabase datasæt
+const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products?limit=4&offset=4", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1ZWRoZHJha3N3cXNxdWh0amt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUyNTEyNDYsImV4cCI6MjAzMDgyNzI0Nn0.mXDwiwon4LDuspPMmUhUACpS8eCG3AZ7Ttf8Dd2wwu0",
+  },
+}).then((res) => res.json());
 ---
 
 <MainLayout>
-  <section class="singleview">
-    <img class="product-image" src={`/imgs/${myData.image}`} alt={myData.titel} />
-    <div class="info">
-      <h2>{myData.titel}</h2>
-      <p>{myData.description}</p>
-      <p class="condition">Stand: {myData.condition}</p>
-      <div class="contact">
-        <p>{myData.price} kr</p>
-        <Button variant="primary" size="small"><a href="#">Kontakt sælger</a></Button>
-      </div>
-      <div class="profile-wrapper">
-        <div class="profile-container">
-          <img class="profile-image" src="../svg/profile_with_border.svg" alt="profil" />
-          <p>{myData.seller}</p>
-        </div>
-        <div class="profile-info">
-          <p>{myData.location}</p>
-          <div class="mitID">
-            <img src="../svg/mit_id.svg" alt="mit id" />
-            <p>MitID valideret</p>
+  <div class="singleview-wrapper">
+    <div>
+      <div class="product-singleview">
+        <div class="shipping hide"><img src="../svg/box.svg" alt="shipping box" /><p>Kan sendes</p></div>
+        <div class="like"><img src="../svg/heart.svg" alt="heart" /></div>
+        <div class="image-number"><p>1/8</p></div>
+        <div class="singleview-gallery">
+          <div>
+            <img class="product-image" src={`/imgs/${myData.image}`} alt={myData.titel} />
+            <img class="product-image" src={`/imgs/${myData.image}`} alt={myData.titel} />
+            <img class="product-image" src={`/imgs/${myData.image}`} alt={myData.titel} />
+            <img class="product-image" src={`/imgs/${myData.image}`} alt={myData.titel} />
+            <img class="product-image" src={`/imgs/${myData.image}`} alt={myData.titel} />
           </div>
-          <p>Bruger siden 18. juli 2005</p>
         </div>
       </div>
-      <Button variant="secondary" size="small"><a class="secondary" href="#">Se sælgers andre annoncer</a></Button>
+      <div class="forward-back-btn">
+        <img src="../svg/indicator.svg" id="swipe-indicator" alt="swipe indicator" />
+        <img src="../svg/forward_grey.svg" id="nextBtn_grey" alt="næste pil" />
+        <img src="../svg/back_grey.svg" id="backBtn_grey" alt="tilbage pil" />
+      </div>
     </div>
+
+    <div class="product-singleview">
+      <div class="info">
+        <h2>{myData.titel}</h2>
+        <p>{myData.description}</p>
+        <p class="condition">Stand: {myData.condition}</p>
+        <div class="contact">
+          <p>{myData.price} kr</p>
+          <Button variant="primary" size="small"><a href="#">Kontakt sælger</a></Button>
+        </div>
+        <div class="profile-wrapper">
+          <div class="profile-container">
+            <img class="profile-image" src="../svg/profile_with_border.svg" alt="profil" />
+            <p>{myData.seller}</p>
+          </div>
+          <div class="profile-info">
+            <p>{myData.location}</p>
+            <div class="mitID">
+              <img src="../svg/mit_id.svg" alt="mit id" />
+              <p>MitID valideret</p>
+            </div>
+            <p>Bruger siden 18. juli 2005</p>
+          </div>
+        </div>
+        <Button variant="secondary" size="small"><a class="secondary" href="#">Se sælgers andre annoncer</a></Button>
+      </div>
+    </div>
+  </div>
+  <h1 class="lignende_annoncer_headline">Lignende annoncer</h1>
+  <section class="cards single">
+    {
+      moreData.map((card) => {
+        return <Card class="ad" data={card} />;
+      })
+    }
   </section>
   <Gallery />
 </MainLayout>
-
 <style>
-  .singleview {
-    margin-inline: 1rem;
+  .singleview-gallery {
+    display: flex;
+    overflow-x: scroll;
+    margin-inline: 0.5rem;
   }
 
-  .product-image {
-    border-radius: 5px;
+  .singleview-gallery div {
+    width: 100%;
+    display: flex;
+    grid-gap: 10px;
+  }
+
+  /* man skal ikke kunne se pilene ved mobile view */
+  #backBtn_grey,
+  #nextBtn_grey {
+    display: none;
+  }
+  /* styling af den omliggende div af hele indholdet */
+  .product-singleview {
+    margin-inline: 1rem;
+    position: relative;
+  }
+  .forward-back-btn {
+    display: flex;
+    justify-content: center;
     margin-bottom: 2rem;
   }
+  /* swipe indicator billede skal være mindre */
+  #swipe-indicator {
+    width: 100px;
+  }
+
+  /* man skal ikke kunne se scrollbaren i mobile view */
+  .singleview-gallery::-webkit-scrollbar {
+    display: none;
+  }
+
+  .image-number {
+    background-color: var(--main-white);
+    position: absolute;
+    opacity: 65%;
+    color: var(--dark-blue-100);
+    bottom: 5%;
+    right: 5%;
+    padding: 10px;
+    border-radius: 50%;
+  }
+  /* styling af like knappen oppe i højre hjørne */
+  .like {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+    border-radius: 50%;
+    background-color: var(--main-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 20px;
+    top: 10px;
+  }
+
+  /* shipping billedet skal være lidt mindre */
+  .shipping img {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* styling af shipping ikonet oppe i venstre hjørne */
+  .shipping {
+    position: absolute;
+    width: 170px;
+    padding: 10px 16px;
+    border-radius: 25px;
+    background-color: var(--main-white);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    top: 10px;
+    left: 20px;
+    opacity: 65%;
+    color: var(--dark-blue-100);
+  }
+
+  /* styling af produkt billedet */
+  .product-image {
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+
+  /* info kassen skal opstilles i grid for at lave lige stort gap mellem elementerne */
   .info {
-    display: grid;
+    display: flex;
     gap: 4px;
+    flex-direction: column;
   }
 
-  h2 {
-    font-weight: 100;
-  }
-
+  /* font for stand skal være grå og mindre i størrelse for hieraki */
   .condition {
     font-size: 0.875rem;
     color: var(--dark-grey-100);
     margin-bottom: 0.75rem;
   }
 
+  /* kontakt og pris elementer er kommet i samme div med styling flex for at de kommmer i hver deres ende i kassen */
   .contact {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
+  /* styling af profile-wrapper div */
   .profile-wrapper {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 2rem;
-    margin-bottom: 0.75rem;
-    margin-top: 0.75rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
   }
 
-  .profile-wrapper > * {
-    align-self: center;
-  }
-
+  /* profile-container div skal have display grid for at give elementerne lige meget gap */
   .profile-wrapper .profile-container {
     display: grid;
-    justify-items: center;
     gap: 5px;
   }
+
+  /* alle profile-containers børn skal være i midten af kolonnen */
+  .profile-wrapper .profile-container > * {
+    justify-self: center;
+    text-align: center;
+  }
+
+  /* profile-info div skal have display grid, for at give en lige gap mellem elementer */
   .profile-info {
     display: grid;
     gap: 15px;
   }
+
+  /* profil billedet skal være mindre  */
+  .profile-image {
+    width: 70px;
+  }
+
+  /* styling af mit ID div */
   .mitID {
     display: flex;
     align-items: center;
   }
 
+  /* teksten i mit id div skal have lidt padding */
   .mitID p {
     padding-left: 5px;
   }
 
+  /* mit id billedet skal være mindre */
   .mitID img {
     width: 20px;
-    /* padding-top: 30px; */
   }
+
+  /* se sælgers andre annoncer knap tekst skal have en anden farve */
   .secondary {
     color: var(--dark-blue-100);
   }
+
+  /* der skal være noget luft mellem knap og næste afsnit på siden */
+  .lignende_annoncer_headline {
+    margin-top: 7rem;
+  }
+
+  @media (min-width: 555px) {
+    .singleview-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    #swipe-indicator {
+      display: none;
+    }
+
+    #backBtn_grey,
+    #nextBtn_grey {
+      display: block;
+      width: 35px;
+      padding-inline: 8px;
+      cursor: pointer;
+    }
+
+    .info {
+      height: 90%;
+    }
+
+    .profile-wrapper,
+    .secondary {
+      margin-top: auto;
+    }
+  }
 </style>
+
+<script>
+  let scrollContainer = document.querySelector(".singleview-gallery");
+  let backBtn_grey = document.getElementById("backBtn_grey");
+  let nextBtn_grey = document.getElementById("nextBtn_grey");
+
+  backBtn_grey.addEventListener("click", () => {
+    scrollContainer.style.scrollBehavior = "smooth";
+    scrollContainer.scrollLeft += 452;
+  });
+
+  nextBtn_grey.addEventListener("click", () => {
+    scrollContainer.style.scrollBehavior = "smooth";
+    scrollContainer.scrollLeft -= 452;
+  });
+</script>

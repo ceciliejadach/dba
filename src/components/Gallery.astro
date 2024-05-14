@@ -5,7 +5,7 @@ import ArticleCard from "./ArticleCard.astro";
 <section>
   <h1 class="dba-guide-headline">Find inspiration fra DBA Guide</h1>
   <div class="gallery-wrap">
-    <img src="./svg/back.svg" id="backBtn" alt="tilbage pil" />
+    <img src="../svg/back.svg" id="backBtn" alt="tilbage pil" />
     <div class="gallery">
       <div>
         <ArticleCard class="gallery_img" background="../imgs/training_guide.webp" title="Træningstøj" description="Bliv klogere på, hvordan du sælger og køber træningstøj og udstyr, samt hvad du skal være opmærksom på." />
@@ -16,7 +16,7 @@ import ArticleCard from "./ArticleCard.astro";
         <ArticleCard class="gallery_img" background="../imgs/chair_guide.webp" title="Møbler" description="Der er ikke de møbler som DBA ikke sælger. Find en masse brugte møbler og vær med til at give dem et nyt liv og hjem." />
       </div>
     </div>
-    <img src="./svg/forward.svg" id="nextBtn" alt="næste pil" />
+    <img src="../svg/forward.svg" id="nextBtn" alt="næste pil" />
   </div>
 </section>
 
@@ -90,12 +90,6 @@ import ArticleCard from "./ArticleCard.astro";
   let scrollContainer = document.querySelector(".gallery");
   let backBtn = document.getElementById("backBtn");
   let nextBtn = document.getElementById("nextBtn");
-
-  // scrollContainer.addEventListener("wheel", (evt) => {
-  //   evt.preventDefault();
-  //   scrollContainer.scrollLeft += evt.deltaY;
-  //   scrollContainer.style.scrollBehavior = "auto";
-  // });
 
   nextBtn.addEventListener("click", () => {
     scrollContainer.style.scrollBehavior = "smooth";
