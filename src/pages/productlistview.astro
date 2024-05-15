@@ -4,6 +4,8 @@ import Card from "../components/Card.astro";
 import Gallery from "../components/Gallery.astro";
 import BurgerAd from "../components/BurgerAd.astro";
 import CategorySlider from "../components/CategorySlider.astro";
+import ContactService from "../components/ContactService.astro";
+import BreadCrumbPath from "../components/BreadCrumbPath.astro";
 
 const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products", {
   method: "GET",
@@ -15,6 +17,7 @@ const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/produ
 
 <MainLayout titel="Productlistview">
   <CategorySlider />
+  <BreadCrumbPath url="/" page="Forside" />
   <h1>Til boligen</h1>
   <section class="cards">
     {
@@ -26,3 +29,4 @@ const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/produ
   <Gallery />
   <BurgerAd />
 </MainLayout>
+<div class="sticky-customer-service"><ContactService /></div>

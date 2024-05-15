@@ -5,6 +5,8 @@ import Gallery from "../components/Gallery.astro";
 import BurgerAd from "../components/BurgerAd.astro";
 import CategorySlider from "../components/CategorySlider.astro";
 import "../styles/style.css";
+import ContactService from "../components/ContactService.astro";
+import BreadCrumbPath from "../components/BreadCrumbPath.astro";
 
 const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products?limit=8", {
   method: "GET",
@@ -22,6 +24,7 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
 
 <MainLayout titel="Forside">
   <CategorySlider />
+
   <h1>Forsideannoncer</h1>
   <section class="cards">
     {
@@ -30,6 +33,7 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
       })
     }
   </section>
+
   <h1>Annoncer som kunne være noget for dig</h1>
   <section class="cards">
     {
@@ -38,6 +42,8 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
       })
     }
   </section>
+
   <Gallery />
   <BurgerAd />
 </MainLayout>
+<ContactService />

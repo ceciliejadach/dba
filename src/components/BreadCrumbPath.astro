@@ -1,0 +1,29 @@
+---
+import "../styles/style.css";
+
+const { url, page } = Astro.props;
+---
+
+<ol class="breadcrumbnav">
+  <li><a href={url}>{page}</a></li>
+</ol>
+
+<style>
+  .breadcrumbnav {
+    list-style: none;
+    margin-inline: 0.5rem;
+  }
+
+  .breadcrumbnav li {
+    display: inline-block;
+  }
+
+  .breadcrumbnav li:last-child::after {
+    content: " > ";
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--dark-grey-100);
+  }
+</style>

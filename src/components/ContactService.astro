@@ -1,0 +1,82 @@
+---
+import "../styles/style.css";
+---
+
+<a href="https://support.dba.dk/">
+  <div class="mobile">
+    <img src="../svg/service.svg" alt="kontakt kundeservice" />
+  </div>
+</a>
+<a href="https://support.dba.dk/">
+  <div class="desktop">
+    <img src="../svg/service.svg" alt="kontakt kundeservice" />
+    <div class="container">
+      <p class="contact">Kontakt</p>
+      <p class="contact">kundeservice</p>
+      <p class="open-hours">Åben alle ugens dage fra 8-22</p>
+    </div>
+  </div>
+</a>
+
+<style>
+  a {
+    text-decoration: none;
+  }
+  .mobile {
+    display: grid;
+    width: fit-content;
+    border-radius: 10px;
+    box-shadow:
+      rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+      rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    padding: 0.3rem;
+    background-color: var(--main-white);
+    position: fixed;
+    right: 10px;
+    bottom: 65px;
+  }
+
+  img {
+    width: 50px;
+  }
+  .container {
+    display: grid;
+    align-content: center;
+  }
+  /* .container > * {
+    align-self: center;
+  } */
+
+  .contact {
+    font-size: 0.875rem;
+    color: var(--dark-blue-100);
+    font-weight: 700;
+  }
+
+  .open-hours {
+    font-size: 0.625rem;
+    color: var(--dark-blue-100);
+  }
+  .desktop {
+    display: none;
+  }
+  @media (min-width: 868px) {
+    .mobile {
+      display: none;
+    }
+    .desktop {
+      display: flex;
+      width: fit-content;
+      gap: 7px;
+      border-radius: 15px;
+      box-shadow:
+        rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+        rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+      padding: 0.68rem;
+      background-color: var(--main-white);
+      position: fixed;
+      right: 15px;
+      bottom: 15px;
+    }
+  }
+</style>

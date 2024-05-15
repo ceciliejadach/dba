@@ -1,42 +1,47 @@
 ---
 import "../styles/style.css";
 import Button from "./Button.astro";
+import Marquee from "./Marquee.astro";
 ---
 
-<nav class="nav_bar">
-  <a href="/"><img src="../png/dba-logo.png" alt="dba logo" /></a>
-  <div class="search">
-    <input class="search_input" type="search" placeholder="Søg på hele DBA" />
-    <img class="search_icon" src="../svg/search.svg" alt="search ikon" />
-  </div>
-  <img class="notification-ikon" src="../svg/bell.svg" alt="klokke" />
-  <ul class="desktop_nav">
-    <Button variant="primary" size="small"><img src="../svg/plus.svg" alt="plus" /><a href="#">Opret annoce</a></Button>
-    <Button variant="tertiary" size="small"><img src="../svg/box.svg" alt="box" />Køb fragt</Button>
-    <Button variant="tertiary" size="small"><img src="../svg/profile.svg" alt="profile" /><a id="blue_link" href="./login">Mit DBA</a></Button>
-    <Button variant="tertiary" size="small"><img src="../svg/heart.svg" alt="heart" />Favoritter</Button>
-  </ul>
-  <ul id="mobile_nav">
-    <li>
-      <img src="../svg/box.svg" alt="box" />
-      <p>Køb fragt</p>
-    </li>
-    <li>
+<div class="navigation">
+  <Marquee />
+  <nav class="nav_bar">
+    <a href="/"><img src="../png/dba-logo.png" alt="dba logo" /></a>
+    <div class="search">
+      <input class="search_input" type="search" placeholder="Søg på hele DBA" />
+      <img class="search_icon" src="../svg/search.svg" alt="search ikon" />
+    </div>
+    <img class="notification-ikon" src="../svg/bell.svg" alt="klokke" />
+    <ul class="desktop_nav">
+      <Button variant="primary" size="small"><img src="../svg/plus.svg" alt="plus" /><a href="#">Opret annoce</a></Button>
+      <Button variant="tertiary" size="small"><img src="../svg/box.svg" alt="box" />Køb fragt</Button>
+      <Button variant="tertiary" size="small"><img src="../svg/profile.svg" alt="profile" /><a id="blue_link" href="./login">Mit DBA</a></Button>
+      <Button variant="tertiary" size="small"><img src="../svg/heart.svg" alt="heart" />Favoritter</Button>
+    </ul>
+    <ul id="mobile_nav">
+      <li>
+        <img src="../svg/box.svg" alt="box" />
+        <p>Køb fragt</p>
+      </li>
+
       <li>
         <img src="../svg/profile.svg" alt="profile" />
         <a href="#">Mit DBA</a>
       </li>
-      <img src="../svg/heart.svg" alt="heart" />
-      <p>Favoritter</p>
-    </li>
-    <!-- <li>
-      <img src="../svg/category.svg" alt="category" />
-      <p>Kategorier</p>
-    </li> -->
-  </ul>
-</nav>
-<div class="cta-btn">
-  <Button variant="primary" size="small"><img src="../svg/plus.svg" alt="plus" /><a href="#">Opret annoce</a></Button>
+      <li>
+        <img src="../svg/heart.svg" alt="heart" />
+        <p>Favoritter</p>
+      </li>
+      <!-- <li>
+        <img src="../svg/category.svg" alt="category" />
+        <p>Kategorier</p>
+      </li> -->
+    </ul>
+  </nav>
+  <div class="cta-btn">
+    <Button variant="primary" size="small"><img src="../svg/plus.svg" alt="plus" /><a href="#">Opret annoce</a></Button>
+  </div>
 </div>
 
 <style>
@@ -78,12 +83,13 @@ import Button from "./Button.astro";
     width: 40px;
     cursor: pointer;
   }
+
   .nav_bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 50px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
     padding-inline: 0.2rem;
     gap: 10px;
   }
@@ -91,6 +97,15 @@ import Button from "./Button.astro";
   @media (min-width: 868px) {
     .nav_bar {
       gap: 0;
+    }
+
+    .navigation {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background-color: var(--main-white);
+      padding-top:
+      padding-bottom: 1.5rem;
     }
   }
 
@@ -107,7 +122,7 @@ import Button from "./Button.astro";
     display: none;
   }
 
-  @media (max-width: 886px) {
+  @media (max-width: 868px) {
     .nav_bar .desktop_nav {
       display: none;
     }
