@@ -1,0 +1,51 @@
+---
+import "../styles/style.css";
+import CategoryComponent from "./CategoryComponent.astro";
+---
+
+<div class="category-gallery">
+  <div>
+    <CategoryComponent id="category" title="Biler" img="./svg/car.svg" />
+    <CategoryComponent title="Camping" img="./svg/caravan.svg" />
+    <CategoryComponent title="Biltilbehør" img="./svg/wheel.svg" />
+    <CategoryComponent title="Boliger" img="./svg/house.svg" />
+    <CategoryComponent id="category" title="Have & byg" img="./svg/garden.svg" />
+    <CategoryComponent title="Til boligen" img="./svg/lamp.svg" />
+    <CategoryComponent title="Til børn" img="./svg/horse.svg" />
+    <CategoryComponent title="Tøj & mode" img="./svg/hanger.svg" />
+    <CategoryComponent title="Sport & fritid" img="./svg/soccer.svg" />
+    <CategoryComponent id="category" title="Biler" img="./svg/car.svg" />
+    <CategoryComponent title="Camping" img="./svg/caravan.svg" />
+    <CategoryComponent title="Biltilbehør" img="./svg/wheel.svg" />
+    <CategoryComponent title="Boliger" img="./svg/house.svg" />
+    <CategoryComponent id="category" title="Have & byg" img="./svg/garden.svg" />
+    <CategoryComponent title="Til boligen" img="./svg/lamp.svg" />
+    <CategoryComponent title="Til børn" img="./svg/horse.svg" />
+    <CategoryComponent title="Tøj & mode" img="./svg/hanger.svg" />
+    <CategoryComponent title="Sport & fritid" img="./svg/soccer.svg" />
+  </div>
+</div>
+
+<style>
+  .category-gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline: 0.5rem;
+    margin-bottom: 20px;
+  }
+  .category-gallery div {
+    width: 100%;
+    grid-gap: 4px;
+    display: flex;
+    overflow-x: scroll;
+  }
+
+  #category {
+    width: 100%;
+  }
+
+  .category-gallery::-webkit-scrollbar {
+    display: none;
+  }
+</style>
