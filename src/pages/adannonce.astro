@@ -1,0 +1,112 @@
+---
+import "../styles/style.css";
+---
+
+<div class="scroll-indicator">
+  <img src="./svg/dba-logo.svg" alt="dba logo" />
+  <div class="step" id="step1">
+    <div class="dot"></div>
+    <span>Trin 1</span>
+  </div>
+  <div class="step" id="step2">
+    <div class="dot"></div>
+    <span>Trin 2</span>
+  </div>
+  <div class="step" id="step3">
+    <div class="dot"></div>
+    <span>Trin 3</span>
+  </div>
+  <div class="step" id="step4">
+    <div class="dot"></div>
+    <span>Trin 4</span>
+  </div>
+</div>
+
+<div class="content">
+  <section id="section1"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus dolore qui doloribus veniam. Consequuntur, voluptatibus exercitationem similique vitae, ut libero, magni placeat nostrum voluptas alias ex qui voluptatem numquam odit!</p></section>
+  <section id="section2"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor consequatur ea error id magni temporibus minima laborum hic, quo aut quas consequuntur illo non earum quos nisi molestias velit alias?</p></section>
+  <section id="section3"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere repellendus delectus aut adipisci distinctio! Accusamus odit, dolores fugit, nulla dignissimos nemo numquam dolorum delectus unde recusandae consequuntur a pariatur libero!</p></section>
+  <section id="section4"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident amet nam autem quidem? Praesentium magni corrupti ducimus recusandae, velit ullam aspernatur quos sit vero non, nulla illo voluptatem consequatur aut?</p></section>
+</div>
+
+<style>
+  img {
+    width: 100px;
+  }
+  .scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #f1f1f1;
+    padding: 10px 0;
+    z-index: 20;
+  }
+
+  .step {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ddd;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+  }
+
+  .step.active .dot {
+    background-color: #4caf50;
+  }
+
+  .step span {
+    color: #666;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  .step.active span {
+    color: #4caf50;
+  }
+
+  .content {
+    margin-top: 80px;
+  }
+
+  section {
+    height: 100vh;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+  }
+</style>
+
+<script>
+  document.addEventListener("scroll", () => {
+    const sections = document.querySelectorAll("section");
+    const steps = document.querySelectorAll(".step");
+
+    let currentSectionIndex = 0;
+
+    sections.forEach((section, index) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+
+      if (pageYOffset >= sectionTop - sectionHeight / 3) {
+        currentSectionIndex = index;
+      }
+    });
+
+    steps.forEach((step, index) => {
+      if (index === currentSectionIndex) {
+        step.classList.add("active");
+      } else {
+        step.classList.remove("active");
+      }
+    });
+  });
+</script>
