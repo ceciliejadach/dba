@@ -15,7 +15,7 @@ import Marquee from "./Marquee.astro";
     <img class="notification-ikon" src="../svg/bell.svg" alt="klokke" />
     <ul class="desktop_nav">
       <Button variant="primary" size="small"><img src="../svg/plus.svg" alt="plus" /><a href="#">Opret annoce</a></Button>
-      <Button variant="tertiary" size="small"><img src="../svg/box.svg" alt="box" />Køb fragt</Button>
+      <Button variant="tertiary" size="small"><img src="../svg/box.svg" alt="box" /><a id="blue_link" href="#">Køb fragt</a></Button>
       <Button variant="tertiary" size="small"><img src="../svg/profile.svg" alt="profile" /><a id="blue_link" href="./login">Mit DBA</a></Button>
       <Button variant="tertiary" size="small"><img src="../svg/heart.svg" alt="heart" />Favoritter</Button>
     </ul>
@@ -47,6 +47,10 @@ import Marquee from "./Marquee.astro";
 <style>
   #blue_link {
     color: var(--dark-blue-100);
+  }
+
+  a {
+  white-space: nowrap;
   }
 
   a img {
