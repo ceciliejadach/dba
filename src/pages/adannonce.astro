@@ -1,38 +1,96 @@
 ---
 import "../styles/style.css";
+const { title } = Astro.props;
+import Button from "../components/Button.astro";
 ---
 
-<div class="scroll-indicator">
-  <img src="./svg/dba-logo.svg" alt="dba logo" />
-  <div class="step" id="step1">
-    <div class="dot"></div>
-    <span>Trin 1</span>
-  </div>
-  <div class="step" id="step2">
-    <div class="dot"></div>
-    <span>Trin 2</span>
-  </div>
-  <div class="step" id="step3">
-    <div class="dot"></div>
-    <span>Trin 3</span>
-  </div>
-  <div class="step" id="step4">
-    <div class="dot"></div>
-    <span>Trin 4</span>
-  </div>
-</div>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <main>
+      <div class="scroll-indicator">
+        <img src="./svg/dba-logo.svg" alt="dba logo" />
+        <div class="step" id="step1">
+          <div class="dot"></div>
+          <span>Trin 1</span>
+        </div>
+        <div class="step" id="step2">
+          <div class="dot"></div>
+          <span>Trin 2</span>
+        </div>
+        <div class="step" id="step3">
+          <div class="dot"></div>
+          <span>Trin 3</span>
+        </div>
+        <div class="step" id="step4">
+          <div class="dot"></div>
+          <span>Trin 4</span>
+        </div>
+        <div class="step" id="step5">
+          <div class="dot"></div>
+          <span>Trin 5</span>
+        </div>
+      </div>
 
-<div class="content">
-  <section id="section1"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus dolore qui doloribus veniam. Consequuntur, voluptatibus exercitationem similique vitae, ut libero, magni placeat nostrum voluptas alias ex qui voluptatem numquam odit!</p></section>
-  <section id="section2"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor consequatur ea error id magni temporibus minima laborum hic, quo aut quas consequuntur illo non earum quos nisi molestias velit alias?</p></section>
-  <section id="section3"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere repellendus delectus aut adipisci distinctio! Accusamus odit, dolores fugit, nulla dignissimos nemo numquam dolorum delectus unde recusandae consequuntur a pariatur libero!</p></section>
-  <section id="section4"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident amet nam autem quidem? Praesentium magni corrupti ducimus recusandae, velit ullam aspernatur quos sit vero non, nulla illo voluptatem consequatur aut?</p></section>
-</div>
+      <div class="text-content">
+        <section id="section1">
+          <div class="wrapper">
+            <div class="container">
+              <div class="figure">
+                <div class="circle"></div>
+                <div class="line"></div>
+              </div>
+              <div class="content">
+                <div class="text-box">
+                  <p>Trin 1 - Information om din annonce</p>
+                  <h2>Upload billeder af det du gerne vil sælge. Træk og slip billedet ind til højre.</h2>
+                  <p>Tilføj så mange billeder du har lyst til, dog maks. 8</p>
+                </div>
+                <button id="uploadButton">Upload billeder</button>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper">
+            <div class="container">
+              <div class="figure">
+                <div class="circle"></div>
+                <div class="line"></div>
+              </div>
+              <div class="content">
+                <div class="text-box">
+                  <h2>Giv os lidt informationer om annoncen, indtast kun rigtige informationer og vær præcis.</h2>
+                  <form>
+                    <label for="price"></label>
+                    <input type="number" class="price" id="price" placeholder="Pris*" />
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="section2"></section>
+        <section id="section3"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere repellendus delectus aut adipisci distinctio! Accusamus odit, dolores fugit, nulla dignissimos nemo numquam dolorum delectus unde recusandae consequuntur a pariatur libero!</p></section>
+        <section id="section4"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident amet nam autem quidem? Praesentium magni corrupti ducimus recusandae, velit ullam aspernatur quos sit vero non, nulla illo voluptatem consequatur aut?</p></section>
+        <section id="section5"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident amet nam autem quidem? Praesentium magni corrupti ducimus recusandae, velit ullam aspernatur quos sit vero non, nulla illo voluptatem consequatur aut?</p></section>
+      </div>
+    </main>
+  </body>
+</html>
 
 <style>
   img {
-    width: 100px;
+    width: 80px;
   }
+
   .scroll-indicator {
     position: fixed;
     top: 0;
@@ -40,7 +98,7 @@ import "../styles/style.css";
     width: 100%;
     display: flex;
     justify-content: space-around;
-    background-color: #f1f1f1;
+    background-color: var(--main-white);
     padding: 10px 0;
     z-index: 20;
   }
@@ -55,26 +113,25 @@ import "../styles/style.css";
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #ddd;
+    border: var(--dark-grey-100) 0.5px solid;
     transition: background-color 0.3s;
     margin-right: 10px;
   }
 
   .step.active .dot {
-    background-color: #4caf50;
+    background-color: var(--dark-grey-100);
   }
 
   .step span {
     color: #666;
-    font-weight: bold;
     transition: color 0.3s;
   }
 
   .step.active span {
-    color: #4caf50;
+    color: var(--dark-grey-100);
   }
 
-  .content {
+  .text-content {
     margin-top: 80px;
   }
 
@@ -82,6 +139,75 @@ import "../styles/style.css";
     height: 100vh;
     padding: 20px;
     border-bottom: 1px solid #ccc;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0;
+    padding: 10px;
+  }
+
+  .container {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+  }
+
+  .circle {
+    width: 10px;
+    height: 10px;
+    border: var(--dark-grey-100) 1px solid;
+    border-radius: 50%;
+  }
+
+  .line {
+    width: 0.6px;
+    height: 300px;
+    background-color: var(--dark-grey-100);
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .text-box,
+  .bread-text {
+    margin-bottom: 20px;
+  }
+
+  .text-box h2 {
+    margin: 0;
+    font-size: 24px;
+  }
+
+  .text-box p,
+  .bread-text p {
+    margin: 0;
+  }
+
+  #uploadButton {
+    background-color: var(--dark-blue-100);
+    color: var(--primary-btn-text-color);
+    display: flex;
+    border-radius: 20px;
+    appearance: none;
+    justify-content: center;
+    border: none;
+    padding: 10px 12px;
+    align-items: center;
+  }
+
+  input [type="number"] {
+    background-color: var(--main-white);
   }
 </style>
 
