@@ -40,7 +40,7 @@ import Marquee from "./Marquee.astro";
     </ul>
   </nav>
   <div class="cta-btn">
-    <Button variant="primary" size="small"><img src="../svg/plus.svg" alt="plus" /><a href="/adannonce">Opret annoce</a></Button>
+    <Button variant="primary" size="large"><img src="../svg/plus.svg" alt="plus" /><a href="/adannonce">Opret annoce</a></Button>
   </div>
 </div>
 
@@ -96,7 +96,10 @@ import Marquee from "./Marquee.astro";
     margin-bottom: 40px;
     padding-inline: 0.2rem;
     gap: 10px;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+
   }
+
 
   @media (min-width: 868px) {
     .nav_bar {
@@ -130,6 +133,7 @@ import Marquee from "./Marquee.astro";
     .nav_bar .desktop_nav {
       display: none;
     }
+
 
     .cta-btn {
       display: block;
