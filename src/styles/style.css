@@ -18,6 +18,9 @@
   /* farver til text */
   --primary-btn-text-color: white;
   --secondary-btn-text-color: #000a8c;
+
+  /* font størrelser til mobil */
+  --h1-text-mobile: 1.25rem;
 }
 
 body {

@@ -35,10 +35,6 @@ import Button from "../components/Button.astro";
           <div class="dot"></div>
           <span>Trin 4</span>
         </div>
-        <div class="step" id="step5">
-          <div class="dot"></div>
-          <span>Trin 5</span>
-        </div>
       </div>
 
       <div class="text-content">
@@ -68,25 +64,226 @@ import Button from "../components/Button.astro";
               <div class="content">
                 <div class="text-box">
                   <h2>Giv os lidt informationer om annoncen, indtast kun rigtige informationer og vær præcis.</h2>
-                  <form>
-                    <label for="price"></label>
-                    <input type="number" class="price" id="price" placeholder="Pris*" />
+                  <form id="description-form" name="description" netlify>
+                    <label for="price"><input type="number" id="price" placeholder="Pris*" /></label>
+                    <label>
+                      <select name="category">
+                        <option>Kategori*</option>
+                        <option>Lampe</option>
+                        <option>Sofa</option>
+                        <option>Pude</option>
+                        <option>Spisebord</option>
+                        <option>Stol</option>
+                        <option>Vægdekoration</option>
+                        <option>Sofabord</option>
+                      </select>
+                    </label>
+                    <label>
+                      <select name="condition">
+                        <option>Stand*</option>
+                        <option>Som ny</option>
+                        <option>God stand</option>
+                        <option>Brugt</option>
+                        <option>Meget brugt</option>
+                      </select>
+                    </label>
+                    <label for="text"></label><textarea name="text" id="text" placeholder="Supplerende tekst*"></textarea>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper">
+            <div class="container">
+              <div class="figure">
+                <div class="circle"></div>
+                <div class="line"></div>
+              </div>
+              <div class="content">
+                <div class="text-box">
+                  <h2>Giv os lidt informationer om annoncen, indtast kun rigtige informationer og vær præcis.</h2>
+                  <p>Du kan trygt købe fragt hos DBA via DAO, GLS eller Bring.</p>
+                </div>
+                <div class="content-wrapper">
+                  <div class="content-container">
+                    <p>Kan sendes</p>
+                    <img src="./svg/box-black.svg" alt="boks" />
+                  </div>
+                  <div class="content-container">
+                    <p>Fysisk udlevering</p>
+                    <img id="multiple-profile-img" src="./svg/multiple-profile.svg" alt="flere profiler" />
+                  </div>
+                  <div class="content-container">
+                    <p>Jeg kan begge dele</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="section2">
+          <div class="wrapper">
+            <div class="container">
+              <div class="figure">
+                <div class="circle"></div>
+                <div class="line"></div>
+              </div>
+              <div class="content">
+                <div class="text-box">
+                  <p>Trin 2 - Salgsmuligheder & abonnementer</p>
+                  <h2>Forøg dine muligheder for salg ved at tilkøbe titel eller “Haster” skilt.</h2>
+                  <p>Det er gratis at oprette en annonce på DBA men du kan øge dine chancer for salg mod et gebyr.</p>
+                </div>
+                <div class="content-wrapper">
+                  <div class="content-container">
+                    <p>Nej tak</p>
+                    <p>0 ,-</p>
+                  </div>
+                  <div class="content-container">
+                    <p>"Haster" skilt</p>
+                    <p>15 ,-</p>
+                  </div>
+                  <div class="content-container">
+                    <p><strong>Fed overskrift</strong></p>
+                    <p>39 ,-</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper">
+            <div class="container">
+              <div class="figure">
+                <div class="circle"></div>
+                <div class="line" id="long"></div>
+              </div>
+              <div class="content">
+                <div class="text-box">
+                  <h2>Køb et månedligt abonnement hos DBA og øg dine chancer for salg</h2>
+                  <p>Det er gratis at oprette en annonce på DBA men du kan blandt andet øge visningerne på dine annoncer med et abonnement.</p>
+                </div>
+                <div class="content-wrapper">
+                  <div class="content-container" id="subscription">
+                    <div class="subscription-content">
+                      <img src="./svg/basis-ad-smiley.svg" alt="basisannonce smiley" />
+                      <h2><strong>Basisannonce</strong></h2>
+                      <p>Bliver slettet efter 30 dage</p>
+                    </div>
+                    <h2>0 ,-</h2>
+                  </div>
+                  <div class="content-container" id="subscription">
+                    <div class="subscription-content">
+                      <img src="./svg/pig.svg" alt="sparegris" />
+                      <h2><strong>Budget</strong></h2>
+                      <p>3x så mange visninger</p>
+                      <p>Fremhævet annonce</p>
+                    </div>
+                    <div>
+                      <h2>15 ,-</h2>
+                      <p>pr. mdr.</p>
+                    </div>
+                  </div>
+                  <div class="content-container" id="subscription">
+                    <div class="subscription-content">
+                      <img src="./svg/celebration.svg" alt="fejring ikon" />
+                      <h2><strong>Standard</strong></h2>
+                      <p>4x så mange visninger</p>
+                      <p>Fremhævet annonce</p>
+                      <p>Topgalleri</p>
+                    </div>
+                    <div>
+                      <h2>39 ,-</h2>
+                      <p>pr. mdr.</p>
+                    </div>
+                  </div>
+                  <div class="content-container" id="subscription">
+                    <div class="subscription-content">
+                      <img src="./svg/premium.svg" alt="dartboard ikon" />
+                      <h2><strong>Premium</strong></h2>
+                      <p>6x så mange visninger</p>
+                      <p>Fremhævet annonce</p>
+                      <p>Topgalleri</p>
+                      <p>Topannonce</p>
+                      <p>Galleri på forsiden</p>
+                    </div>
+                    <div>
+                      <h2>99 ,-</h2>
+                      <p>pr. mdr.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="section3">
+          <div class="wrapper">
+            <div class="container">
+              <div class="figure">
+                <div class="circle"></div>
+                <div class="line"></div>
+              </div>
+              <div class="content">
+                <div class="text-box">
+                  <p>Trin 3 - Kontaktoplysninger</p>
+                  <h2>Hjælp sælger med at komme i kontakt med dig ved at indtaste dine kontaktinformationer.</h2>
+                  <form id="description-form" name="description" netlify>
+                    <label for="email"><input type="text" id="email" placeholder="E-mail*" /></label>
+                    <label for="city"><input type="text" id="city" placeholder="Post nr. & by*" /></label>
+                    <label for="address"><input type="text" id="address" placeholder="Addresse" /></label>
+                    <label for="phonenumber"><input type="number" id="phonenumber" placeholder="Telefon nr." /></label>
                   </form>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <section id="section2"></section>
-        <section id="section3"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere repellendus delectus aut adipisci distinctio! Accusamus odit, dolores fugit, nulla dignissimos nemo numquam dolorum delectus unde recusandae consequuntur a pariatur libero!</p></section>
-        <section id="section4"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident amet nam autem quidem? Praesentium magni corrupti ducimus recusandae, velit ullam aspernatur quos sit vero non, nulla illo voluptatem consequatur aut?</p></section>
-        <section id="section5"><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident amet nam autem quidem? Praesentium magni corrupti ducimus recusandae, velit ullam aspernatur quos sit vero non, nulla illo voluptatem consequatur aut?</p></section>
+        <section id="section4">
+          <div class="wrapper">
+            <div class="container">
+              <div class="figure">
+                <div class="circle"></div>
+                <div class="line" id="medium"></div>
+              </div>
+              <div class="content">
+                <div class="text-box">
+                  <p>Trin 4 - Forhåndsvisning</p>
+                  <h2>Forhåndsvisning af din annonce.</h2>
+                  <div class="product-singleview">
+                    <div class="shipping hide"><img src="../svg/box.svg" alt="shipping box" /><p>Kan sendes</p></div>
+                    <div class="like"><img src="../svg/heart.svg" alt="heart" /></div>
+                    <div class="image-number"><p>1/8</p></div>
+                    <div class="singleview-gallery">
+                      <div>
+                        <img class="product-image" src="./imgs/vifte_1.webp" alt="vifte" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="image-text">
+                    <h2><strong>Din overskrift her</strong></h2>
+                    <div>
+                      <p>Din beskrive af mål, størrelse, farve og en masse andet kommer til at stå her</p>
+                      <p>Stand: kommer til at stå her</p>
+                    </div>
+                    <h2>000 kr</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <Button variant="primary" size="large">
+              <a href="#">Indryk annonce på DBA</a>
+            </Button>
+          </div>
+        </section>
       </div>
     </main>
   </body>
 </html>
 
 <style>
+  body {
+    background-color: var(--light-blue-100);
+  }
   img {
     width: 80px;
   }
@@ -106,7 +303,6 @@ import Button from "../components/Button.astro";
   .step {
     display: flex;
     align-items: center;
-    cursor: pointer;
   }
 
   .dot {
@@ -114,7 +310,7 @@ import Button from "../components/Button.astro";
     height: 10px;
     border-radius: 50%;
     border: var(--dark-grey-100) 0.5px solid;
-    transition: background-color 0.3s;
+    transition: 0.3s;
     margin-right: 10px;
   }
 
@@ -123,8 +319,8 @@ import Button from "../components/Button.astro";
   }
 
   .step span {
-    color: #666;
-    transition: color 0.3s;
+    color: var(--dark-grey-100);
+    transition: 0.3s;
   }
 
   .step.active span {
@@ -137,28 +333,41 @@ import Button from "../components/Button.astro";
 
   section {
     height: 100vh;
-    padding: 20px;
+    padding: 10px;
+  }
+
+  #section1 {
+    height: 155vh;
+    padding: 10px;
+  }
+
+  #section2 {
+    height: 220vh;
+    padding: 10px;
+  }
+
+  #section3 {
+    height: 60vh;
+    padding: 10px;
     border-bottom: 1px solid #ccc;
   }
 
   .wrapper {
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: flex-start;
-    margin: 0;
-    padding: 10px;
+    margin: 0; */
+    padding: 20px;
   }
 
   .container {
     display: flex;
-    align-items: flex-start;
   }
 
   .figure {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 20px;
   }
 
   .circle {
@@ -170,18 +379,19 @@ import Button from "../components/Button.astro";
 
   .line {
     width: 0.6px;
-    height: 300px;
+    height: 420px;
     background-color: var(--dark-grey-100);
   }
 
   .content {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
   .text-box,
   .bread-text {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
   }
 
   .text-box h2 {
@@ -189,9 +399,8 @@ import Button from "../components/Button.astro";
     font-size: 24px;
   }
 
-  .text-box p,
-  .bread-text p {
-    margin: 0;
+  .text-box {
+    padding-left: 25px;
   }
 
   #uploadButton {
@@ -204,10 +413,169 @@ import Button from "../components/Button.astro";
     border: none;
     padding: 10px 12px;
     align-items: center;
+    cursor: pointer;
+  }
+  #description-form {
+    display: grid;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+    margin-top: 30px;
   }
 
-  input [type="number"] {
+  #price {
+  }
+  input,
+  select {
+    height: 60px;
+    width: 330px;
+    font-size: 1rem;
+    color: var(--black-100);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-family: Plus Jakarta Sans;
+  }
+  textarea {
+    height: 110px;
+    width: 330px;
+    font-size: 1rem;
+    color: var(--black-100);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-family: Plus Jakarta Sans;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--black-100);
+    padding-left: 5px;
+    font-family: Plus Jakarta Sans;
+  }
+
+  .content-wrapper {
+    display: grid;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+  .content-container {
+    display: flex;
+    align-items: center;
+    height: 60px;
     background-color: var(--main-white);
+    width: 330px;
+    border-radius: 5px;
+    justify-content: space-between;
+    padding-inline: 24px;
+  }
+
+  .content-container img {
+    width: 20px;
+  }
+
+  #multiple-profile-img {
+    width: 30px;
+  }
+
+  #subscription {
+    height: 300px;
+    align-items: flex-start;
+    padding-top: 30px;
+  }
+
+  .subscription-content {
+    display: grid;
+    gap: 10px;
+  }
+
+  .subscription-content img {
+    width: 40px;
+  }
+
+  #long {
+    height: 1400px;
+  }
+
+  #medium {
+    height: 700px;
+  }
+
+  .product-singleview {
+    position: relative;
+  }
+
+  .singleview-gallery {
+    display: flex;
+  }
+
+  /* .singleview-gallery div {
+    width: 100%;
+    display: flex;
+  } */
+
+  .image-number {
+    background-color: var(--main-white);
+    position: absolute;
+    opacity: 65%;
+    color: var(--dark-blue-100);
+    bottom: 5%;
+    right: 4%;
+    padding: 10px;
+    border-radius: 50%;
+  }
+  /* styling af like knappen oppe i højre hjørne */
+  .like {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+    border-radius: 50%;
+    background-color: var(--main-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 4%;
+    top: 2%;
+  }
+
+  /* shipping billedet skal være lidt mindre */
+  .shipping img {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* styling af shipping ikonet oppe i venstre hjørne */
+  .shipping {
+    position: absolute;
+    width: 160px;
+    padding: 8px 16px;
+    border-radius: 25px;
+    background-color: var(--main-white);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    top: 2%;
+    left: 2.5%;
+    opacity: 65%;
+    color: var(--dark-blue-100);
+  }
+
+  /* styling af produkt billedet */
+  .product-image {
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    width: 330px;
+  }
+
+  .image-text > * {
+    padding-bottom: 20px;
+  }
+
+  .image-text {
+    margin-bottom: 70px;
   }
 </style>
 
