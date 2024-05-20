@@ -6,6 +6,7 @@ import Card from "../../components/Card.astro";
 import BurgerAd from "../../components/BurgerAd.astro";
 import "../../styles/style.css";
 import ContactService from "../../components/ContactService.astro";
+import BreadCrumbPath from "../../components/BreadCrumbPath.astro";
 
 // fetchning af singleview informationer
 const { myData } = Astro.props;
@@ -35,6 +36,12 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
 ---
 
 <MainLayout>
+  <div class="breadcrumb-container">
+    <BreadCrumbPath url="/" page="Forside" />
+    <BreadCrumbPath url="/productlistview" page={myData.category} />
+    <p>{myData.titel}</p>
+  </div>
+
   <div class="singleview-wrapper">
     <div>
       <div class="product-singleview">
@@ -98,6 +105,15 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
 </MainLayout>
 <div class="sticky-customer-service"><ContactService /></div>
 <style>
+  .breadcrumb-container {
+    display: flex;
+    margin-left: 0.5rem;
+  }
+
+  .breadcrumb-container p {
+    color: var(--dark-grey-100);
+    margin-left: 5px;
+  }
   .singleview-gallery {
     display: flex;
     overflow-x: scroll;

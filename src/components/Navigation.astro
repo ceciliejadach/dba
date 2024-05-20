@@ -33,10 +33,6 @@ import Marquee from "./Marquee.astro";
         <img src="../svg/heart.svg" alt="heart" />
         <p>Favoritter</p>
       </li>
-      <!-- <li>
-        <img src="../svg/category.svg" alt="category" />
-        <p>Kategorier</p>
-      </li> -->
     </ul>
   </nav>
   <div class="cta-btn">
@@ -50,7 +46,7 @@ import Marquee from "./Marquee.astro";
   }
 
   a {
-  white-space: nowrap;
+    white-space: nowrap;
   }
 
   a img {
@@ -95,11 +91,8 @@ import Marquee from "./Marquee.astro";
     margin-top: 20px;
     margin-bottom: 40px;
     padding-inline: 0.2rem;
-    gap: 10px;
     box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
-
   }
-
 
   @media (min-width: 868px) {
     .nav_bar {
@@ -111,8 +104,6 @@ import Marquee from "./Marquee.astro";
       top: 0;
       z-index: 10;
       background-color: var(--main-white);
-      padding-top:
-      padding-bottom: 1.5rem;
     }
   }
 
@@ -134,17 +125,17 @@ import Marquee from "./Marquee.astro";
       display: none;
     }
 
-
     .cta-btn {
       display: block;
       position: fixed;
       bottom: 65px;
-      left: 32%;
       z-index: 10;
+      display: grid;
+      justify-items: center;
+      width: 100%;
     }
 
     #mobile_nav {
-      display: block;
       background: var(--light-grey-100);
       position: fixed;
       bottom: 0;
