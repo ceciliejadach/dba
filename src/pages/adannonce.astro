@@ -1,7 +1,8 @@
 ---
 import "../styles/style.css";
+import AdPreview from "../components/AdPreview.astro";
+import UploadImage from "../components/UploadImage.astro";
 const { title } = Astro.props;
-import Button from "../components/Button.astro";
 ---
 
 <html lang="en">
@@ -18,7 +19,7 @@ import Button from "../components/Button.astro";
   <body>
     <main>
       <div class="scroll-indicator">
-        <img src="./svg/dba-logo.svg" alt="dba logo" />
+        <a href="/"><img src="./svg/dba-logo.svg" alt="dba logo" /></a>
         <div class="step" id="step1">
           <div class="dot"></div>
           <span>Trin 1</span>
@@ -37,257 +38,247 @@ import Button from "../components/Button.astro";
         </div>
       </div>
 
-      <div class="text-content">
-        <section id="section1">
-          <div class="wrapper">
-            <div class="container">
-              <div class="figure">
-                <div class="circle"></div>
-                <div class="line"></div>
+      <section id="section1">
+        <div class="wrapper">
+          <div class="container">
+            <div class="figure">
+              <div class="circle"></div>
+              <div class="line"></div>
+            </div>
+            <div class="content">
+              <div class="text-box">
+                <p id="step-text">Trin 1 - Information om din annonce</p>
+                <h2>Upload billeder af det du gerne vil sælge. Træk og slip billedet ind til højre.</h2>
+                <p>Tilføj så mange billeder du har lyst til, dog maks. 8</p>
               </div>
-              <div class="content">
-                <div class="text-box">
-                  <p>Trin 1 - Information om din annonce</p>
-                  <h2>Upload billeder af det du gerne vil sælge. Træk og slip billedet ind til højre.</h2>
-                  <p>Tilføj så mange billeder du har lyst til, dog maks. 8</p>
-                </div>
-                <button id="uploadButton">Upload billeder</button>
-              </div>
+              <UploadImage />
             </div>
           </div>
-          <div class="wrapper">
-            <div class="container">
-              <div class="figure">
-                <div class="circle"></div>
-                <div class="line"></div>
+        </div>
+        <div class="wrapper">
+          <div class="container">
+            <div class="figure">
+              <div class="circle"></div>
+              <div class="line"></div>
+            </div>
+            <div class="content">
+              <div class="text-box">
+                <h2>Giv os lidt informationer om annoncen, indtast kun rigtige informationer og vær præcis.</h2>
               </div>
-              <div class="content">
-                <div class="text-box">
-                  <h2>Giv os lidt informationer om annoncen, indtast kun rigtige informationer og vær præcis.</h2>
-                  <form id="description-form" name="description" netlify>
-                    <label for="price"><input type="number" id="price" placeholder="Pris*" /></label>
-                    <label>
-                      <select name="category">
-                        <option>Kategori*</option>
-                        <option>Lampe</option>
-                        <option>Sofa</option>
-                        <option>Pude</option>
-                        <option>Spisebord</option>
-                        <option>Stol</option>
-                        <option>Vægdekoration</option>
-                        <option>Sofabord</option>
-                      </select>
-                    </label>
-                    <label>
-                      <select name="condition">
-                        <option>Stand*</option>
-                        <option>Som ny</option>
-                        <option>God stand</option>
-                        <option>Brugt</option>
-                        <option>Meget brugt</option>
-                      </select>
-                    </label>
-                    <label for="text"></label><textarea name="text" id="text" placeholder="Supplerende tekst*"></textarea>
-                  </form>
-                </div>
-              </div>
+              <form id="description-form" name="description" netlify>
+                <label for="price"><input type="number" id="price" placeholder="Pris*" /></label>
+                <label>
+                  <select name="category">
+                    <option>Kategori*</option>
+                    <option>Lampe</option>
+                    <option>Sofa</option>
+                    <option>Pude</option>
+                    <option>Spisebord</option>
+                    <option>Stol</option>
+                    <option>Vægdekoration</option>
+                    <option>Sofabord</option>
+                  </select>
+                </label>
+                <label>
+                  <select name="condition">
+                    <option>Stand*</option>
+                    <option>Som ny</option>
+                    <option>God stand</option>
+                    <option>Brugt</option>
+                    <option>Meget brugt</option>
+                  </select>
+                </label>
+                <label for="text"></label><textarea name="text" id="text" placeholder="Supplerende tekst*"></textarea>
+              </form>
             </div>
           </div>
-          <div class="wrapper">
-            <div class="container">
-              <div class="figure">
-                <div class="circle"></div>
-                <div class="line"></div>
-              </div>
-              <div class="content">
-                <div class="text-box">
-                  <h2>Giv os lidt informationer om annoncen, indtast kun rigtige informationer og vær præcis.</h2>
-                  <p>Du kan trygt købe fragt hos DBA via DAO, GLS eller Bring.</p>
-                </div>
-                <div class="content-wrapper">
-                  <div class="content-container">
-                    <p>Kan sendes</p>
-                    <img src="./svg/box-black.svg" alt="boks" />
-                  </div>
-                  <div class="content-container">
-                    <p>Fysisk udlevering</p>
-                    <img id="multiple-profile-img" src="./svg/multiple-profile.svg" alt="flere profiler" />
-                  </div>
-                  <div class="content-container">
-                    <p>Jeg kan begge dele</p>
-                  </div>
-                </div>
-              </div>
+        </div>
+        <div class="wrapper">
+          <div class="container">
+            <div class="figure">
+              <div class="circle"></div>
+              <div class="line"></div>
             </div>
-          </div>
-        </section>
-        <section id="section2">
-          <div class="wrapper">
-            <div class="container">
-              <div class="figure">
-                <div class="circle"></div>
-                <div class="line"></div>
+            <div class="content">
+              <div class="text-box">
+                <h2>Vælg metode for, hvordan din køber kan modtage varen.</h2>
+                <p>Du kan trygt købe fragt hos DBA via DAO, GLS eller Bring.</p>
               </div>
-              <div class="content">
-                <div class="text-box">
-                  <p>Trin 2 - Salgsmuligheder & abonnementer</p>
-                  <h2>Forøg dine muligheder for salg ved at tilkøbe titel eller “Haster” skilt.</h2>
-                  <p>Det er gratis at oprette en annonce på DBA men du kan øge dine chancer for salg mod et gebyr.</p>
+              <div class="content-wrapper">
+                <div class="content-container">
+                  <p>Kan sendes</p>
+                  <img src="./svg/box-black.svg" alt="boks" />
                 </div>
-                <div class="content-wrapper">
-                  <div class="content-container">
-                    <p>Nej tak</p>
-                    <p>0 ,-</p>
-                  </div>
-                  <div class="content-container">
-                    <p>"Haster" skilt</p>
-                    <p>15 ,-</p>
-                  </div>
-                  <div class="content-container">
-                    <p><strong>Fed overskrift</strong></p>
-                    <p>39 ,-</p>
-                  </div>
+                <div class="content-container">
+                  <p>Fysisk udlevering</p>
+                  <img id="multiple-profile-img" src="./svg/multiple-profile.svg" alt="flere profiler" />
+                </div>
+                <div class="content-container">
+                  <p>Jeg kan begge dele</p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="wrapper">
-            <div class="container">
-              <div class="figure">
-                <div class="circle"></div>
-                <div class="line" id="long"></div>
+        </div>
+      </section>
+
+      <section id="section2">
+        <div class="wrapper">
+          <div class="container">
+            <div class="figure">
+              <div class="circle"></div>
+              <div class="line"></div>
+            </div>
+            <div class="content">
+              <div class="text-box">
+                <p id="step-text">Trin 2 - Salgsmuligheder & abonnementer</p>
+                <h2>Forøg dine muligheder for salg ved at tilkøbe titel eller “Haster” skilt.</h2>
+                <p>Det er gratis at oprette en annonce på DBA men du kan øge dine chancer for salg mod et gebyr.</p>
               </div>
-              <div class="content">
-                <div class="text-box">
-                  <h2>Køb et månedligt abonnement hos DBA og øg dine chancer for salg</h2>
-                  <p>Det er gratis at oprette en annonce på DBA men du kan blandt andet øge visningerne på dine annoncer med et abonnement.</p>
+              <div class="content-wrapper">
+                <div class="content-container">
+                  <p>Nej tak</p>
+                  <p>0 ,-</p>
                 </div>
-                <div class="content-wrapper">
-                  <div class="content-container" id="subscription">
-                    <div class="subscription-content">
-                      <img src="./svg/basis-ad-smiley.svg" alt="basisannonce smiley" />
-                      <h2><strong>Basisannonce</strong></h2>
-                      <p>Bliver slettet efter 30 dage</p>
-                    </div>
-                    <h2>0 ,-</h2>
+                <div class="content-container">
+                  <p><strong>Fed overskrift</strong></p>
+                  <p>39 ,-</p>
+                </div>
+                <div class="content-container">
+                  <p>"Haster" skilt</p>
+                  <p>15 ,-</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper">
+          <div class="container">
+            <div class="figure">
+              <div class="circle"></div>
+              <div class="line" id="long"></div>
+            </div>
+            <div class="content">
+              <div class="text-box">
+                <h2>Køb et månedligt abonnement hos DBA og øg dine chancer for salg</h2>
+                <p>Det er gratis at oprette en annonce på DBA men du kan blandt andet øge visningerne på dine annoncer med et abonnement.</p>
+              </div>
+              <div class="content-wrapper" id="subscription-wrapper">
+                <div class="content-container" id="subscription">
+                  <div class="subscription-content">
+                    <img src="./svg/basis-ad-smiley.svg" alt="basisannonce smiley" />
+                    <h2><strong>Basisannonce</strong></h2>
+                    <p>Bliver slettet efter 30 dage</p>
                   </div>
-                  <div class="content-container" id="subscription">
-                    <div class="subscription-content">
-                      <img src="./svg/pig.svg" alt="sparegris" />
-                      <h2><strong>Budget</strong></h2>
-                      <p>3x så mange visninger</p>
-                      <p>Fremhævet annonce</p>
-                    </div>
-                    <div>
-                      <h2>15 ,-</h2>
-                      <p>pr. mdr.</p>
-                    </div>
+                  <h2>0 ,-</h2>
+                </div>
+                <div class="content-container" id="subscription">
+                  <div class="subscription-content">
+                    <img src="./svg/pig.svg" alt="sparegris" />
+                    <h2><strong>Budget</strong></h2>
+                    <p>3x så mange visninger</p>
+                    <p>Fremhævet annonce</p>
                   </div>
-                  <div class="content-container" id="subscription">
-                    <div class="subscription-content">
-                      <img src="./svg/celebration.svg" alt="fejring ikon" />
-                      <h2><strong>Standard</strong></h2>
-                      <p>4x så mange visninger</p>
-                      <p>Fremhævet annonce</p>
-                      <p>Topgalleri</p>
-                    </div>
-                    <div>
-                      <h2>39 ,-</h2>
-                      <p>pr. mdr.</p>
-                    </div>
+                  <div>
+                    <h2>15 ,-</h2>
+                    <p>pr. mdr.</p>
                   </div>
-                  <div class="content-container" id="subscription">
-                    <div class="subscription-content">
-                      <img src="./svg/premium.svg" alt="dartboard ikon" />
-                      <h2><strong>Premium</strong></h2>
-                      <p>6x så mange visninger</p>
-                      <p>Fremhævet annonce</p>
-                      <p>Topgalleri</p>
-                      <p>Topannonce</p>
-                      <p>Galleri på forsiden</p>
-                    </div>
-                    <div>
-                      <h2>99 ,-</h2>
-                      <p>pr. mdr.</p>
-                    </div>
+                </div>
+                <div class="content-container" id="subscription">
+                  <div class="subscription-content">
+                    <img src="./svg/celebration.svg" alt="fejring ikon" />
+                    <h2><strong>Standard</strong></h2>
+                    <p>4x så mange visninger</p>
+                    <p>Fremhævet annonce</p>
+                    <p>Topgalleri</p>
+                  </div>
+                  <div>
+                    <h2>39 ,-</h2>
+                    <p>pr. mdr.</p>
+                  </div>
+                </div>
+                <div class="content-container" id="subscription">
+                  <div class="subscription-content">
+                    <img src="./svg/premium.svg" alt="dartboard ikon" />
+                    <h2><strong>Premium</strong></h2>
+                    <p>6x så mange visninger</p>
+                    <p>Fremhævet annonce</p>
+                    <p>Topgalleri</p>
+                    <p>Topannonce</p>
+                    <p>Galleri på forsiden</p>
+                  </div>
+                  <div>
+                    <h2>99 ,-</h2>
+                    <p>pr. mdr.</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-        <section id="section3">
-          <div class="wrapper">
-            <div class="container">
-              <div class="figure">
-                <div class="circle"></div>
-                <div class="line"></div>
+        </div>
+      </section>
+
+      <section id="section3">
+        <div class="wrapper">
+          <div class="container">
+            <div class="figure">
+              <div class="circle"></div>
+              <div class="line"></div>
+            </div>
+            <div class="content">
+              <div class="text-box">
+                <p id="step-text">Trin 3 - Kontaktoplysninger</p>
+                <h2>Hjælp sælger med at komme i kontakt med dig ved at indtaste dine kontaktinformationer.</h2>
               </div>
-              <div class="content">
-                <div class="text-box">
-                  <p>Trin 3 - Kontaktoplysninger</p>
-                  <h2>Hjælp sælger med at komme i kontakt med dig ved at indtaste dine kontaktinformationer.</h2>
-                  <form id="description-form" name="description" netlify>
-                    <label for="email"><input type="text" id="email" placeholder="E-mail*" /></label>
-                    <label for="city"><input type="text" id="city" placeholder="Post nr. & by*" /></label>
-                    <label for="address"><input type="text" id="address" placeholder="Addresse" /></label>
-                    <label for="phonenumber"><input type="number" id="phonenumber" placeholder="Telefon nr." /></label>
-                  </form>
-                </div>
-              </div>
+              <form id="description-form" name="description" netlify>
+                <label for="email"><input type="text" id="email" placeholder="E-mail*" /></label>
+                <label for="city"><input type="text" id="city" placeholder="Post nr. & by*" /></label>
+                <label for="address"><input type="text" id="address" placeholder="Addresse" /></label>
+                <label for="phonenumber"><input type="number" id="phonenumber" placeholder="Telefon nr." /></label>
+              </form>
             </div>
           </div>
-        </section>
-        <section id="section4">
-          <div class="wrapper">
-            <div class="container">
-              <div class="figure">
-                <div class="circle"></div>
-                <div class="line" id="medium"></div>
-              </div>
-              <div class="content">
-                <div class="text-box">
-                  <p>Trin 4 - Forhåndsvisning</p>
-                  <h2>Forhåndsvisning af din annonce.</h2>
-                  <div class="product-singleview">
-                    <div class="shipping hide"><img src="../svg/box.svg" alt="shipping box" /><p>Kan sendes</p></div>
-                    <div class="like"><img src="../svg/heart.svg" alt="heart" /></div>
-                    <div class="image-number"><p>1/8</p></div>
-                    <div class="singleview-gallery">
-                      <div>
-                        <img class="product-image" src="./imgs/vifte_1.webp" alt="vifte" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="image-text">
-                    <h2><strong>Din overskrift her</strong></h2>
-                    <div>
-                      <p>Din beskrive af mål, størrelse, farve og en masse andet kommer til at stå her</p>
-                      <p>Stand: kommer til at stå her</p>
-                    </div>
-                    <h2>000 kr</h2>
-                  </div>
-                </div>
-              </div>
+        </div>
+      </section>
+
+      <section id="section4">
+        <div class="wrapper">
+          <div class="container">
+            <div class="figure">
+              <div class="circle"></div>
+              <div class="line" id="medium"></div>
             </div>
-            <Button variant="primary" size="large">
-              <a href="#">Indryk annonce på DBA</a>
-            </Button>
+            <div class="content">
+              <div class="text-box">
+                <p id="step-text">Trin 4 - Forhåndsvisning</p>
+                <h2>Forhåndsvisning af din annonce.</h2>
+              </div>
+              <AdPreview />
+            </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+      <a id="submit" href="#">Indryk annonce på DBA</a>
     </main>
   </body>
 </html>
 
 <style>
+  /* generel styling for siden */
   body {
     background-color: var(--light-blue-100);
   }
+
+  main {
+    max-width: 1300px;
+  }
+
+  /* dba logo's længde */
   img {
     width: 80px;
   }
 
+  /* styling af scroll indicator øverst på siden */
   .scroll-indicator {
     position: fixed;
     top: 0;
@@ -327,43 +318,31 @@ import Button from "../components/Button.astro";
     color: var(--dark-grey-100);
   }
 
-  .text-content {
-    margin-top: 80px;
-  }
+  /* styling af sektionerne  */
 
   section {
-    height: 100vh;
+    height: fit-content;
     padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  section > * {
+    margin-bottom: 20px;
   }
 
   #section1 {
-    height: 155vh;
-    padding: 10px;
-  }
-
-  #section2 {
-    height: 220vh;
-    padding: 10px;
-  }
-
-  #section3 {
-    height: 60vh;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
+    margin-top: 80px;
   }
 
   .wrapper {
-    /* display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 0; */
-    padding: 20px;
+    padding: 10px;
   }
 
   .container {
     display: flex;
   }
 
+  /* styling af figuren ude i venstre side */
   .figure {
     display: flex;
     flex-direction: column;
@@ -383,48 +362,38 @@ import Button from "../components/Button.astro";
     background-color: var(--dark-grey-100);
   }
 
+  /* opsætning af inholdet i sektionen */
   .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
   }
 
-  .text-box,
-  .bread-text {
-    /* margin-bottom: 20px; */
-  }
-
+  /* fontstørrelse på h2 */
   .text-box h2 {
-    margin: 0;
     font-size: 24px;
+    margin: 10px auto;
   }
 
+  /* padding på boksen som indeholder vejledende tekst */
   .text-box {
     padding-left: 25px;
+    max-width: 600px;
   }
-
-  #uploadButton {
-    background-color: var(--dark-blue-100);
-    color: var(--primary-btn-text-color);
-    display: flex;
-    border-radius: 20px;
-    appearance: none;
-    justify-content: center;
-    border: none;
-    padding: 10px 12px;
-    align-items: center;
-    cursor: pointer;
+  .text-box p {
+    color: var(--dark-grey-100);
   }
+  #step-text {
+    color: var(--black-100);
+    font-size: 0.75rem;
+  }
+  /* styling af form */
   #description-form {
     display: grid;
     gap: 10px;
     width: 100%;
     justify-content: center;
-    margin-top: 30px;
   }
 
-  #price {
-  }
+  /* styling af hhv. input, select og textarea tags */
   input,
   select {
     height: 60px;
@@ -438,7 +407,6 @@ import Button from "../components/Button.astro";
   }
   textarea {
     height: 110px;
-    width: 330px;
     font-size: 1rem;
     color: var(--black-100);
     outline: none;
@@ -453,14 +421,13 @@ import Button from "../components/Button.astro";
     font-family: Plus Jakarta Sans;
   }
 
+  /* styling af wrapper som indeholder shipping metoder og tilkøb */
   .content-wrapper {
     display: grid;
-    gap: 10px;
-    width: 100%;
     justify-content: center;
-    margin-top: 30px;
-    margin-left: 20px;
   }
+
+  /* styling af shipping metoder og tilkøb kasser */
   .content-container {
     display: flex;
     align-items: center;
@@ -480,21 +447,32 @@ import Button from "../components/Button.astro";
     width: 30px;
   }
 
+  #subscription-wrapper {
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  /* styling af subscription kasse */
   #subscription {
     height: 300px;
     align-items: flex-start;
     padding-top: 30px;
+    width: 100%;
+    border-radius: 16px;
   }
 
+  /* styling af indeholdet inde i subscription kassen */
   .subscription-content {
     display: grid;
     gap: 10px;
   }
 
+  /* billede størrelse i subscription kasser */
   .subscription-content img {
     width: 40px;
   }
 
+  /* styling af specifikke linjer i figuren til venstre */
   #long {
     height: 1400px;
   }
@@ -503,79 +481,61 @@ import Button from "../components/Button.astro";
     height: 700px;
   }
 
-  .product-singleview {
-    position: relative;
-  }
-
-  .singleview-gallery {
+  #submit {
+    background-color: var(--dark-blue-100);
+    color: var(--primary-btn-text-color);
     display: flex;
-  }
-
-  /* .singleview-gallery div {
-    width: 100%;
-    display: flex;
-  } */
-
-  .image-number {
-    background-color: var(--main-white);
-    position: absolute;
-    opacity: 65%;
-    color: var(--dark-blue-100);
-    bottom: 5%;
-    right: 4%;
-    padding: 10px;
-    border-radius: 50%;
-  }
-  /* styling af like knappen oppe i højre hjørne */
-  .like {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    padding: 6px;
-    border-radius: 50%;
-    background-color: var(--main-white);
-    display: flex;
+    border-radius: 20px;
     justify-content: center;
-    align-items: center;
-    right: 4%;
-    top: 2%;
+    padding: 10px 12px;
+    margin-inline: auto;
+    width: 300px;
+    margin-bottom: 100px;
+    text-decoration: none;
   }
 
-  /* shipping billedet skal være lidt mindre */
-  .shipping img {
-    width: 30px;
-    height: 30px;
+  @media (min-width: 668px) {
+    #description-form,
+    .content-wrapper {
+      width: 100%;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      grid-template-rows: repeat(2, 40px);
+      gap: 40px;
+      max-width: 680px;
+      margin-left: 25px;
+      padding-right: 25px;
+    }
+
+    #subscription-wrapper {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-rows: repeat(2, 300px);
+      gap: 40px;
+      margin-top: 20px;
+    }
+
+    textarea {
+      grid-column: 1/3;
+    }
+
+    #long {
+      height: 630px;
+    }
+
+    #medium {
+      height: 630px;
+    }
   }
 
-  /* styling af shipping ikonet oppe i venstre hjørne */
-  .shipping {
-    position: absolute;
-    width: 160px;
-    padding: 8px 16px;
-    border-radius: 25px;
-    background-color: var(--main-white);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    top: 2%;
-    left: 2.5%;
-    opacity: 65%;
-    color: var(--dark-blue-100);
-  }
-
-  /* styling af produkt billedet */
-  .product-image {
-    border-radius: 5px;
-    margin-bottom: 1rem;
-    width: 330px;
-  }
-
-  .image-text > * {
-    padding-bottom: 20px;
-  }
-
-  .image-text {
-    margin-bottom: 70px;
+  @media (min-width: 1024px) {
+    .content {
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      width: 100%;
+      justify-items: start;
+    }
+    #subscription-wrapper {
+      margin-top: 0;
+    }
   }
 </style>
 

@@ -1,0 +1,94 @@
+---
+import "../styles/style.css";
+---
+
+<div class="upload-container">
+  <div class="upload-box" id="uploadBox">
+    <input type="file" id="fileInput" accept="image/*" style="display: none;" />
+    <img id="uploadIcon" src="./svg/drag-and-drop.svg" alt="Upload ikon" />
+    <p>Træk og slip</p>
+  </div>
+  <button id="uploadButton">Upload billeder</button>
+</div>
+
+<style>
+  .upload-container {
+    display: grid;
+    justify-items: center;
+    height: fit-content;
+  }
+
+  .upload-box {
+    border: 1px dashed #ccc;
+    width: 350px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #d7e6f4;
+    cursor: pointer;
+    position: relative;
+    color: var(--dark-grey-100);
+    border-radius: 8px;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+
+  .upload-box img {
+    max-width: 50px;
+    max-height: 50px;
+    margin-bottom: 10px;
+  }
+
+  #uploadButton {
+    width: 350px;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: var(--dark-blue-100);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    font-family: Plus Jakarta Sans;
+    font-size: 1rem;
+    margin-left: 20px;
+  }
+
+  #uploadButton:hover {
+    background-color: transparent;
+    color: var(--dark-blue-100);
+    border: solid 1px var(--dark-blue-100);
+  }
+
+  @media (min-width: 668px) {
+    .upload-container {
+      justify-items: start;
+    }
+  }
+</style>
+
+<script>
+  document.getElementById("uploadBox").addEventListener("click", function () {
+    document.getElementById("fileInput").click();
+  });
+
+  document.getElementById("uploadButton").addEventListener("click", function () {
+    document.getElementById("fileInput").click();
+  });
+
+  document.getElementById("fileInput").addEventListener("change", function (event) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        document.getElementById("uploadBox").style.backgroundImage = `url(${e.target.result})`;
+        document.getElementById("uploadBox").style.backgroundSize = "cover";
+        document.getElementById("uploadBox").style.backgroundPosition = "center";
+        document.getElementById("uploadIcon").style.display = "none";
+        document.querySelector("#uploadBox p").style.display = "none";
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+</script>
