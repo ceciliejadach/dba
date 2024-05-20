@@ -437,6 +437,11 @@ const { title } = Astro.props;
     border-radius: 5px;
     justify-content: space-between;
     padding-inline: 24px;
+    cursor: pointer;
+  }
+
+  .content-container.active {
+    border: 3px solid var(--dark-blue-100);
   }
 
   .content-container img {
@@ -457,7 +462,6 @@ const { title } = Astro.props;
     height: 300px;
     align-items: flex-start;
     padding-top: 30px;
-    width: 100%;
     border-radius: 16px;
   }
 
@@ -561,6 +565,17 @@ const { title } = Astro.props;
       } else {
         step.classList.remove("active");
       }
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const containers = document.querySelectorAll(".content-container");
+
+    containers.forEach((container) => {
+      container.addEventListener("click", function () {
+        // Toggle the 'active' class on the clicked container
+        this.classList.toggle("active");
+      });
     });
   });
 </script>
