@@ -6,7 +6,6 @@ import BurgerAd from "../components/BurgerAd.astro";
 import CategorySlider from "../components/CategorySlider.astro";
 import "../styles/style.css";
 import ContactService from "../components/ContactService.astro";
-import BreadCrumbPath from "../components/BreadCrumbPath.astro";
 
 const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products?limit=8", {
   method: "GET",
@@ -22,7 +21,7 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
 }).then((res) => res.json());
 ---
 
-<MainLayout titel="Forside">
+<MainLayout title="Forside">
   <CategorySlider />
 
   <h1>Forsideannoncer</h1>
