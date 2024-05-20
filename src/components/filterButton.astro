@@ -1,0 +1,103 @@
+---
+import "../styles/style.css";
+---
+
+<button>
+  <img src="filtericon.svg" alt="" />
+  Filtre
+  <div class="formular">
+    Filtre
+    <div class="belysning">
+      <form action="filtering" method="POST" data-netlify="true">
+        <label for="Til boligen">
+          <select name="liste">
+            <option value="Belysning">Belysning</option>
+            <option value="Sengemøbler">Sengemøbler</option>
+            <option value="Spise- & dagligstuemøbler">
+              Spise- & dagligstuemøbler
+            </option>
+            <option value="Hårde hvidevarer">Hårde hvidevarer</option>
+            <option value="Andre maskiner">Andre maskiner</option>
+          </select>
+        </label>
+      </form>
+      <div class="kategori">
+        <label for="Kategori">
+          <select name="liste">
+            <option value="Bordlamper">Bordlamper</option>
+            <option value="Gulvlamper">Gulvlamper</option>
+            <option value="Loftlamper"> Loftlamper </option>
+            <option value="Væglamper">Væglamper</option>
+            <option value="Udendørsbeslysning">Udendørsbeslysning</option>
+          </select>
+        </label>
+      </div>
+      <div class="radius">
+        <input type="text" placeholder="Radius" />
+        <p>km fra</p>
+        <input type="text" placeholder="Postnr." />
+      </div>
+      <div class="pris">
+        <input type="text" placeholder="Pris fra" />
+        <p>-</p>
+        <input type="text" placeholder="Til" />
+      </div>
+    </div>
+  </div>
+</button>
+
+<style>
+  button {
+    border: 1.5px solid var(--dark-blue-100);
+    font-family: Plus Jakarta Sans;
+    font-weight: 600;
+    color: var(--dark-blue-100);
+    border-radius: 46px;
+    padding: 4px 16px;
+    background-color: var(--main-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    position: relative;
+  }
+
+  .formular {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+    justify-self: stretch;
+    width: fit-content;
+    padding: 10px;
+    border: 1px solid #000a8c;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    position: absolute;
+    visibility: hidden;
+    flex-direction: column;
+    text-align: left;
+    left: 0px;
+    top: 30px;
+  }
+
+  button:hover .formular {
+    visibility: visible;
+  }
+
+  .belysning,
+  .kategori,
+  .radius,
+  .pris {
+    display: grid; /* Changed from flex */
+    grid-template-columns: auto auto; /* Added */
+    grid-gap: 10px; /* Added */
+    align-items: center; /* Added */
+    margin-top: 0.4rem;
+  }
+
+  .radius,
+  .pris {
+    grid-template-columns: auto auto auto; /* Added */
+  }
+</style>
