@@ -1,0 +1,109 @@
+---
+import "../styles/style.css";
+import Button from "../components/Button.astro";
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <main title="Bekræftelse">
+      <nav>
+        <a href="/"><img src="./svg/dba-logo.svg" alt="dba logo" /></a>
+      </nav>
+      <section>
+        <div class="wrapper">
+          <img id="conformation-icon" src="./svg/conformation-icon.svg" alt="konformation ikon" />
+          <div>
+            <p>Bekræftet indrykkelse af annonce.</p>
+            <p>Gå til Mit DBA for at se dine annoncer eller forsæt til forsiden og browse videre.</p>
+          </div>
+          <div class="container">
+            <Button variant="primary" size="xl" url="#">Mit DBA</Button>
+            <Button variant="secondary" size="xl" url="/">Tilbage til forside</Button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+
+<style>
+  /* generel styling for siden */
+  body {
+    background-color: var(--light-blue-100);
+  }
+
+  main {
+    max-width: 1300px;
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  /* dba logo's længde */
+  img {
+    width: 80px;
+  }
+
+  nav {
+    padding: 1rem;
+  }
+
+  .wrapper {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.5rem;
+  }
+
+  .container {
+    display: grid;
+    gap: 10px;
+    margin-top: 100px;
+  }
+
+  a {
+    font-size: 1.2rem;
+  }
+
+  #blue {
+    color: var(--dark-blue-100);
+  }
+
+  #conformation-icon {
+    width: 200px;
+  }
+
+  @media (min-width: 600px) {
+    body {
+      background-color: var(--main-white);
+    }
+    section {
+      background-color: var(--light-blue-100);
+      border-radius: 10px;
+      box-shadow:
+        rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+        rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    }
+  }
+</style>

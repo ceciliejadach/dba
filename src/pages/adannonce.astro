@@ -17,7 +17,7 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <main>
+    <main title="Opret annonce">
       <div class="scroll-indicator">
         <a href="/"><img src="./svg/dba-logo.svg" alt="dba logo" /></a>
         <div class="step" id="step1">
@@ -49,7 +49,7 @@ const { title } = Astro.props;
               <div class="text-box">
                 <p id="step-text">Trin 1 - Information om din annonce</p>
                 <h2>Upload billeder af det du gerne vil sælge. Træk og slip billedet ind til højre.</h2>
-                <p>Tilføj så mange billeder du har lyst til, dog maks. 8</p>
+                <p>Tilføj så mange billeder du har lyst til (maks 8).</p>
               </div>
               <UploadImage />
             </div>
@@ -63,7 +63,7 @@ const { title } = Astro.props;
             </div>
             <div class="content">
               <div class="text-box">
-                <h2>Giv os lidt informationer om annoncen, indtast kun rigtige informationer og vær præcis.</h2>
+                <h2>Giv os lidt informationer om annoncen, indtast kun rigtige informationer og vær præcis.</h2><br />
               </div>
               <form id="description-form" name="description" netlify>
                 <label for="price"><input type="number" id="price" placeholder="Pris*" /></label>
@@ -258,7 +258,7 @@ const { title } = Astro.props;
           </div>
         </div>
       </section>
-      <a id="submit" href="#">Indryk annonce på DBA</a>
+      <a id="submit" href="/conformation">Indryk annonce på DBA</a>
     </main>
   </body>
 </html>
@@ -370,12 +370,12 @@ const { title } = Astro.props;
   /* fontstørrelse på h2 */
   .text-box h2 {
     font-size: 24px;
-    margin: 10px auto;
+    margin: 0 auto 10px;
   }
 
   /* padding på boksen som indeholder vejledende tekst */
   .text-box {
-    padding-left: 25px;
+    margin-left: 25px;
     max-width: 600px;
   }
   .text-box p {
@@ -391,6 +391,7 @@ const { title } = Astro.props;
     gap: 10px;
     width: 100%;
     justify-content: center;
+    margin-left: 10px;
   }
 
   /* styling af hhv. input, select og textarea tags */
@@ -425,6 +426,7 @@ const { title } = Astro.props;
   .content-wrapper {
     display: grid;
     justify-content: center;
+    margin-left: 25px;
   }
 
   /* styling af shipping metoder og tilkøb kasser */
@@ -496,6 +498,12 @@ const { title } = Astro.props;
     width: 300px;
     margin-bottom: 100px;
     text-decoration: none;
+  }
+
+  #submit:hover {
+    background-color: transparent;
+    color: var(--dark-blue-100);
+    border: solid 1px var(--dark-blue-100);
   }
 
   @media (min-width: 668px) {
