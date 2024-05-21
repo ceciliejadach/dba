@@ -44,11 +44,9 @@ console.log("tags", tags);
     <BreadCrumbPath url="/productlistview" page={myData.category} />
     <p>{myData.titel}</p>
   </div>
-  <!-- image test -->
   <div class="singleview-wrapper">
     <div>
       <div class="product-singleview">
-        <!-- <div class="shipping hide"><img src="/svg/box.svg" alt="shipping box" /><h3><strong>Kan sendes</strong></h3></div> -->
         <div class={(myData.tags.includes("shipping") && "shipping hide") || "shipping"}><img src="/svg/box.svg" alt="shipping box" /><h3><strong>Kan sendes</strong></h3></div>
         <div class="like"><img src="/svg/heart.svg" alt="heart" /></div>
         <div class="image-number"><p>1/8</p></div>
