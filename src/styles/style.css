@@ -19,8 +19,22 @@
   --primary-btn-text-color: white;
   --secondary-btn-text-color: #000a8c;
 
-  /* font størrelser til mobil */
-  --h1-text-mobile: 1.25rem;
+  /* font størrelser - mobil */
+  --h1-mobile: 1.25rem;
+  --h2-mobile: 1rem;
+  --h3-mobile: 0.875rem;
+  --h4-mobile: 0.75rem;
+  --p-mobile: 1rem;
+  --p-small-mobile: 0.75rem;
+
+  /* font størrelser - desktop */
+  --h1-desktop: 2.25rem;
+  --h2-desktop: 1.5rem;
+  --h3-desktop: 1rem;
+  --h4-desktop: 0.875rem;
+  --p-big-desktop: 1.25rem;
+  --p-desktop: 0.75rem;
+  --p-small-desktop: 0.5rem;
 }
 
 body {
@@ -33,16 +47,28 @@ main {
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: var(--h1-mobile);
   font-weight: 100;
   margin-left: 0.5rem;
   margin-bottom: 1rem;
 }
 
 h2 {
+  font-size: var(--h2-mobile);
   font-weight: 100;
 }
 
+h3 {
+  font-size: var(--h3-mobile);
+}
+
+h4 {
+  font-size: var(--h4-mobile);
+}
+
+p {
+  font-size: var(--p-mobile);
+}
 img {
   width: 100%;
   display: block;
@@ -56,6 +82,7 @@ button img {
 button a {
   text-decoration: none;
   color: var(--main-white);
+  font-size: 1rem;
 }
 #secondary-color {
   color: var(--dark-blue-100);
@@ -74,6 +101,22 @@ button a {
 
 @media (min-width: 868px) {
   h1 {
-    font-size: 1.5rem;
+    font-size: var(--h1-desktop);
+  }
+
+  h2 {
+    font-size: var(--h2-desktop);
+  }
+
+  h3 {
+    font-size: var(--h3-desktop);
+  }
+
+  h4 {
+    font-size: var(--h4-desktop);
+  }
+
+  p {
+    font-size: var(--p-desktop);
   }
 }
