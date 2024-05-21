@@ -100,11 +100,19 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
       })
     }
   </section>
+  <div class="button">
+    <Button id="middle" variant="secondary" url="#" size="large">Se flere annoncer</Button>
+  </div>
   <Gallery />
   <BurgerAd />
 </MainLayout>
 <div class="sticky-customer-service"><ContactService /></div>
 <style>
+  .button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+  }
   .breadcrumb-container {
     display: flex;
     margin-left: 0.5rem;

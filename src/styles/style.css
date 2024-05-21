@@ -69,7 +69,7 @@ button a {
   gap: 2rem;
   margin-inline: 0.5rem;
   max-width: 980px;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 }
 
 @media (min-width: 868px) {

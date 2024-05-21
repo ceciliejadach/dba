@@ -6,6 +6,7 @@ import BurgerAd from "../components/BurgerAd.astro";
 import CategorySlider from "../components/CategorySlider.astro";
 import ContactService from "../components/ContactService.astro";
 import BreadCrumbPath from "../components/BreadCrumbPath.astro";
+import Button from "../components/Button.astro";
 
 const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products", {
   method: "GET",
@@ -30,6 +31,10 @@ const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/produ
       })
     }
   </section>
+  <div class="button">
+    <Button id="middle" variant="secondary" url="#" size="large">Se flere annoncer</Button>
+  </div>
+
   <Gallery />
   <BurgerAd />
 </MainLayout>
@@ -38,6 +43,12 @@ const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/produ
 <style>
   .breadcrumb-container {
     display: flex;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
   }
 
   .breadcrumb-container p {
