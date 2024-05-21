@@ -24,7 +24,7 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
 <MainLayout title="Forside">
   <CategorySlider />
 
-  <h1>Forsideannoncer</h1>
+  <h2>Forsideannoncer</h2>
   <section class="cards">
     {
       data.map((card) => {
@@ -33,7 +33,7 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
     }
   </section>
 
-  <h1>Annoncer til dig</h1>
+  <h2>Annoncer til dig</h2>
   <section class="cards">
     {
       moreData.map((card) => {

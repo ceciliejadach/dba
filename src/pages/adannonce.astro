@@ -47,9 +47,9 @@ const { title } = Astro.props;
             </div>
             <div class="content">
               <div class="text-box">
-                <p id="step-text">Trin 1 - Information om din annonce</p>
+                <h4>Trin 1 - Information om din annonce</h4>
                 <h2>Upload billeder af det du gerne vil sælge. Træk og slip billedet ind til højre.</h2>
-                <p>Tilføj så mange billeder du har lyst til (maks 8).</p>
+                <h3>Tilføj så mange billeder du har lyst til (maks 8).</h3>
               </div>
               <UploadImage />
             </div>
@@ -102,7 +102,7 @@ const { title } = Astro.props;
             <div class="content">
               <div class="text-box">
                 <h2>Vælg metode for, hvordan din køber kan modtage varen.</h2>
-                <p>Du kan trygt købe fragt hos DBA via DAO, GLS eller Bring.</p>
+                <h3>Du kan trygt købe fragt hos DBA via DAO, GLS eller Bring.</h3>
               </div>
               <div class="content-wrapper">
                 <div class="content-container">
@@ -131,9 +131,9 @@ const { title } = Astro.props;
             </div>
             <div class="content">
               <div class="text-box">
-                <p id="step-text">Trin 2 - Salgsmuligheder & abonnementer</p>
+                <h4>Trin 2 - Salgsmuligheder & abonnementer</h4>
                 <h2>Forøg dine muligheder for salg ved at tilkøbe titel eller “Haster” skilt.</h2>
-                <p>Det er gratis at oprette en annonce på DBA men du kan øge dine chancer for salg mod et gebyr.</p>
+                <h3>Det er gratis at oprette en annonce på DBA men du kan øge dine chancer for salg mod et gebyr.</h3>
               </div>
               <div class="content-wrapper">
                 <div class="content-container">
@@ -161,7 +161,7 @@ const { title } = Astro.props;
             <div class="content">
               <div class="text-box">
                 <h2>Køb et månedligt abonnement hos DBA og øg dine chancer for salg</h2>
-                <p>Det er gratis at oprette en annonce på DBA men du kan blandt andet øge visningerne på dine annoncer med et abonnement.</p>
+                <h3>Det er gratis at oprette en annonce på DBA men du kan blandt andet øge visningerne på dine annoncer med et abonnement.</h3>
               </div>
               <div class="content-wrapper" id="subscription-wrapper">
                 <div class="content-container" id="subscription">
@@ -227,7 +227,7 @@ const { title } = Astro.props;
             </div>
             <div class="content">
               <div class="text-box">
-                <p id="step-text">Trin 3 - Kontaktoplysninger</p>
+                <h4>Trin 3 - Kontaktoplysninger</h4>
                 <h2>Hjælp sælger med at komme i kontakt med dig ved at indtaste dine kontaktinformationer.</h2>
               </div>
               <form id="description-form" name="description" netlify>
@@ -250,7 +250,7 @@ const { title } = Astro.props;
             </div>
             <div class="content">
               <div class="text-box">
-                <p id="step-text">Trin 4 - Forhåndsvisning</p>
+                <h4>Trin 4 - Forhåndsvisning</h4>
                 <h2>Forhåndsvisning af din annonce.</h2>
               </div>
               <AdPreview />
@@ -278,6 +278,22 @@ const { title } = Astro.props;
     width: 80px;
   }
 
+  h2 {
+    margin: 0 auto 10px;
+  }
+
+  h3 {
+    /* font-size: var(--h3-mobile); */
+    font-weight: 200;
+    color: var(--dark-grey-100);
+  }
+
+  h4 {
+    color: var(--black-100);
+    /* font-size: var(--h4-mobile); */
+    font-weight: 100;
+    margin-bottom: 15px;
+  }
   /* styling af scroll indicator øverst på siden */
   .scroll-indicator {
     position: fixed;
@@ -367,24 +383,12 @@ const { title } = Astro.props;
     display: grid;
   }
 
-  /* fontstørrelse på h2 */
-  .text-box h2 {
-    font-size: 24px;
-    margin: 0 auto 10px;
-  }
-
   /* padding på boksen som indeholder vejledende tekst */
   .text-box {
     margin-left: 25px;
     max-width: 600px;
   }
-  .text-box p {
-    color: var(--dark-grey-100);
-  }
-  #step-text {
-    color: var(--black-100);
-    font-size: 0.75rem;
-  }
+
   /* styling af form */
   #description-form {
     display: grid;
@@ -489,7 +493,8 @@ const { title } = Astro.props;
 
   #submit {
     background-color: var(--dark-blue-100);
-    color: var(--primary-btn-text-color);
+    color: var(--main-white);
+    font-weight: 600;
     display: flex;
     border-radius: 20px;
     justify-content: center;

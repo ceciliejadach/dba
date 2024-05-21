@@ -8,7 +8,7 @@ const { data } = Astro.props;
     <div class="like"><img src="../svg/heart.svg" alt="heart" /></div>
 
     <img class="product" src={`../imgs/${data.image}`} alt={data.titel} />
-    <h2>{data.titel}</h2>
+    <h3>{data.titel}</h3>
     <div>
       <p class="pris">{data.price} kr</p>
       <p class="lokation">{data.location}</p>
@@ -22,9 +22,8 @@ const { data } = Astro.props;
     color: var(--black-100);
   }
 
-  h2 {
-    font-size: 1rem;
-    margin-bottom: 4px;
+  h3 {
+    margin-bottom: 5px;
   }
   article {
     max-width: 221px;
@@ -35,15 +34,16 @@ const { data } = Astro.props;
     margin-bottom: 8px;
   }
 
-  .pris {
-    font-size: 0.875rem;
+  .pris,
+  .lokation {
+    font-size: var(--p-small-mobile);
     color: var(--dark-grey-100);
   }
 
-  .lokation {
-    font-size: 0.75rem;
+  /* .lokation {
+    font-size: var(--p-mini);
     color: var(--dark-grey-100);
-  }
+  } */
 
   article div {
     display: flex;

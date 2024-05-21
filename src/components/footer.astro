@@ -51,7 +51,7 @@ import "../styles/style.css";
     display: grid;
     gap: 50px;
     background-color: var(--light-grey-100);
-    padding: 2rem 5rem 7rem;
+    padding: 2rem 1rem 7rem;
   }
 
   .grid-container {
@@ -68,12 +68,15 @@ import "../styles/style.css";
   }
 
   h3 {
+    font-size: var(--h3-mobile);
     margin-bottom: 0.5rem;
+    font-weight: 600;
   }
   .content a {
     text-decoration: none;
     color: var(--dark-grey-100);
     line-height: 1.3rem;
+    font-size: var(--h4-mobile);
   }
 
   .content a:hover {
@@ -82,7 +85,8 @@ import "../styles/style.css";
   }
   .flex-container {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     padding-inline: 1rem;
     margin-top: 2rem;
   }

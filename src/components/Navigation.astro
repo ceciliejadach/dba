@@ -14,7 +14,7 @@ import Marquee from "./Marquee.astro";
     </div>
     <img class="notification-ikon" src="../svg/bell.svg" alt="klokke" />
     <ul class="desktop_nav">
-      <Button variant="primary" size="small"><img src="../svg/plus.svg" alt="plus" /><a href="/adannonce">Opret annoce</a></Button>
+      <Button variant="primary" size="small" url="/adannonce"><img id="small-img" src="../svg/plus.svg" alt="plus" />Opret annoce</Button>
       <Button variant="tertiary" size="small"><img src="../svg/box.svg" alt="box" /><a id="blue_link" href="#">Køb fragt</a></Button>
       <Button variant="tertiary" size="small"><img src="../svg/profile.svg" alt="profile" /><a id="blue_link" href="#">Mit DBA</a></Button>
       <Button variant="tertiary" size="small"><img src="../svg/heart.svg" alt="heart" />Favoritter</Button>
@@ -36,13 +36,14 @@ import Marquee from "./Marquee.astro";
     </ul>
   </nav>
   <div class="cta-btn">
-    <Button variant="primary" size="large"><img src="../svg/plus.svg" alt="plus" /><a href="/adannonce">Opret annoce</a></Button>
+    <Button variant="primary" size="medium" url="/adannonce" id="small-img"><img src="../svg/plus.svg" alt="plus" />Opret annoce</Button>
   </div>
 </div>
 
 <style>
   #blue_link {
     color: var(--dark-blue-100);
+    font-size: var(--p-desktop);
   }
 
   a {
@@ -51,6 +52,10 @@ import Marquee from "./Marquee.astro";
 
   a img {
     width: 100px;
+  }
+
+  #small-img {
+    width: 20px;
   }
 
   .search {
@@ -69,7 +74,7 @@ import Marquee from "./Marquee.astro";
   }
 
   .search_input {
-    font-size: 1rem;
+    font-size: var(--h4-mobile);
     font-weight: 500;
     color: var(--dark-grey-100);
     margin-right: 14px;

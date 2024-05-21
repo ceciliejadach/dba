@@ -32,7 +32,7 @@ const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/produ
     }
   </section>
   <div class="button">
-    <Button id="middle" variant="secondary" url="#" size="large">Se flere annoncer</Button>
+    <Button id="middle" variant="secondary" url="#" size="medium">Se flere annoncer</Button>
   </div>
 
   <Gallery />
@@ -43,16 +43,16 @@ const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/produ
 <style>
   .breadcrumb-container {
     display: flex;
-  }
-
-  .button {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 100px;
+    align-items: baseline;
   }
 
   .breadcrumb-container p {
     color: var(--dark-grey-100);
     margin-left: 10px;
+  }
+  .button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
   }
 </style>

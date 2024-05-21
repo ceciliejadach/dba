@@ -45,7 +45,7 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
   <div class="singleview-wrapper">
     <div>
       <div class="product-singleview">
-        <div class="shipping hide"><img src="../svg/box.svg" alt="shipping box" /><p>Kan sendes</p></div>
+        <div class="shipping hide"><img src="../svg/box.svg" alt="shipping box" /><h3><strong>Kan sendes</strong></h3></div>
         <div class="like"><img src="../svg/heart.svg" alt="heart" /></div>
         <div class="image-number"><p>1/8</p></div>
         <div class="singleview-gallery">
@@ -72,7 +72,7 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
         <p class="condition">Stand: {myData.condition}</p>
         <div class="contact">
           <p>{myData.price} kr</p>
-          <Button variant="primary" size="small"><a href="#">Kontakt sælger</a></Button>
+          <Button variant="primary" size="medium">Kontakt sælger</Button>
         </div>
         <div class="profile-wrapper">
           <div class="profile-container">
@@ -116,6 +116,7 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
   .breadcrumb-container {
     display: flex;
     margin-left: 0.5rem;
+    align-items: baseline;
   }
 
   .breadcrumb-container p {
@@ -186,8 +187,8 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
 
   /* shipping billedet skal være lidt mindre */
   .shipping img {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
   }
 
   /* styling af shipping ikonet oppe i venstre hjørne */

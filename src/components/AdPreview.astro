@@ -4,9 +4,9 @@ import "../styles/style.css";
 
 <div class="product-singleview-wrapper">
   <div class="product-singleview">
-    <div class="shipping hide"><img src="../svg/box.svg" alt="shipping box" /><p>Kan sendes</p></div>
+    <div class="shipping hide"><img src="../svg/box.svg" alt="shipping box" /><h3>Kan sendes</h3></div>
     <div class="like"><img src="../svg/heart.svg" alt="heart" /></div>
-    <div class="image-number"><p>1/8</p></div>
+    <div class="image-number"><h3>1/8</h3></div>
     <div class="singleview-gallery">
       <div>
         <img class="product-image" src="./imgs/vifte_1.webp" alt="vifte" />
@@ -16,10 +16,10 @@ import "../styles/style.css";
   <div class="image-text">
     <h2><strong>Din overskrift her</strong></h2>
     <div>
-      <p>Din beskrivelse af mål, størrelse, farve og en masse andet kommer til at stå her.</p>
-      <p>Stand: kommer til at stå her</p>
+      <h3>Din beskrivelse af mål, størrelse, farve og en masse andet kommer til at stå her.</h3><br />
+      <h3>Stand: kommer til at stå her</h3>
     </div>
-    <h2>000 kr</h2>
+    <h2><strong>000 kr</strong></h2>
   </div>
 </div>
 
@@ -69,15 +69,15 @@ import "../styles/style.css";
 
   /* shipping billedet skal være lidt mindre */
   .shipping img {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
   }
 
   /* styling af shipping ikonet oppe i venstre hjørne */
   .shipping {
     position: absolute;
     width: 160px;
-    padding: 8px 16px;
+    padding: 8px 10px;
     border-radius: 25px;
     background-color: var(--main-white);
     display: flex;
@@ -89,6 +89,11 @@ import "../styles/style.css";
     color: var(--dark-blue-100);
   }
 
+  .shipping h3,
+  .image-number h3 {
+    font-weight: 600;
+  }
+
   /* styling af produkt billedet */
   .product-image {
     border-radius: 5px;
@@ -97,8 +102,12 @@ import "../styles/style.css";
   }
 
   .image-text > * {
-    padding-bottom: 20px;
     width: 334px;
+  }
+
+  .image-text div {
+    margin-bottom: 10px;
+    margin-left: 10px;
   }
 
   .image-text {
