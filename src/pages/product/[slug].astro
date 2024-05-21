@@ -33,6 +33,9 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1ZWRoZHJha3N3cXNxdWh0amt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUyNTEyNDYsImV4cCI6MjAzMDgyNzI0Nn0.mXDwiwon4LDuspPMmUhUACpS8eCG3AZ7Ttf8Dd2wwu0",
   },
 }).then((res) => res.json());
+
+const tags = myData.tags;
+console.log("tags", tags);
 ---
 
 <MainLayout>
@@ -45,7 +48,8 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
   <div class="singleview-wrapper">
     <div>
       <div class="product-singleview">
-        <div class="shipping hide"><img src="/svg/box.svg" alt="shipping box" /><h3><strong>Kan sendes</strong></h3></div>
+        <!-- <div class="shipping hide"><img src="/svg/box.svg" alt="shipping box" /><h3><strong>Kan sendes</strong></h3></div> -->
+        <div class={(myData.tags.includes("shipping") && "shipping hide") || "shipping"}><img src="/svg/box.svg" alt="shipping box" /><h3><strong>Kan sendes</strong></h3></div>
         <div class="like"><img src="/svg/heart.svg" alt="heart" /></div>
         <div class="image-number"><p>1/8</p></div>
         <div class="singleview-gallery">
@@ -207,6 +211,9 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
     color: var(--dark-blue-100);
   }
 
+  .shipping.hide {
+    display: none;
+  }
   /* styling af produkt billedet */
   .product-image {
     border-radius: 5px;

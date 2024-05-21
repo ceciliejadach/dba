@@ -19,7 +19,7 @@ const { title } = Astro.props;
   <body>
     <main title="Opret annonce">
       <div class="scroll-indicator">
-        <a href="/"><img src="./svg/dba-logo.svg" alt="dba logo" /></a>
+        <a href="/"><img src="/svg/dba-logo.svg" alt="dba logo" /></a>
         <div class="step" id="step1">
           <div class="dot"></div>
           <span>Trin 1</span>
@@ -107,11 +107,11 @@ const { title } = Astro.props;
               <div class="content-wrapper">
                 <div class="content-container">
                   <p>Kan sendes</p>
-                  <img src="./svg/box-black.svg" alt="boks" />
+                  <img src="/svg/box-black.svg" alt="boks" />
                 </div>
                 <div class="content-container">
                   <p>Fysisk udlevering</p>
-                  <img id="multiple-profile-img" src="./svg/multiple-profile.svg" alt="flere profiler" />
+                  <img id="multiple-profile-img" src="/svg/multiple-profile.svg" alt="flere profiler" />
                 </div>
                 <div class="content-container">
                   <p>Jeg kan begge dele</p>
@@ -166,40 +166,40 @@ const { title } = Astro.props;
               <div class="content-wrapper" id="subscription-wrapper">
                 <div class="content-container" id="subscription">
                   <div class="subscription-content">
-                    <img src="./svg/basis-ad-smiley.svg" alt="basisannonce smiley" />
+                    <img src="/svg/basis-ad-smiley.svg" alt="basisannonce smiley" />
                     <h2><strong>Basisannonce</strong></h2>
                     <p>Bliver slettet efter 30 dage</p>
                   </div>
-                  <h2>0 ,-</h2>
+                  <h2>0,-</h2>
                 </div>
                 <div class="content-container" id="subscription">
                   <div class="subscription-content">
-                    <img src="./svg/pig.svg" alt="sparegris" />
+                    <img src="/svg/pig.svg" alt="sparegris" />
                     <h2><strong>Budget</strong></h2>
                     <p>3x så mange visninger</p>
                     <p>Fremhævet annonce</p>
                   </div>
                   <div>
-                    <h2>15 ,-</h2>
+                    <h2>15,-</h2>
                     <p>pr. mdr.</p>
                   </div>
                 </div>
                 <div class="content-container" id="subscription">
                   <div class="subscription-content">
-                    <img src="./svg/celebration.svg" alt="fejring ikon" />
+                    <img src="/svg/celebration.svg" alt="fejring ikon" />
                     <h2><strong>Standard</strong></h2>
                     <p>4x så mange visninger</p>
                     <p>Fremhævet annonce</p>
                     <p>Topgalleri</p>
                   </div>
                   <div>
-                    <h2>39 ,-</h2>
+                    <h2>39,-</h2>
                     <p>pr. mdr.</p>
                   </div>
                 </div>
                 <div class="content-container" id="subscription">
                   <div class="subscription-content">
-                    <img src="./svg/premium.svg" alt="dartboard ikon" />
+                    <img src="/svg/premium.svg" alt="dartboard ikon" />
                     <h2><strong>Premium</strong></h2>
                     <p>6x så mange visninger</p>
                     <p>Fremhævet annonce</p>
@@ -208,7 +208,7 @@ const { title } = Astro.props;
                     <p>Galleri på forsiden</p>
                   </div>
                   <div>
-                    <h2>99 ,-</h2>
+                    <h2>99,-</h2>
                     <p>pr. mdr.</p>
                   </div>
                 </div>
@@ -283,14 +283,12 @@ const { title } = Astro.props;
   }
 
   h3 {
-    /* font-size: var(--h3-mobile); */
     font-weight: 200;
     color: var(--dark-grey-100);
   }
 
   h4 {
     color: var(--black-100);
-    /* font-size: var(--h4-mobile); */
     font-weight: 100;
     margin-bottom: 15px;
   }
@@ -403,7 +401,7 @@ const { title } = Astro.props;
   select {
     height: 60px;
     width: 330px;
-    font-size: 1rem;
+    font-size: var(--p-mobile);
     color: var(--black-100);
     outline: none;
     border: none;
@@ -412,7 +410,7 @@ const { title } = Astro.props;
   }
   textarea {
     height: 110px;
-    font-size: 1rem;
+    font-size: var(--p-mobile);
     color: var(--black-100);
     outline: none;
     border: none;
@@ -477,6 +475,10 @@ const { title } = Astro.props;
     gap: 10px;
   }
 
+  .subscription-content h2 {
+    margin: 0;
+  }
+
   /* billede størrelse i subscription kasser */
   .subscription-content img {
     width: 40px;
@@ -512,6 +514,14 @@ const { title } = Astro.props;
   }
 
   @media (min-width: 668px) {
+    input,
+    select,
+    textarea {
+      font-size: var(--p-big-desktop);
+    }
+    p {
+      font-size: var(--p-big-desktop);
+    }
     #description-form,
     .content-wrapper {
       width: 100%;

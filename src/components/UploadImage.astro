@@ -1,5 +1,6 @@
 ---
 import "../styles/style.css";
+import Button from "./Button.astro";
 ---
 
 <div class="upload-container">
@@ -8,7 +9,11 @@ import "../styles/style.css";
     <img id="uploadIcon" src="/svg/drag-and-drop.svg" alt="Upload ikon" />
     <p>Træk og slip</p>
   </div>
-  <button id="uploadButton">Upload billeder</button>
+  <div id="uploadButton">
+    <Button variant="primary" size="medium">Upload billeder</Button>
+  </div>
+
+  <!-- <button id="uploadButton">Upload billeder</button> -->
 </div>
 
 <style>
@@ -43,27 +48,11 @@ import "../styles/style.css";
   }
 
   #uploadButton {
-    width: 350px;
-    padding: 10px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
-    background-color: var(--dark-blue-100);
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 25px;
-    font-family: Plus Jakarta Sans;
-    font-size: var(--h4-mobile);
-    font-weight: 600;
-    margin-left: 25px;
-    margin-right: 10px;
   }
-
-  #uploadButton:hover {
-    background-color: transparent;
-    color: var(--dark-blue-100);
-    border: solid 1px var(--dark-blue-100);
-  }
-
   @media (min-width: 668px) {
     .upload-container {
       justify-items: start;

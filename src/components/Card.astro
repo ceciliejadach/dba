@@ -1,10 +1,13 @@
 ---
 const { data } = Astro.props;
+
+const tags = data.tags;
+console.log("tags", tags);
 ---
 
 <a href={`/product/${data.slug}`}>
   <article>
-    <div class="shipping hide"><img src="/svg/box.svg" alt="shipping box" /></div>
+    <div class={(data.tags.includes("shipping") && "shipping hide") || "shipping"}><img src="/svg/box.svg" alt="shipping box" /></div>
     <div class="like"><img src="/svg/heart.svg" alt="heart" /></div>
 
     <img class="product" src={`/imgs/${data.image}`} alt={data.titel} />
@@ -29,6 +32,7 @@ const { data } = Astro.props;
     max-width: 221px;
     position: relative;
   }
+
   .product {
     border-radius: 10px;
     margin-bottom: 8px;
@@ -72,5 +76,9 @@ const { data } = Astro.props;
   .shipping {
     top: 5px;
     left: 5px;
+  }
+
+  .shipping.hide {
+    display: none;
   }
 </style>
