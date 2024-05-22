@@ -11,7 +11,8 @@ console.log("tags", tags);
     <div class="like"><img src="/svg/heart.svg" alt="heart" /></div>
 
     <img class="product" src={`/imgs/${data.image}`} alt={data.titel} />
-    <h3>{data.titel}</h3>
+    <!-- <h3>{data.titel}</h3> -->
+    <div class={data.tags.includes("paid") && "paid hide"}><p id="titel">{data.titel}</p></div>
     <div>
       <p class="pris">{data.price} kr</p>
       <p class="lokation">{data.location}</p>
@@ -20,14 +21,15 @@ console.log("tags", tags);
 </a>
 
 <style>
+  #titel {
+    margin-bottom: 5px;
+    font-size: var(--h3-mobile);
+  }
   a {
     text-decoration: none;
     color: var(--black-100);
   }
 
-  h3 {
-    margin-bottom: 5px;
-  }
   article {
     max-width: 221px;
     position: relative;
@@ -80,5 +82,9 @@ console.log("tags", tags);
 
   .shipping.hide {
     display: none;
+  }
+
+  .paid {
+    font-weight: 700;
   }
 </style>
