@@ -1,11 +1,12 @@
 ---
 import "../styles/style.css";
-import Button from "../components/Button.astro";
 ---
 
 <button>
-  <img src="/svg/filter_icon.svg" alt="" />
-  Filtre
+  <div id="filter-button">
+    <img src="/svg/filter_icon.svg" alt="" />
+    Filtre
+  </div>
   <div class="formular">
     Filtre
     <div class="belysning">
@@ -64,6 +65,12 @@ import Button from "../components/Button.astro";
     margin-right: 0.4rem;
   }
 
+  #filter-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   #see-more-btn {
     color: var(--main-white);
     background-color: var(--dark-blue-100);
@@ -90,7 +97,7 @@ import Button from "../components/Button.astro";
     top: 47px;
   }
 
-  button .formular {
+  .formular.visible {
     visibility: visible;
     z-index: 10;
   }
@@ -135,3 +142,14 @@ import Button from "../components/Button.astro";
     color: var(--dark-blue-100);
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("filter-button");
+    const formular = document.querySelector(".formular");
+
+    button.addEventListener("click", function () {
+      formular.classList.toggle("visible");
+    });
+  });
+</script>
