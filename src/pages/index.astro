@@ -6,25 +6,36 @@ import BurgerAd from "../components/BurgerAd.astro";
 import CategorySlider from "../components/CategorySlider.astro";
 import "../styles/style.css";
 import ContactService from "../components/ContactService.astro";
+import FiltreButton from "../components/FiltreButton.astro";
 
-const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products?limit=8", {
-  method: "GET",
-  headers: {
-    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1ZWRoZHJha3N3cXNxdWh0amt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUyNTEyNDYsImV4cCI6MjAzMDgyNzI0Nn0.mXDwiwon4LDuspPMmUhUACpS8eCG3AZ7Ttf8Dd2wwu0",
-  },
-}).then((res) => res.json());
-const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products?limit=4&offset=4", {
-  method: "GET",
-  headers: {
-    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1ZWRoZHJha3N3cXNxdWh0amt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUyNTEyNDYsImV4cCI6MjAzMDgyNzI0Nn0.mXDwiwon4LDuspPMmUhUACpS8eCG3AZ7Ttf8Dd2wwu0",
-  },
-}).then((res) => res.json());
+const data = await fetch(
+  "https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products?limit=8",
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1ZWRoZHJha3N3cXNxdWh0amt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUyNTEyNDYsImV4cCI6MjAzMDgyNzI0Nn0.mXDwiwon4LDuspPMmUhUACpS8eCG3AZ7Ttf8Dd2wwu0",
+    },
+  }
+).then((res) => res.json());
+const moreData = await fetch(
+  "https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products?limit=4&offset=4",
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1ZWRoZHJha3N3cXNxdWh0amt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUyNTEyNDYsImV4cCI6MjAzMDgyNzI0Nn0.mXDwiwon4LDuspPMmUhUACpS8eCG3AZ7Ttf8Dd2wwu0",
+    },
+  }
+).then((res) => res.json());
 ---
 
 <MainLayout title="Forside">
   <CategorySlider />
-
-  <h2>Forsideannoncer</h2>
+  <div class="flex">
+    <h2>Forsideannoncer</h2>
+    <FiltreButton />
+  </div>
   <section class="cards">
     {
       data.map((card) => {
@@ -46,3 +57,12 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
   <BurgerAd />
 </MainLayout>
 <ContactService />
+
+<style>
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    align-items: center;
+  }
+</style>
