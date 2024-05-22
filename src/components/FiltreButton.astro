@@ -1,0 +1,155 @@
+---
+import "../styles/style.css";
+---
+
+<button>
+  <div id="filter-button">
+    <img src="/svg/filter_icon.svg" alt="" />
+    Filtre
+  </div>
+  <div class="formular">
+    Filtre
+    <div class="belysning">
+      <form action="filtering" method="POST" data-netlify="true">
+        <label for="Til boligen">
+          <select name="liste">
+            <option value="Belysning">Belysning</option>
+            <option value="Sengemøbler">Sengemøbler</option>
+            <option value="Spise- & dagligstuemøbler">
+              Spise- & dagligstuemøbler
+            </option>
+            <option value="Hårde hvidevarer">Hårde hvidevarer</option>
+            <option value="Andre maskiner">Andre maskiner</option>
+          </select>
+        </label>
+      </form>
+      <div class="kategori">
+        <label for="Kategori">
+          <select name="liste">
+            <option value="Bordlamper">Bordlamper</option>
+            <option value="Gulvlamper">Gulvlamper</option>
+            <option value="Loftlamper"> Loftlamper </option>
+            <option value="Væglamper">Væglamper</option>
+            <option value="Udendørsbeslysning">Udendørsbeslysning</option>
+          </select>
+        </label>
+      </div>
+      <div class="radius">
+        <input type="text" placeholder="Radius" />
+        <p>km fra</p>
+        <input type="text" placeholder="Postnr." />
+      </div>
+      <div class="pris">
+        <input type="text" placeholder="Pris fra" />
+        <p>-</p>
+        <input type="text" placeholder="Til" />
+      </div>
+      <a id="see-more-btn" href="/productlistview">Se flere annoncer</a>
+    </div>
+  </div>
+</button>
+
+<style>
+  button {
+    border: 1.5px solid var(--dark-blue-100);
+    font-family: Plus Jakarta Sans;
+    font-weight: 600;
+    color: var(--dark-blue-100);
+    border-radius: 46px;
+    padding: 8px 16px;
+    background-color: var(--main-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-right: 0.4rem;
+  }
+
+  #filter-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #see-more-btn {
+    color: var(--main-white);
+    background-color: var(--dark-blue-100);
+    border: 1.5px solid var(--dark-blue-100);
+    border-radius: 46px;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .formular {
+    display: grid;
+    padding: 10px;
+    width: 230px;
+    border: 1.5px solid var(--dark-blue-100);
+    background-color: var(--main-white);
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    position: absolute;
+    visibility: hidden;
+    text-align: left;
+    right: 0px;
+    top: 47px;
+  }
+
+  .formular.visible {
+    visibility: visible;
+    z-index: 10;
+  }
+
+  .belysning,
+  .kategori,
+  .radius,
+  .pris {
+    display: grid;
+    grid-gap: 10px;
+    margin-top: 0.4rem;
+  }
+
+  .radius,
+  .pris {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .pris {
+    padding-bottom: 10px;
+  }
+
+  input {
+    width: 70px;
+    border: 1.5px solid var(--dark-blue-100);
+    border-radius: 3px;
+    padding: 10px;
+  }
+
+  input::placeholder {
+    color: var(--dark-blue-100);
+    opacity: 30%;
+  }
+
+  select {
+    width: 210px;
+    border: 1.5px solid var(--dark-blue-100);
+    border-radius: 3px;
+    padding: 10px;
+    color: var(--dark-blue-100);
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("filter-button");
+    const formular = document.querySelector(".formular");
+
+    button.addEventListener("click", function () {
+      formular.classList.toggle("visible");
+    });
+  });
+</script>
