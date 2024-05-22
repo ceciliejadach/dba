@@ -28,10 +28,16 @@ const { url, page } = Astro.props;
 
   a {
     color: var(--dark-grey-100);
-    font-size: var(--p-desktop);
+    font-size: var(--p-mobile);
   }
 
   a:hover {
     text-decoration: underline;
+  }
+
+  @media (min-width: 868px) {
+    a {
+      font-size: var(--p-desktop);
+    }
   }
 </style>

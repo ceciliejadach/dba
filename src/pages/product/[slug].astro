@@ -61,7 +61,6 @@ console.log("tags", tags);
         </div>
       </div>
       <div class="forward-back-btn">
-        <img src="/svg/indicator.svg" id="swipe-indicator" alt="swipe indicator" />
         <img src="/svg/forward_grey.svg" id="nextBtn_grey" alt="næste pil" />
         <img src="/svg/back_grey.svg" id="backBtn_grey" alt="tilbage pil" />
       </div>
@@ -69,17 +68,17 @@ console.log("tags", tags);
 
     <div class="product-singleview">
       <div class="info">
-        <h2>{myData.titel}</h2>
-        <p>{myData.description}</p>
-        <p class="condition">Stand: {myData.condition}</p>
+        <h1 id="titel">{myData.titel}</h1>
+        <p id="description-text">{myData.description}</p>
+        <h3 class="condition">Stand: {myData.condition}</h3>
         <div class="contact">
-          <p>{myData.price} kr</p>
+          <p id="price">{myData.price} kr</p>
           <Button variant="primary" size="medium">Kontakt sælger</Button>
         </div>
         <div class="profile-wrapper">
           <div class="profile-container">
             <img class="profile-image" src="/svg/profile_with_border.svg" alt="profil" />
-            <p>{myData.seller}</p>
+            <h3 id="seller">{myData.seller}</h3>
           </div>
           <div class="profile-info">
             <p>{myData.location}</p>
@@ -90,7 +89,9 @@ console.log("tags", tags);
             <p>Bruger siden 18. juli 2005</p>
           </div>
         </div>
-        <Button variant="secondary" size="small"><a class="secondary" href="#">Se sælgers andre annoncer</a></Button>
+        <div class="btn-1">
+          <Button class="secondary" variant="secondary" size="xl">Se sælgers andre annoncer</Button>
+        </div>
       </div>
     </div>
   </div>
@@ -102,15 +103,23 @@ console.log("tags", tags);
       })
     }
   </section>
-  <div class="button">
-    <Button id="middle" variant="secondary" url="#" size="large">Se flere annoncer</Button>
+  <div class="btn-2">
+    <Button variant="secondary" url="#" size="large">Se flere annoncer</Button>
   </div>
   <Gallery />
   <BurgerAd />
 </MainLayout>
 <div class="sticky-customer-service"><ContactService /></div>
 <style>
-  .button {
+  #seller {
+    font-weight: 600;
+    color: var(--dark-blue-100);
+  }
+  .btn-1 {
+    display: flex;
+    justify-content: center;
+  }
+  .btn-2 {
     display: flex;
     justify-content: center;
     margin-bottom: 100px;
@@ -150,11 +159,7 @@ console.log("tags", tags);
   .forward-back-btn {
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
-  }
-  /* swipe indicator billede skal være mindre */
-  #swipe-indicator {
-    width: 100px;
+    margin-top: 1rem;
   }
 
   /* man skal ikke kunne se scrollbaren i mobile view */
@@ -215,10 +220,13 @@ console.log("tags", tags);
   /* styling af produkt billedet */
   .product-image {
     border-radius: 5px;
-    margin-bottom: 1rem;
   }
 
-  /* info kassen skal opstilles i grid for at lave lige stort gap mellem elementerne */
+  #titel {
+    margin-left: 0;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
   .info {
     display: flex;
     gap: 4px;
@@ -230,6 +238,11 @@ console.log("tags", tags);
     font-size: 0.875rem;
     color: var(--dark-grey-100);
     margin-bottom: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  #price {
+    font-size: var(--h1-mobile);
   }
 
   /* kontakt og pris elementer er kommet i samme div med styling flex for at de kommmer i hver deres ende i kassen */
@@ -244,8 +257,8 @@ console.log("tags", tags);
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 2rem;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-bottom: 3rem;
+    margin-top: 4rem;
   }
 
   /* profile-container div skal have display grid for at give elementerne lige meget gap */
@@ -264,11 +277,13 @@ console.log("tags", tags);
   .profile-info {
     display: grid;
     gap: 15px;
+    font-weight: 600;
+    color: var(--dark-grey-100);
   }
 
   /* profil billedet skal være mindre  */
   .profile-image {
-    width: 70px;
+    width: 60px;
   }
 
   /* styling af mit ID div */
@@ -287,23 +302,18 @@ console.log("tags", tags);
     width: 20px;
   }
 
-  /* se sælgers andre annoncer knap tekst skal have en anden farve */
-  .secondary {
-    color: var(--dark-blue-100);
-  }
-
   /* der skal være noget luft mellem knap og næste afsnit på siden */
   .lignende_annoncer_headline {
     margin-top: 7rem;
   }
 
-  @media (min-width: 555px) {
+  @media (min-width: 750px) {
+    .btn-1 {
+      justify-content: flex-start;
+    }
     .singleview-wrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
-    }
-    #swipe-indicator {
-      display: none;
     }
 
     #backBtn_grey,
@@ -315,12 +325,22 @@ console.log("tags", tags);
     }
 
     .info {
-      height: 90%;
+      height: 95%;
     }
 
     .profile-wrapper,
     .secondary {
       margin-top: auto;
+    }
+
+    #description-text {
+      font-size: var(--p-big-desktop);
+    }
+
+    #price {
+      font-size: var(--h2-desktop);
+      font-weight: 600;
+      margin-bottom: 0;
     }
   }
 </style>
