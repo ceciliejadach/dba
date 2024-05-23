@@ -8,7 +8,6 @@ import "../styles/style.css";
 import ContactService from "../components/ContactService.astro";
 import FiltreButton from "../components/FiltreButton.astro";
 import Button from "../components/Button.astro";
-import PrimaryIconButton from "../components/PrimaryIconButton.astro";
 
 const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products?limit=8", {
   method: "GET",
@@ -49,8 +48,6 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
 
   <Gallery />
   <BurgerAd />
-
-  <PrimaryIconButton url="/adannonce" background="/svg/plus.svg" hover="/svg/blue-plus.svg" />
 </MainLayout>
 <ContactService />
 

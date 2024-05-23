@@ -73,7 +73,7 @@ console.log("tags", tags);
         <h3 class="condition">Stand: {myData.condition}</h3>
         <div class="contact">
           <p id="price">{myData.price} kr</p>
-          <Button variant="primary" size="medium">Kontakt sælger</Button>
+          <Button variant="primary" text="Kontakt sælger" />
         </div>
         <div class="profile-wrapper">
           <div class="profile-container">
@@ -90,7 +90,7 @@ console.log("tags", tags);
           </div>
         </div>
         <div class="btn-1">
-          <Button class="secondary" variant="secondary" size="xl">Se sælgers andre annoncer</Button>
+          <Button class="secondary" size="medium" variant="secondary" text="Se sælgers andre annoncer" />
         </div>
       </div>
     </div>
@@ -104,7 +104,7 @@ console.log("tags", tags);
     }
   </section>
   <div class="btn-2">
-    <Button variant="secondary" url="#" size="large">Se flere annoncer</Button>
+    <Button variant="secondary" size="medium" text="Se flere annoncer" url="#" size="large" />
   </div>
   <Gallery />
   <BurgerAd />
@@ -115,13 +115,12 @@ console.log("tags", tags);
     font-weight: 600;
     color: var(--dark-blue-100);
   }
-  .btn-1 {
+  .btn-1,
+  .btn-2 {
     display: flex;
     justify-content: center;
   }
   .btn-2 {
-    display: flex;
-    justify-content: center;
     margin-bottom: 100px;
   }
   .breadcrumb-container {

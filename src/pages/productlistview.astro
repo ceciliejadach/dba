@@ -9,23 +9,19 @@ import BreadCrumbPath from "../components/BreadCrumbPath.astro";
 import Button from "../components/Button.astro";
 import FiltreButton from "../components/FiltreButton.astro";
 
-const data = await fetch(
-  "https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products",
-  {
-    method: "GET",
-    headers: {
-      apikey:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1ZWRoZHJha3N3cXNxdWh0amt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUyNTEyNDYsImV4cCI6MjAzMDgyNzI0Nn0.mXDwiwon4LDuspPMmUhUACpS8eCG3AZ7Ttf8Dd2wwu0",
-    },
-  }
-).then((res) => res.json());
+const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1ZWRoZHJha3N3cXNxdWh0amt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUyNTEyNDYsImV4cCI6MjAzMDgyNzI0Nn0.mXDwiwon4LDuspPMmUhUACpS8eCG3AZ7Ttf8Dd2wwu0",
+  },
+}).then((res) => res.json());
 ---
 
 <MainLayout titel="Productlistview">
   <CategorySlider />
   <div class="breadcrumb-container">
     <BreadCrumbPath url="/" page="Forside" />
-      <p>Til boligen</p>
+    <p>Til boligen</p>
   </div>
 
   <div class="flex">
@@ -41,9 +37,7 @@ const data = await fetch(
     }
   </section>
   <div class="button">
-    <Button id="middle" variant="secondary" url="#" size="medium"
-      >Se flere annoncer</Button
-    >
+    <Button variant="secondary" text="Se flere annoncer" />
   </div>
 
   <Gallery />
@@ -65,12 +59,12 @@ const data = await fetch(
     display: flex;
     justify-content: center;
     margin-bottom: 100px;
+    width: 100%;
   }
-    .flex {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 1rem;
-      align-items: center;
-    }
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    align-items: center;
   }
 </style>

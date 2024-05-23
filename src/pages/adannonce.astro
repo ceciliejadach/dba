@@ -2,6 +2,7 @@
 import "../styles/style.css";
 import AdPreview from "../components/AdPreview.astro";
 import UploadImage from "../components/UploadImage.astro";
+import Button from "../components/Button.astro";
 const { title } = Astro.props;
 ---
 
@@ -257,8 +258,10 @@ const { title } = Astro.props;
             </div>
           </div>
         </div>
+        <div class="button">
+          <Button url="/conformation" variant="tertiary" text="Indryk annonce på DBA" />
+        </div>
       </section>
-      <a id="submit" href="/conformation">Indryk annonce på DBA</a>
     </main>
   </body>
 </html>
@@ -284,7 +287,7 @@ const { title } = Astro.props;
 
   h3 {
     font-weight: 200;
-    color: var(--dark-grey-100);
+    color: var(--black-100);
   }
 
   h4 {
@@ -493,24 +496,9 @@ const { title } = Astro.props;
     height: 700px;
   }
 
-  #submit {
-    background-color: var(--dark-blue-100);
-    color: var(--main-white);
-    font-weight: 600;
+  .button {
     display: flex;
-    border-radius: 20px;
     justify-content: center;
-    padding: 10px 12px;
-    margin-inline: auto;
-    width: 300px;
-    margin-bottom: 100px;
-    text-decoration: none;
-  }
-
-  #submit:hover {
-    background-color: transparent;
-    color: var(--dark-blue-100);
-    border: solid 1px var(--dark-blue-100);
   }
 
   @media (min-width: 668px) {

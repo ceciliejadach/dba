@@ -1,11 +1,11 @@
 ---
-const { url, background, hover } = Astro.props;
+const { url, background, hover, text } = Astro.props;
 ---
 
 <a href={url}>
   <div class="button-container">
     <div class="container"></div>
-    <p>Opret annonce</p>
+    <p>{text}</p>
   </div>
 </a>
 
@@ -19,47 +19,32 @@ const { url, background, hover } = Astro.props;
     transition:
       background-color 0.2s,
       color 0.2s;
-    background-color: var(--dark-blue-100);
-    color: var(--main-white);
+    background-color: transparent;
     font-size: var(--p-mobile);
     white-space: nowrap;
   }
 
+  p {
+    color: var(--dark-blue-100);
+  }
+
   .container {
-    width: 15px;
-    height: 15px;
+    width: 16.5px;
+    height: 17.5px;
     background-image: var(--background);
     background-repeat: no-repeat;
     background-size: cover;
-    margin-right: 10px;
+    margin-right: 7px;
     transition: background-image 0.2s;
-  }
-
-  .container:hover {
-    width: 30px;
-    height: 30px;
-  }
-  .button-container:hover {
-    background-color: var(--light-blue-100);
-    color: var(--dark-blue-100);
   }
 
   .button-container:hover .container {
     background-image: var(--hover);
-    background-color: var(--background-color);
-  }
-  .button-container:hover .button-text {
-    color: var(--dark-blue-100);
   }
 
   @media (min-width: 868px) {
     .button-container {
       font-size: var(--p-desktop);
-    }
-
-    .container {
-      width: 12px;
-      height: 12px;
     }
   }
 </style>

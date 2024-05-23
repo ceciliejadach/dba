@@ -1,7 +1,10 @@
 ---
 import "../styles/style.css";
-import Button from "./Button.astro";
+
 import Marquee from "./Marquee.astro";
+import PrimaryIconButton from "./PrimaryIconButton.astro";
+import TertiaryIconButton from "./TertiaryIconButton.astro";
+import FavoritNavigationButton from "./FavoritNavigationButton.astro";
 ---
 
 <div class="navigation">
@@ -14,10 +17,10 @@ import Marquee from "./Marquee.astro";
     </div>
     <img class="notification-ikon" src="/svg/bell.svg" alt="klokke" />
     <ul class="desktop_nav">
-      <Button variant="primary" size="small" url="/adannonce"><img id="small-img" src="/svg/plus.svg" alt="plus" />Opret annoce</Button>
-      <Button variant="tertiary" size="small"><img src="/svg/box.svg" alt="box" /><a id="blue_link" href="#">Køb fragt</a></Button>
-      <Button variant="tertiary" size="small"><img src="/svg/profile.svg" alt="profile" /><a id="blue_link" href="#">Mit DBA</a></Button>
-      <Button variant="tertiary" size="small"><img src="/svg/heart.svg" alt="heart" />Favoritter</Button>
+      <PrimaryIconButton url="/adannonce" background="/svg/plus.svg" hover="/svg/blue-plus.svg" />
+      <TertiaryIconButton background="/svg/box.svg" hover="/svg/blue-box.svg" text="Køb fragt" />
+      <TertiaryIconButton background="/svg/profile.svg" hover="/svg/blue-profile.svg" text="Mit DBA" />
+      <FavoritNavigationButton id="heart-icon" background="/svg/heart.svg" hover="/svg/blue-heart.svg" text="Favoritter" />
     </ul>
     <ul id="mobile_nav">
       <li>
@@ -36,7 +39,7 @@ import Marquee from "./Marquee.astro";
     </ul>
   </nav>
   <div class="cta-btn">
-    <Button variant="primary" size="medium" url="/adannonce" id="small-img"><img src="/svg/plus.svg" alt="plus" />Opret annoce</Button>
+    <PrimaryIconButton url="/adannonce" background="/svg/plus.svg" hover="/svg/blue-plus.svg" />
   </div>
 </div>
 

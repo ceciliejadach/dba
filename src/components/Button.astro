@@ -1,29 +1,29 @@
 ---
-const { variant, text, url, background, hover } = Astro.props;
+const { url, text, variant, size } = Astro.props;
 ---
 
-<!-- <a href={url}>
-  <button class={variant + " " + size}>
-    <slot />
-  </button>
-</a> -->
 <a href={url}>
-  <div class="button-container" class={variant}>
-    <div class="container"></div>
+  <button class={variant + " " + size}>
     <p>{text}</p>
-  </div>
+  </button>
 </a>
 
-<style define:vars={{ background: `url("${background}")`, hover: `url("${hover}")` }}>
-  .button-container {
+<style>
+  button {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: fit-content;
     padding: 10px 20px;
     border-radius: 20px;
     transition:
       background-color 0.2s,
       color 0.2s;
+    font-size: var(--p-mobile);
+    white-space: nowrap;
+    outline: none;
+    border: none;
+    cursor: pointer;
   }
 
   .primary {
@@ -31,98 +31,45 @@ const { variant, text, url, background, hover } = Astro.props;
     color: var(--main-white);
   }
 
-  .container {
-    width: 15px;
-    height: 15px;
-    background-image: var(--background);
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-right: 10px;
-    transition: background-image 0.2s;
-  }
-  .button-container:hover {
+  .primary:hover {
     background-color: var(--light-blue-100);
     color: var(--dark-blue-100);
   }
 
-  .button-container:hover .container {
-    background-image: var(--hover);
-    background-color: var(--background-color);
-  }
-
-  .primary .button-container:hover .button-text {
-    color: var(--dark-blue-100);
-  }
-</style>
-
-<!-- <style>
-  a {
-    text-decoration: none;
-  }
-  button {
-    cursor: pointer;
-  }
-
-
-  .primary {
-    background-color: var(--dark-blue-100);
-    color: var(--primary-btn-text-color);
-    display: flex;
-    border-radius: 20px;
-    appearance: none;
-    justify-content: center;
-    border: none;
-    padding: 8px 20px;
-    align-items: center;
-    transition: 0.2s;
-  }
-
-
   .secondary {
-    border: 1px solid var(--dark-blue-100);
     background-color: transparent;
-    border-radius: 25px;
-    appearance: none;
-    padding: 8px 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border: solid 1px var(--dark-blue-100);
     color: var(--dark-blue-100);
   }
 
+  .secondary:hover {
+    background-color: var(--dark-blue-100);
+    color: var(--main-white);
+  }
 
   .tertiary {
-    padding: 8px 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--dark-blue-100);
-    background-color: transparent;
-    border: none;
+    background-color: var(--dark-blue-100);
+    color: var(--main-white);
+    border: solid 1px var(--dark-blue-100);
   }
 
+  .tertiary:hover {
+    background-color: transparent;
+    border: solid 1px var(--dark-blue-100);
+    color: var(--dark-blue-100);
+  }
 
   .small {
-    font-size: var(--p-desktop);
+    width: 140px;
   }
 
   .medium {
-    font-size: var(--h3-desktop);
-    width: 250px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    width: 350px;
   }
 
-
-  .large {
-    font-size: 1rem;
-    width: 250px;
+  @media (min-width: 868px) {
+    button {
+      font-size: var(--p-desktop);
+    }
   }
-
-  .xl {
-    font-size: 1rem;
-    width: 300px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-</style> -->
+</style>
