@@ -97,20 +97,21 @@ import Marquee from "./Marquee.astro";
     margin-bottom: 40px;
     padding-inline: 0.2rem;
     box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    gap: 10px;
   }
 
-  @media (min-width: 868px) {
+  .navigation {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--main-white);
+  }
+
+  /* @media (min-width: 868px) {
     .nav_bar {
       gap: 0;
     }
-
-    .navigation {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background-color: var(--main-white);
-    }
-  }
+  } */
 
   .nav_bar ul {
     display: flex;
