@@ -40,14 +40,14 @@ const { variant, text, url, background, hover } = Astro.props;
     margin-right: 10px;
     transition: background-image 0.2s;
   }
-
-  .primary .button-container:hover {
+  .button-container:hover {
     background-color: var(--light-blue-100);
     color: var(--dark-blue-100);
   }
 
   .button-container:hover .container {
     background-image: var(--hover);
+    background-color: var(--background-color);
   }
 
   .primary .button-container:hover .button-text {
