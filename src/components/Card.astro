@@ -5,20 +5,20 @@ const tags = data.tags;
 console.log("tags", tags);
 ---
 
-<a href={`/product/${data.slug}`}>
-  <article>
-    <div class={(data.tags.includes("shipping") && "shipping hide") || "shipping"}><img src="/svg/box.svg" alt="shipping box" /></div>
-    <div class="like"><img src="/svg/heart.svg" alt="heart" /></div>
-
+<article>
+  <div class={(data.tags.includes("shipping") && "shipping hide") || "shipping"}><img src="/svg/box.svg" alt="shipping box" /></div>
+  <div class="like-container">
+    <div class="like"></div>
+  </div>
+  <a href={`/product/${data.slug}`}>
     <img class="product" src={`/imgs/${data.image}`} alt={data.titel} />
-    <!-- <h3>{data.titel}</h3> -->
     <div class={data.tags.includes("paid") && "paid hide"}><p id="titel">{data.titel}</p></div>
     <div>
       <p class="pris">{data.price} kr</p>
       <p class="lokation">{data.location}</p>
     </div>
-  </article>
-</a>
+  </a>
+</article>
 
 <style>
   #titel {
@@ -46,19 +46,13 @@ console.log("tags", tags);
     color: var(--dark-grey-100);
   }
 
-  /* .lokation {
-    font-size: var(--p-mini);
-    color: var(--dark-grey-100);
-  } */
-
   article div {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  .shipping,
-  .like {
+  .shipping {
     position: absolute;
     width: 30px;
     height: 30px;
@@ -71,10 +65,36 @@ console.log("tags", tags);
     align-items: center;
   }
 
-  .like {
+  .like-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
     right: 5px;
     top: 5px;
+    background-color: var(--main-white);
+    padding: 6px;
+    border-radius: 50%;
   }
+
+  .like {
+    width: 21.2px;
+    height: 17.5px;
+    background-image: url("/svg/heart.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+  }
+
+  .like:hover {
+    background-image: url("/svg/pink-heart.svg");
+    width: 21px;
+    height: 17.5px;
+  }
+
+  /* .liked {
+    background-image: url("/svg/red-heart.svg");
+  } */
   .shipping {
     top: 5px;
     left: 5px;
@@ -88,3 +108,13 @@ console.log("tags", tags);
     font-weight: 700;
   }
 </style>
+
+<!-- <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const likeProduct = document.querySelector(".like-container .like");
+
+    likeProduct.addEventListener("click", function () {
+      likeProduct.classList.toggle("liked");
+    });
+  });
+</script> -->
