@@ -7,27 +7,20 @@ import CategorySlider from "../components/CategorySlider.astro";
 import "../styles/style.css";
 import ContactService from "../components/ContactService.astro";
 import FiltreButton from "../components/FiltreButton.astro";
+import Button from "../components/Button.astro";
 
-const data = await fetch(
-  "https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products?limit=8",
-  {
-    method: "GET",
-    headers: {
-      apikey:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1ZWRoZHJha3N3cXNxdWh0amt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUyNTEyNDYsImV4cCI6MjAzMDgyNzI0Nn0.mXDwiwon4LDuspPMmUhUACpS8eCG3AZ7Ttf8Dd2wwu0",
-    },
-  }
-).then((res) => res.json());
-const moreData = await fetch(
-  "https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products?limit=4&offset=4",
-  {
-    method: "GET",
-    headers: {
-      apikey:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1ZWRoZHJha3N3cXNxdWh0amt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUyNTEyNDYsImV4cCI6MjAzMDgyNzI0Nn0.mXDwiwon4LDuspPMmUhUACpS8eCG3AZ7Ttf8Dd2wwu0",
-    },
-  }
-).then((res) => res.json());
+const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products?limit=8", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1ZWRoZHJha3N3cXNxdWh0amt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUyNTEyNDYsImV4cCI6MjAzMDgyNzI0Nn0.mXDwiwon4LDuspPMmUhUACpS8eCG3AZ7Ttf8Dd2wwu0",
+  },
+}).then((res) => res.json());
+const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products?limit=4&offset=4", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1ZWRoZHJha3N3cXNxdWh0amt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUyNTEyNDYsImV4cCI6MjAzMDgyNzI0Nn0.mXDwiwon4LDuspPMmUhUACpS8eCG3AZ7Ttf8Dd2wwu0",
+  },
+}).then((res) => res.json());
 ---
 
 <MainLayout title="Forside">
@@ -55,6 +48,8 @@ const moreData = await fetch(
 
   <Gallery />
   <BurgerAd />
+
+  <Button variant="primary" text="Opret annonce" background="/svg/plus.svg" hover="/svg/blue-plus.svg" />
 </MainLayout>
 <ContactService />
 
@@ -65,4 +60,41 @@ const moreData = await fetch(
     padding-bottom: 1rem;
     align-items: center;
   }
+
+  /* 
+  .button-container {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 10px 20px;
+    background-color: var(--dark-blue-100);
+    color: var(--main-white);
+    border-radius: 20px;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+  }
+
+  .heart-container {
+    width: 15px;
+    height: 15px;
+    background-image: url("/svg/plus.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 10px;
+    transition: background-image 0.2s;
+  }
+
+  .button-container:hover {
+    background-color: var(--light-blue-100);
+    color: var(--dark-blue-100);
+  }
+
+  .button-container:hover .heart-container {
+    background-image: url("/svg/blue-plus.svg");
+  }
+
+  .button-container:hover .button-text {
+    color: var(--dark-blue-100);
+  } */
 </style>

@@ -1,14 +1,61 @@
 ---
-const { variant, size, url } = Astro.props;
+const { variant, text, url, background, hover } = Astro.props;
 ---
 
-<a href={url}>
+<!-- <a href={url}>
   <button class={variant + " " + size}>
     <slot />
   </button>
+</a> -->
+<a href={url}>
+  <div class="button-container" class={variant}>
+    <div class="container"></div>
+    <p>{text}</p>
+  </div>
 </a>
 
-<style>
+<style define:vars={{ background: `url("${background}")`, hover: `url("${hover}")` }}>
+  .button-container {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+  }
+
+  .primary {
+    background-color: var(--dark-blue-100);
+    color: var(--main-white);
+  }
+
+  .container {
+    width: 15px;
+    height: 15px;
+    background-image: var(--background);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 10px;
+    transition: background-image 0.2s;
+  }
+
+  .primary .button-container:hover {
+    background-color: var(--light-blue-100);
+    color: var(--dark-blue-100);
+  }
+
+  .button-container:hover .container {
+    background-image: var(--hover);
+  }
+
+  .primary .button-container:hover .button-text {
+    color: var(--dark-blue-100);
+  }
+</style>
+
+<!-- <style>
   a {
     text-decoration: none;
   }
@@ -16,7 +63,7 @@ const { variant, size, url } = Astro.props;
     cursor: pointer;
   }
 
-  /* styling af primær knap (CTA) */
+
   .primary {
     background-color: var(--dark-blue-100);
     color: var(--primary-btn-text-color);
@@ -30,7 +77,7 @@ const { variant, size, url } = Astro.props;
     transition: 0.2s;
   }
 
-  /* styling af sekundær knap */
+
   .secondary {
     border: 1px solid var(--dark-blue-100);
     background-color: transparent;
@@ -43,7 +90,7 @@ const { variant, size, url } = Astro.props;
     color: var(--dark-blue-100);
   }
 
-  /* styling af tertiære knap  */
+
   .tertiary {
     padding: 8px 12px;
     display: flex;
@@ -54,7 +101,7 @@ const { variant, size, url } = Astro.props;
     border: none;
   }
 
-  /* styling størrelse af knap til mobil  */
+
   .small {
     font-size: var(--p-desktop);
   }
@@ -66,7 +113,7 @@ const { variant, size, url } = Astro.props;
     padding-bottom: 10px;
   }
 
-  /* styling størrelse af knap til desktop  */
+
   .large {
     font-size: 1rem;
     width: 250px;
@@ -78,4 +125,4 @@ const { variant, size, url } = Astro.props;
     padding-top: 10px;
     padding-bottom: 10px;
   }
-</style>
+</style> -->
