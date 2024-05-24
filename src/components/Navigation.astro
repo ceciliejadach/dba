@@ -19,19 +19,19 @@ import FavoritNavigationButton from "./FavoritNavigationButton.astro";
     <ul class="desktop_nav">
       <li><PrimaryIconButton url="/adannonce" background="/svg/plus.svg" hover="/svg/blue-plus.svg" /></li>
       <li>
-        <TertiaryIconButton background="/svg/box.svg" hover="/svg/blue-box.svg" text="Køb fragt" />
+        <TertiaryIconButton background="/svg/box.svg" hover="/svg/blue-box.svg" text="Køb fragt" url="https://www.dba.dk/fragt/pakkelabel" />
       </li>
       <li>
         <TertiaryIconButton background="/svg/profile.svg" hover="/svg/blue-profile.svg" text="Mit DBA" url="/mitdba" />
       </li>
       <li>
-        <FavoritNavigationButton id="heart-icon" background="/svg/heart.svg" hover="/svg/blue-heart.svg" text="Favoritter" />
+        <FavoritNavigationButton id="heart-icon" background="/svg/heart.svg" hover="/svg/blue-heart.svg" text="Favoritter" url="/mitdba" />
       </li>
     </ul>
     <ul id="mobile_nav">
       <li>
         <img src="/svg/box.svg" alt="box" />
-        <p>Køb fragt</p>
+        <a href="https://www.dba.dk/fragt/pakkelabel">Køb fragt</a>
       </li>
 
       <li>
@@ -40,7 +40,7 @@ import FavoritNavigationButton from "./FavoritNavigationButton.astro";
       </li>
       <li>
         <img src="/svg/heart.svg" alt="heart" />
-        <p>Favoritter</p>
+        <a href="/mitdba">Favoritter</a>
       </li>
     </ul>
   </nav>
