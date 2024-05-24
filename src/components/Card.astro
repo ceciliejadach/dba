@@ -6,12 +6,12 @@ console.log("tags", tags);
 ---
 
 <article>
-  <div class={(data.tags.includes("shipping") && "shipping hide") || "shipping"}><img src="/svg/box.svg" alt="shipping box" /></div>
+  <div class={(data.tags.includes("shipping") && "shipping hide") || "shipping"}><img src="/svg/box.svg" alt="shipping box" width="18" height="19" /></div>
   <div class="like-container">
     <div class="like"></div>
   </div>
   <a href={`/product/${data.slug}`}>
-    <img class="product" src={`/imgs/${data.image}`} alt={data.titel} />
+    <img class="product" src={`/imgs/${data.image}`} alt={data.titel} width="217" height="289" />
     <div class={data.tags.includes("paid") && "paid hide"}><p id="titel">{data.titel}</p></div>
     <div>
       <p class="pris">{data.price} kr</p>

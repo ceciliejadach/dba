@@ -4,7 +4,7 @@ const { data } = Astro.props;
 
 <a href={`/product/${data.slug}`}>
   <article>
-    <img class="product" src={`/imgs/${data.image}`} alt={data.titel} />
+    <img class="product" src={`/imgs/${data.image}`} alt={data.titel} width="94" height="126" />
     <div class="info">
       <p id="titel"><strong>{data.titel}</strong></p>
       <p class="description">{data.description}</p>
