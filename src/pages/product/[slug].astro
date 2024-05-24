@@ -47,22 +47,22 @@ console.log("tags", tags);
   <div class="singleview-wrapper">
     <div>
       <div class="product-singleview">
-        <div class={(myData.tags.includes("shipping") && "shipping hide") || "shipping"}><img src="/svg/box.svg" alt="shipping box" /><h3><strong>Kan sendes</strong></h3></div>
-        <div class="like"><img src="/svg/heart.svg" alt="heart" /></div>
+        <div class={(myData.tags.includes("shipping") && "shipping hide") || "shipping"}><img src="/svg/box.svg" alt="shipping box" width="25" height="25" /><h3><strong>Kan sendes</strong></h3></div>
+        <div class="like"><img src="/svg/heart.svg" alt="heart" width="28" height="24" /></div>
         <div class="image-number"><p>1/8</p></div>
         <div class="singleview-gallery">
           <div>
-            <img class="product-image" src={`/imgs/${myData.image}`} alt={myData.titel} />
-            <img class="product-image" src={`/imgs/${myData.image}`} alt={myData.titel} />
-            <img class="product-image" src={`/imgs/${myData.image}`} alt={myData.titel} />
-            <img class="product-image" src={`/imgs/${myData.image}`} alt={myData.titel} />
-            <img class="product-image" src={`/imgs/${myData.image}`} alt={myData.titel} />
+            <img class="product-image" src={`/imgs/${myData.image}`} alt={myData.titel} width="442" height="590" />
+            <img class="product-image" src={`/imgs/${myData.image}`} alt={myData.titel} width="442" height="590" />
+            <img class="product-image" src={`/imgs/${myData.image}`} alt={myData.titel} width="442" height="590" />
+            <img class="product-image" src={`/imgs/${myData.image}`} alt={myData.titel} width="442" height="590" />
+            <img class="product-image" src={`/imgs/${myData.image}`} alt={myData.titel} width="442" height="590" />
           </div>
         </div>
       </div>
       <div class="forward-back-btn">
-        <img src="/svg/forward_grey.svg" id="nextBtn_grey" alt="næste pil" />
-        <img src="/svg/back_grey.svg" id="backBtn_grey" alt="tilbage pil" />
+        <img src="/svg/forward_grey.svg" id="nextBtn_grey" alt="næste pil" width="35" height="16" />
+        <img src="/svg/back_grey.svg" id="backBtn_grey" alt="tilbage pil" width="35" height="16" />
       </div>
     </div>
 
@@ -77,13 +77,13 @@ console.log("tags", tags);
         </div>
         <div class="profile-wrapper">
           <div class="profile-container">
-            <img class="profile-image" src="/svg/profile_with_border.svg" alt="profil" />
+            <img class="profile-image" src="/svg/profile_with_border.svg" alt="profil" width="60" height="58" />
             <h3 id="seller">{myData.seller}</h3>
           </div>
           <div class="profile-info">
             <p>{myData.location}</p>
             <div class="mitID">
-              <img src="/svg/mit_id.svg" alt="mit id" />
+              <img src="/svg/mit_id.svg" alt="mit id" width="20" height="22" />
               <p>MitID valideret</p>
             </div>
             <p>Bruger siden 18. juli 2005</p>
