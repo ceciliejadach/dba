@@ -17,10 +17,16 @@ import FavoritNavigationButton from "./FavoritNavigationButton.astro";
     </div>
     <img class="notification-ikon" src="/svg/bell.svg" alt="klokke" />
     <ul class="desktop_nav">
-      <PrimaryIconButton url="/adannonce" background="/svg/plus.svg" hover="/svg/blue-plus.svg" />
-      <TertiaryIconButton background="/svg/box.svg" hover="/svg/blue-box.svg" text="Køb fragt" />
-      <TertiaryIconButton background="/svg/profile.svg" hover="/svg/blue-profile.svg" text="Mit DBA" url="/mitdba" />
-      <FavoritNavigationButton id="heart-icon" background="/svg/heart.svg" hover="/svg/blue-heart.svg" text="Favoritter" />
+      <li><PrimaryIconButton url="/adannonce" background="/svg/plus.svg" hover="/svg/blue-plus.svg" /></li>
+      <li>
+        <TertiaryIconButton background="/svg/box.svg" hover="/svg/blue-box.svg" text="Køb fragt" />
+      </li>
+      <li>
+        <TertiaryIconButton background="/svg/profile.svg" hover="/svg/blue-profile.svg" text="Mit DBA" url="/mitdba" />
+      </li>
+      <li>
+        <FavoritNavigationButton id="heart-icon" background="/svg/heart.svg" hover="/svg/blue-heart.svg" text="Favoritter" />
+      </li>
     </ul>
     <ul id="mobile_nav">
       <li>
@@ -44,11 +50,9 @@ import FavoritNavigationButton from "./FavoritNavigationButton.astro";
 </div>
 
 <style>
-  #blue_link {
-    color: var(--dark-blue-100);
-    font-size: var(--p-desktop);
+  ul li {
+    list-style: none;
   }
-
   a {
     white-space: nowrap;
   }
