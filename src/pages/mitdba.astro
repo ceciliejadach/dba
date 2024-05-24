@@ -1,0 +1,100 @@
+---
+import "../styles/style.css";
+import MainLayoutProfile from "../layouts/MainLayoutProfile.astro";
+import Profile from "../components/Profile.astro";
+import CardProfile from "../components/CardProfile.astro";
+import CardFavoritProfile from "../components/CardFavoritProfile.astro";
+import Gallery from "../components/Gallery.astro";
+import BurgerAd from "../components/BurgerAd.astro";
+import Button from "../components/Button.astro";
+import TertiaryIconButton from "../components/TertiaryIconButton.astro";
+
+const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products?limit=3", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1ZWRoZHJha3N3cXNxdWh0amt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUyNTEyNDYsImV4cCI6MjAzMDgyNzI0Nn0.mXDwiwon4LDuspPMmUhUACpS8eCG3AZ7Ttf8Dd2wwu0",
+  },
+}).then((res) => res.json());
+const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products?limit=4&offset=4", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1ZWRoZHJha3N3cXNxdWh0amt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUyNTEyNDYsImV4cCI6MjAzMDgyNzI0Nn0.mXDwiwon4LDuspPMmUhUACpS8eCG3AZ7Ttf8Dd2wwu0",
+  },
+}).then((res) => res.json());
+---
+
+<MainLayoutProfile>
+  <section class="profile-container">
+    <Profile />
+    <div class="buttons">
+      <Button variant="secondary" text="Annonce Agenter" />
+      <Button variant="secondary" text="Spørgsmål og svar" />
+      <Button variant="secondary" text="Sælgere du følger" />
+      <TertiaryIconButton background="/svg/box.svg" hover="/svg/blue-box.svg" text="Køb fragt" variant="secondary" />
+      <TertiaryIconButton background="/svg/headset.svg" hover="/svg/blue-headset.svg" text="Kontakt kundeservice" variant="secondary" />
+      <Button variant="secondary" text="Kontoindstillinger" />
+      <Button variant="secondary" text="DBA Guide" />
+    </div>
+  </section>
+
+  <h2>Mine annoncer</h2>
+  <section>
+    {
+      data.map((cardprofile) => {
+        return <CardProfile data={cardprofile} />;
+      })
+    }
+  </section>
+
+  <div class="wrapper">
+    <h2>Favoritter</h2>
+    <section>
+      {
+        moreData.map((cardfavoritprofile) => {
+          return <CardFavoritProfile data={cardfavoritprofile} />;
+        })
+      }
+    </section>
+  </div>
+  <div class="container">
+    <Gallery />
+    <BurgerAd />
+  </div>
+</MainLayoutProfile>
+
+<style>
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.5rem;
+    gap: 16px;
+    margin-bottom: 2rem;
+  }
+  .wrapper {
+    display: none;
+  }
+
+  .container {
+    margin-top: 25rem;
+  }
+
+  @media (min-width: 700px) {
+    .wrapper {
+      margin-top: 3rem;
+      display: block;
+    }
+
+    .profile-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .buttons {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-content: flex-start;
+      margin-top: 2rem;
+    }
+  }
+</style>

@@ -29,7 +29,7 @@ import FavoritNavigationButton from "./FavoritNavigationButton.astro";
       </li>
 
       <li>
-        <img src="/svg/profile.svg" alt="profile" />
+        <img src="/svg/blue-profile.svg" alt="profile" />
         <a href="/mitdba">Mit DBA</a>
       </li>
       <li>
@@ -44,21 +44,8 @@ import FavoritNavigationButton from "./FavoritNavigationButton.astro";
 </div>
 
 <style>
-  #blue_link {
-    color: var(--dark-blue-100);
-    font-size: var(--p-desktop);
-  }
-
-  a {
-    white-space: nowrap;
-  }
-
   a img {
     width: 100px;
-  }
-
-  #small-img {
-    width: 20px;
   }
 
   .search {
@@ -110,12 +97,6 @@ import FavoritNavigationButton from "./FavoritNavigationButton.astro";
     background-color: var(--main-white);
   }
 
-  /* @media (min-width: 868px) {
-    .nav_bar {
-      gap: 0;
-    }
-  } */
-
   .nav_bar ul {
     display: flex;
     flex-direction: row;
@@ -130,6 +111,13 @@ import FavoritNavigationButton from "./FavoritNavigationButton.astro";
   }
 
   @media (max-width: 868px) {
+    .notification-ikon {
+      display: none;
+    }
+
+    .search {
+      display: none;
+    }
     .nav_bar .desktop_nav {
       display: none;
     }

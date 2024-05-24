@@ -1,16 +1,16 @@
 ---
-const { url, background, hover, text } = Astro.props;
+const { url, background, hover, text, variant } = Astro.props;
 ---
 
 <a href={url}>
-  <div class="button-container">
+  <button class={variant}>
     <div class="container"></div>
     <p>{text}</p>
-  </div>
+  </button>
 </a>
 
 <style define:vars={{ background: `url("${background}")`, hover: `url("${hover}")` }}>
-  .button-container {
+  button {
     display: flex;
     align-items: center;
     width: fit-content;
@@ -22,6 +22,15 @@ const { url, background, hover, text } = Astro.props;
     background-color: transparent;
     font-size: var(--p-mobile);
     white-space: nowrap;
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+
+  .secondary {
+    background-color: transparent;
+    border: solid 1px var(--dark-blue-100);
+    color: var(--dark-blue-100);
   }
 
   p {
@@ -38,12 +47,12 @@ const { url, background, hover, text } = Astro.props;
     transition: background-image 0.2s;
   }
 
-  .button-container:hover .container {
+  button:hover .container {
     background-image: var(--hover);
   }
 
   @media (min-width: 868px) {
-    .button-container {
+    button {
       font-size: var(--p-desktop);
     }
   }

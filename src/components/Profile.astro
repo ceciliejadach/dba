@@ -1,0 +1,75 @@
+---
+import "../styles/style.css";
+import Button from "./Button.astro";
+---
+
+<div class="profile-wrapper">
+  <div class="profile-container">
+    <img class="profile-image" src="/svg/profile_with_border.svg" alt="profil" />
+    <h1 id="seller">Ross Geller</h1>
+  </div>
+  <div class="profile-info">
+    <p>2450 København SV</p>
+    <div class="mitID">
+      <img src="/svg/mit_id.svg" alt="mit id" />
+      <p>MitID valideret</p>
+    </div>
+    <p>Bruger siden 18. juli 2005</p>
+    <Button variant="secondary" text="Rediger profil" />
+  </div>
+</div>
+
+<style>
+  /* styling af profile-wrapper div */
+  .profile-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+    margin: 2rem 0.5rem;
+    max-width: 450px;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  }
+
+  /* profile-container div skal have display grid for at give elementerne lige meget gap */
+  .profile-wrapper .profile-container {
+    display: grid;
+    gap: 5px;
+  }
+
+  /* alle profile-containers børn skal være i midten af kolonnen */
+  .profile-wrapper .profile-container > * {
+    justify-self: center;
+    text-align: center;
+  }
+
+  /* profile-info div skal have display grid, for at give en lige gap mellem elementer */
+  .profile-info {
+    display: grid;
+    gap: 15px;
+    font-weight: 600;
+    color: var(--dark-grey-100);
+  }
+
+  /* profil billedet skal være mindre  */
+  .profile-image {
+    width: 60px;
+  }
+
+  /* styling af mit ID div */
+  .mitID {
+    display: flex;
+    align-items: center;
+  }
+
+  /* teksten i mit id div skal have lidt padding */
+  .mitID p {
+    padding-left: 5px;
+  }
+
+  /* mit id billedet skal være mindre */
+  .mitID img {
+    width: 20px;
+  }
+</style>

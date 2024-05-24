@@ -1,0 +1,63 @@
+---
+const { data } = Astro.props;
+---
+
+<a href={`/product/${data.slug}`}>
+  <article>
+    <img class="product" src={`/imgs/${data.image}`} alt={data.titel} />
+    <div class="info">
+      <p id="titel"><strong>{data.titel}</strong></p>
+      <p class="description">{data.description}</p>
+    </div>
+    <div class="container">
+      <p class="pris">{data.price} kr</p>
+      <img class="edit" src="/svg/red-heart.svg" alt="rødt hjerte ikon" />
+    </div>
+  </article>
+</a>
+
+<style>
+  #titel {
+    font-size: var(--h3-mobile);
+  }
+  a {
+    text-decoration: none;
+    color: var(--black-100);
+  }
+
+  article {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 20px;
+    margin-inline: 0.5rem;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    position: relative;
+    max-width: 450px;
+  }
+
+  .info {
+    display: grid;
+  }
+  .product {
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+
+  .edit {
+    width: 15px;
+    height: 15px;
+  }
+  .container {
+    display: grid;
+    justify-items: center;
+    height: fit-content;
+    gap: 30px;
+  }
+  .description,
+  .lokation {
+    font-size: var(--p-small-mobile);
+    color: var(--dark-grey-100);
+  }
+</style>
