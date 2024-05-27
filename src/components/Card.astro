@@ -86,12 +86,16 @@ console.log("tags", tags);
   .like:hover {
     background-image: url("/svg/pink-heart.svg");
     width: 21px;
-    height: 17.5px;
+    height: 18px;
   }
 
-  /* .liked {
+  .liked {
     background-image: url("/svg/red-heart.svg");
-  } */
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 21px;
+    height: 18px;
+  }
   .shipping {
     top: 5px;
     left: 5px;
@@ -105,13 +109,3 @@ console.log("tags", tags);
     font-weight: 700;
   }
 </style>
-
-<!-- <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const likeProduct = document.querySelector(".like-container .like");
-
-    likeProduct.addEventListener("click", function () {
-      likeProduct.classList.toggle("liked");
-    });
-  });
-</script> -->

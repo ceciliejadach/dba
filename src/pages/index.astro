@@ -53,3 +53,21 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
     align-items: center;
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const likeContainers = document.querySelectorAll(".like");
+
+    console.log(likeContainers);
+
+    //likeProduct.addEventListener("click", like);
+    likeContainers.forEach((lc) => {
+      lc.addEventListener("click", like);
+    });
+
+    function like() {
+      console.log(this);
+      this.classList.toggle("liked");
+    }
+  });
+</script>
