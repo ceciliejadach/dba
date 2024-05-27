@@ -21,11 +21,27 @@ const { title } = Astro.props;
   </head>
   <body>
     <main>
-      <Navigation />
+      <header>
+        <img class="top-ad" src="/imgs/top-ad.webp" alt="top annonce" width="980" height="188" />
+        <Navigation />
+      </header>
       <slot />
       <Gallery />
       <BurgerAd />
     </main>
     <Footer />
   </body>
+
+  <style>
+    .top-ad {
+      display: none;
+    }
+
+    @media (min-width: 868px) {
+      .top-ad {
+        display: block;
+        width: 980px;
+      }
+    }
+  </style>
 </html>
