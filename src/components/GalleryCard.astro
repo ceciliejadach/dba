@@ -1,9 +1,8 @@
 ---
-const { variant } = Astro.props;
-const { title, description, background } = Astro.props;
+const { title, description, background, url, variant } = Astro.props;
 ---
 
-<a href="https://guide.dba.dk/">
+<a href={url}>
   <div id="guide_card" class={variant + " "}>
     <div class="guide_title">
       <p>{title}</p>
