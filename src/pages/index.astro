@@ -1,8 +1,6 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Card from "../components/Card.astro";
-// import Gallery from "../components/Gallery.astro";
-// import BurgerAd from "../components/BurgerAd.astro";
 import CategorySlider from "../components/CategorySlider.astro";
 import "../styles/style.css";
 import ContactService from "../components/ContactService.astro";
@@ -44,9 +42,6 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
       })
     }
   </section>
-
-  <!-- <Gallery />
-  <BurgerAd /> -->
 </MainLayout>
 <ContactService />
 
@@ -57,41 +52,4 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
     padding-bottom: 1rem;
     align-items: center;
   }
-
-  /* 
-  .button-container {
-    display: flex;
-    align-items: center;
-    width: fit-content;
-    padding: 10px 20px;
-    background-color: var(--dark-blue-100);
-    color: var(--main-white);
-    border-radius: 20px;
-    transition:
-      background-color 0.2s,
-      color 0.2s;
-  }
-
-  .heart-container {
-    width: 15px;
-    height: 15px;
-    background-image: url("/svg/plus.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-right: 10px;
-    transition: background-image 0.2s;
-  }
-
-  .button-container:hover {
-    background-color: var(--light-blue-100);
-    color: var(--dark-blue-100);
-  }
-
-  .button-container:hover .heart-container {
-    background-image: url("/svg/blue-plus.svg");
-  }
-
-  .button-container:hover .button-text {
-    color: var(--dark-blue-100);
-  } */
 </style>
