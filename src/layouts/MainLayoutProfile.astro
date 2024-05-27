@@ -2,6 +2,8 @@
 import "../styles/style.css";
 import Footer from "../components/Footer.astro";
 import NavigationProfile from "../components/NavigationProfile.astro";
+import Gallery from "../components/Gallery.astro";
+import BurgerAd from "../components/BurgerAd.astro";
 const { title } = Astro.props;
 ---
 
@@ -21,6 +23,8 @@ const { title } = Astro.props;
     <main>
       <NavigationProfile />
       <slot />
+      <Gallery />
+      <BurgerAd />
     </main>
     <Footer />
   </body>
