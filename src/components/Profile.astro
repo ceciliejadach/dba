@@ -26,7 +26,8 @@ import Button from "./Button.astro";
     grid-template-columns: 1fr 2fr;
     gap: 1rem;
     margin: 2rem 0.5rem;
-    max-width: 450px;
+    width: 450px;
+    height: 205px;
     padding: 1rem;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
@@ -36,6 +37,7 @@ import Button from "./Button.astro";
   .profile-wrapper .profile-container {
     display: grid;
     gap: 5px;
+    align-items: center;
   }
 
   /* alle profile-containers børn skal være i midten af kolonnen */
@@ -48,6 +50,7 @@ import Button from "./Button.astro";
   .profile-info {
     display: grid;
     align-items: center;
+    gap: 15px;
 
     /* gap: 15px; */
     font-weight: 600;
@@ -73,5 +76,11 @@ import Button from "./Button.astro";
   /* mit id billedet skal være mindre */
   .mitID img {
     width: 20px;
+  }
+
+  @media (min-width: 868px) {
+    .profile-info {
+      gap: 0;
+    }
   }
 </style>
