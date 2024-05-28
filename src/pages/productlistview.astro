@@ -1,8 +1,6 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Card from "../components/Card.astro";
-// import Gallery from "../components/Gallery.astro";
-// import BurgerAd from "../components/BurgerAd.astro";
 import CategorySlider from "../components/CategorySlider.astro";
 import ContactService from "../components/ContactService.astro";
 import BreadCrumbPath from "../components/BreadCrumbPath.astro";
@@ -39,9 +37,6 @@ const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/produ
   <div class="button">
     <Button variant="secondary" text="Se flere annoncer" size="medium" />
   </div>
-
-  <!-- <Gallery />
-  <BurgerAd /> -->
 </MainLayout>
 <ContactService />
 
