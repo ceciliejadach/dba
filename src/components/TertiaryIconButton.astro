@@ -33,9 +33,19 @@ const { url, background, hover, text, variant } = Astro.props;
     color: var(--dark-blue-100);
   }
 
-  p {
+  .tertiary {
+    background-color: transparent;
+    border: solid 1px var(--dark-blue-100);
     color: var(--dark-blue-100);
   }
+  .tertiary:hover {
+    background-color: var(--dark-blue-100);
+    color: var(--main-white);
+  }
+
+  /* p {
+    color: var(--dark-blue-100);
+  } */
 
   .container {
     width: 16.5px;
