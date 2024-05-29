@@ -13,6 +13,7 @@ const { title, description, background, url, variant } = Astro.props;
 </a>
 
 <style define:vars={{ background: `url("${background}")` }}>
+  /* styling af selve kortet og baggrundsbillede på korttet */
   #guide_card {
     display: flex;
     flex-direction: column;
@@ -25,12 +26,14 @@ const { title, description, background, url, variant } = Astro.props;
     border-radius: 10px;
   }
 
+  /* placering af titlen på kortet */
   .guide_title {
     display: flex;
     margin-top: auto;
     justify-items: center;
   }
 
+  /* styling af brødtekst på kort  */
   .guide_title p {
     align-self: center;
     color: var(--main-white);

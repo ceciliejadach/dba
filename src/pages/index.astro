@@ -6,12 +6,15 @@ import "../styles/style.css";
 import ContactService from "../components/ContactService.astro";
 import FiltreButton from "../components/FiltreButton.astro";
 
+// vi fetcher datasæt til første sektion på forsiden - 8 første produkter
 const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products?limit=8", {
   method: "GET",
   headers: {
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1ZWRoZHJha3N3cXNxdWh0amt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUyNTEyNDYsImV4cCI6MjAzMDgyNzI0Nn0.mXDwiwon4LDuspPMmUhUACpS8eCG3AZ7Ttf8Dd2wwu0",
   },
 }).then((res) => res.json());
+
+// vi fecther data til anden sektion på forside - de 4 næste produkter efter de første 8
 const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/products?limit=4&offset=8", {
   method: "GET",
   headers: {
@@ -21,13 +24,16 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
 ---
 
 <MainLayout title="Forside">
+  <!-- kategorier øverst på siden -->
   <CategorySlider />
   <div class="flex">
     <h2>Forsideannoncer</h2>
     <FiltreButton />
   </div>
+  <!-- forsideannoncer sektion -->
   <section class="cards">
     {
+      // vi bruger map for at loope vores card komponent
       data.map((card) => {
         return <Card data={card} />;
       })
@@ -35,8 +41,10 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
   </section>
 
   <h2>Annoncer til dig</h2>
+  <!-- annoncer til dig sektion -->
   <section class="cards">
     {
+      // vi bruger map for at loope vores card komponent
       moreData.map((card) => {
         return <Card data={card} />;
       })

@@ -31,15 +31,18 @@
   --p-mini: 0.5rem;
 }
 
+/* implementering af font type til body */
 body {
   font-family: Plus Jakarta Sans;
 }
 
+/* main skal have en max-bredde og placeres i midten af body */
 main {
   max-width: 980px;
   margin-inline: auto;
 }
 
+/* styling af H1 */
 h1 {
   font-size: var(--h1-mobile);
   font-weight: 100;
@@ -47,6 +50,7 @@ h1 {
   margin-bottom: 1rem;
 }
 
+/* styling af H2 */
 h2 {
   font-size: var(--h2-mobile);
   font-weight: 300;
@@ -54,23 +58,29 @@ h2 {
   margin-left: 0.5rem;
 }
 
+/* styling af H3 */
 h3 {
   font-size: var(--h3-mobile);
   font-weight: 200;
 }
 
+/* styling af H4 */
 h4 {
   font-size: var(--h4-mobile);
 }
 
+/* styling af brødtekst */
 p {
   font-size: var(--p-mobile);
 }
+
+/* styling af links */
 
 a {
   text-decoration: none;
 }
 
+/* styling af billeder */
 img {
   width: 100%;
   display: block;
