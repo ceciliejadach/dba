@@ -12,8 +12,6 @@ import Button from "./Button.astro";
   <div id="uploadButton">
     <Button variant="tertiary" text="Upload billeder" size="medium" />
   </div>
-
-  <!-- <button id="uploadButton">Upload billeder</button> -->
 </div>
 
 <style>
@@ -61,23 +59,36 @@ import Button from "./Button.astro";
 </style>
 
 <script>
+  // Upload image kasse lytter efter klik og åbner mappe ved klik
   document.getElementById("uploadBox").addEventListener("click", function () {
     document.getElementById("fileInput").click();
   });
-
+  // Upload image knap lytter efter klik og åbner mappe ved klik
   document.getElementById("uploadButton").addEventListener("click", function () {
     document.getElementById("fileInput").click();
   });
 
+  //Lytter efter om #fileInput ændrer indhold - der bliver valgt et billede. Event change aktiveres når bruger har valgt en fil
   document.getElementById("fileInput").addEventListener("change", function (event) {
-    const file = event.target.files[0];
-    if (file) {
+    //Vi fortæller TypeScript, at event.target er et HTMLInputElement. Dette er nødvendigt, fordi TypeScript som standard ikke ved, at event.target er et input-element, og vi vil gerne få adgang til files-egenskaben, som kun findes på HTMLInputElement.
+    const input = event.target as HTMLInputElement;
+    //input.files må ikke være null eller undefined, og at der er mindst én fil valgt
+    if (input.files && input.files[0]) {
+      //den første fil, som brugeren har valgt, gemmes i en variabel kaldet file
+      const file = input.files[0];
+      //giver os mulighed for at læse indholdet af file på en måde, der ikke blokerer hovedtråden (dvs. den fortsætter med at køre andre koder, mens den læser filen).
       const reader = new FileReader();
+      //funktion, der kører, når FileReader har læst filen
       reader.onload = function (e) {
-        document.getElementById("uploadBox").style.backgroundImage = `url(${e.target.result})`;
+        const result = e.target?.result as string;
+        document.getElementById("uploadBox").style.backgroundImage = `url(${result})`;
+        //billedet skal fylde hele kassen
         document.getElementById("uploadBox").style.backgroundSize = "cover";
+        //billedet skal placeres i midten af kassen
         document.getElementById("uploadBox").style.backgroundPosition = "center";
+        //man skal ikke kunne se ikonet, når billedet er blevet oploadet
         document.getElementById("uploadIcon").style.display = "none";
+        //man skal ikke kunne se teksten i boksen, når billedet er blevet oploadet
         document.querySelector("#uploadBox p").style.display = "none";
       };
       reader.readAsDataURL(file);

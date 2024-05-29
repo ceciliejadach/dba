@@ -8,16 +8,10 @@
   /* colors */
   --main-white: white;
   --light-blue-100: #e0eefa;
-  --blue-20: #80a7e0;
   --dark-blue-100: #000a8c;
   --light-grey-100: #f2f2f2;
   --dark-grey-100: #434343;
-  --dark-grey-20: #dadada;
   --black-100: #000000;
-
-  /* farver til text */
-  --primary-btn-text-color: white;
-  --secondary-btn-text-color: #000a8c;
 
   /* font størrelser - mobil */
   --h1-mobile: 1.25rem;
@@ -81,29 +75,6 @@ img {
   width: 100%;
   display: block;
   height: auto;
-}
-button img {
-  width: 25px;
-  padding-right: 8px;
-}
-
-button a {
-  text-decoration: none;
-  color: var(--main-white);
-}
-#secondary-color {
-  color: var(--dark-blue-100);
-}
-
-/* opstilling af annoncer i grid */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(171px, 1fr));
-  justify-items: center;
-  gap: 2rem;
-  margin-inline: 0.5rem;
-  max-width: 980px;
-  margin-bottom: 4rem;
 }
 
 @media (min-width: 868px) {

@@ -29,7 +29,7 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
   <section class="cards">
     {
       data.map((card) => {
-        return <Card class="ad" data={card} />;
+        return <Card data={card} />;
       })
     }
   </section>
@@ -38,7 +38,7 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
   <section class="cards">
     {
       moreData.map((card) => {
-        return <Card class="ad" data={card} />;
+        return <Card data={card} />;
       })
     }
   </section>
@@ -46,6 +46,16 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
 <ContactService />
 
 <style>
+  /* opstilling af annoncer i grid */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(171px, 1fr));
+    justify-items: center;
+    gap: 2rem;
+    margin-inline: 0.5rem;
+    max-width: 980px;
+    margin-bottom: 4rem;
+  }
   .flex {
     display: flex;
     justify-content: space-between;

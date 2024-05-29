@@ -56,6 +56,17 @@ const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/produ
     margin-bottom: 100px;
     width: 100%;
   }
+
+  /* opstilling af annoncer i grid */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(171px, 1fr));
+    justify-items: center;
+    gap: 2rem;
+    margin-inline: 0.5rem;
+    max-width: 980px;
+    margin-bottom: 4rem;
+  }
   .flex {
     display: flex;
     justify-content: space-between;
@@ -63,3 +74,20 @@ const data = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/produ
     align-items: center;
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const likeContainers = document.querySelectorAll(".like");
+
+    console.log(likeContainers);
+
+    likeContainers.forEach((lc) => {
+      lc.addEventListener("click", like);
+    });
+
+    function like() {
+      console.log(this);
+      this.classList.toggle("liked");
+    }
+  });
+</script>
