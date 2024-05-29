@@ -18,9 +18,9 @@ import FavoritNavigationButton from "./FavoritNavigationButton.astro";
     <img class="notification-ikon" src="/svg/bell.svg" alt="klokke" />
     <ul class="desktop_nav">
       <PrimaryIconButton url="/adannonce" background="/svg/plus.svg" hover="/svg/blue-plus.svg" />
-      <TertiaryIconButton background="/svg/box.svg" hover="/svg/blue-box.svg" text="Køb fragt" />
-      <TertiaryIconButton background="/svg/profile.svg" hover="/svg/blue-profile.svg" text="Mit DBA" url="/mitdba" />
-      <FavoritNavigationButton id="heart-icon" background="/svg/heart.svg" hover="/svg/blue-heart.svg" text="Favoritter" />
+      <TertiaryIconButton id="blue" background="/svg/box.svg" hover="/svg/blue-box.svg" variant="secondary" text="Køb fragt" />
+      <TertiaryIconButton id="blue" background="/svg/profile.svg" hover="/svg/blue-profile-2.svg" variant="secondary" text="Mit DBA" url="/mitdba" />
+      <FavoritNavigationButton id="heart-icon" background="/svg/heart.svg" hover="/svg/blue-heart-2.svg" text="Favoritter" />
     </ul>
     <ul id="mobile_nav">
       <li>
@@ -76,6 +76,10 @@ import FavoritNavigationButton from "./FavoritNavigationButton.astro";
   .notification-ikon {
     width: 40px;
     cursor: pointer;
+  }
+
+  #blue {
+    color: var(--dark-blue-100);
   }
 
   .nav_bar {

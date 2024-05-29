@@ -12,16 +12,19 @@ const { img, title } = Astro.props;
 
 <style>
   a {
-    text-decoration: none;
     color: var(--dark-blue-100);
     cursor: pointer;
   }
   div {
     display: flex;
     padding: 8px 12px;
-    border: solid 1px var(--dark-blue-100);
     border-radius: 20px;
     width: fit-content;
+    box-shadow: inset 0px 0px 0px 1px var(--dark-blue-100);
+  }
+
+  div:hover {
+    box-shadow: inset 0px 0px 0px 2px var(--dark-blue-100);
   }
 
   img {

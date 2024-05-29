@@ -4,7 +4,9 @@ import "../styles/style.css";
 
 <button>
   <div id="filter-button">
-    <img src="/svg/filter_icon.svg" alt="filter ikon" width="25" height="17" />
+    <!-- <img src="/svg/filter_icon.svg" alt="filter ikon" width="25" height="17" /> -->
+    <img src="/svg/filter_icon.svg" alt="filter ikon" width="25" height="17" class="default-img" />
+    <img src="/svg/blue-filter.svg" alt="hover filter ikon" width="25" height="17" class="hover-img" />
     Filtre
   </div>
   <div class="formular">
@@ -53,8 +55,8 @@ import "../styles/style.css";
     font-family: Plus Jakarta Sans;
     font-weight: 600;
     color: var(--dark-blue-100);
-    border-radius: 46px;
-    padding: 8px 16px;
+    border-radius: 20px;
+    padding: 8px 12px;
     background-color: var(--main-white);
     display: flex;
     justify-content: center;
@@ -62,14 +64,58 @@ import "../styles/style.css";
     position: relative;
     margin-right: 0.4rem;
   }
-  button img {
+  /* button img {
     width: 25px;
     padding-right: 8px;
+  } */
+  /* button img {
+    padding-right: 8px;
+    transition: opacity 0.3s;
+  }
+  button .hover-img {
+    display: none;
+    position: absolute;
+    width: 25px;
+    padding-right: 8px;
+  }
+  button:hover img {
+    display: none;
+  }
+  button:hover .hover-img {
+    display: inline;
   }
   #filter-button {
     display: flex;
     justify-content: center;
     align-items: center;
+  } */
+
+  #filter-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  #filter-button img {
+    width: 25px;
+    height: 17px;
+    transition: opacity 0.3s;
+  }
+
+  #filter-button .hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+
+  button:hover #filter-button .default-img {
+    opacity: 0;
+  }
+
+  button:hover #filter-button .hover-img {
+    opacity: 1;
   }
 
   #see-more-btn {

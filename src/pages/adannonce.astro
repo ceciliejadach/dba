@@ -90,6 +90,7 @@ const { title } = Astro.props;
                   </select>
                 </label>
                 <label for="text"></label><textarea name="text" id="text" placeholder="Supplerende tekst*"></textarea>
+                <!-- Giv en grundig beskrivelse af produktet, inkluder f. eks. farve, mål, nypris..." rows="3" -->
               </form>
             </div>
           </div>
@@ -134,7 +135,7 @@ const { title } = Astro.props;
               <div class="text-box">
                 <h4>Trin 2 - Salgsmuligheder & abonnementer</h4>
                 <h2>Forøg dine muligheder for salg ved at tilkøbe titel eller “Haster” skilt.</h2>
-                <h3>Det er gratis at oprette en annonce på DBA men du kan øge dine chancer for salg mod et gebyr.</h3>
+                <h3>Det er gratis at oprette en annonce på DBA, men du kan øge dine chancer for salg mod et gebyr.</h3>
               </div>
               <div class="content-wrapper">
                 <div class="content-container">
@@ -162,7 +163,7 @@ const { title } = Astro.props;
             <div class="content">
               <div class="text-box">
                 <h2>Køb et månedligt abonnement hos DBA og øg dine chancer for salg</h2>
-                <h3>Det er gratis at oprette en annonce på DBA men du kan blandt andet øge visningerne på dine annoncer med et abonnement.</h3>
+                <h3>Det er gratis at oprette en annonce på DBA, men du kan blandt andet øge visningerne på dine annoncer med et abonnement.</h3>
               </div>
               <div class="content-wrapper" id="subscription-wrapper">
                 <div class="content-container" id="subscription">
@@ -506,6 +507,7 @@ const { title } = Astro.props;
     select,
     textarea {
       font-size: var(--p-big-desktop);
+      width: 100%;
     }
     p {
       font-size: var(--p-big-desktop);
@@ -517,8 +519,8 @@ const { title } = Astro.props;
       grid-template-rows: repeat(2, 40px);
       gap: 40px;
       max-width: 680px;
-      margin-left: 25px;
-      padding-right: 25px;
+      margin-inline: 25px;
+      /* padding-right: 25px; */
     }
 
     #subscription-wrapper {
