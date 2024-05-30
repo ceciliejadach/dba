@@ -59,7 +59,7 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(171px, 1fr));
     justify-items: center;
-    gap: 2rem;
+    gap: 1rem;
     margin-inline: 0.5rem;
     max-width: 980px;
     margin-bottom: 4rem;
@@ -69,6 +69,12 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
     justify-content: space-between;
     padding-bottom: 1rem;
     align-items: center;
+  }
+
+  @media (min-width: 868px) {
+    .cards {
+      gap: 2rem;
+    }
   }
 </style>
 
