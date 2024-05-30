@@ -25,13 +25,13 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
   <section class="profile-container">
     <Profile />
     <div class="buttons">
-      <Button variant="secondary" text="Annonce Agenter" />
-      <Button variant="secondary" text="Spørgsmål og svar" />
-      <Button variant="secondary" text="Sælgere du følger" />
-      <TertiaryIconButton background="/svg/box.svg" hover="/svg/white-box.svg" text="Køb fragt" variant="tertiary" />
-      <TertiaryIconButton background="/svg/headset.svg" hover="/svg/white-headset.svg" text="Kontakt kundeservice" variant="tertiary" />
-      <Button variant="secondary" text="Kontoindstillinger" />
-      <Button variant="secondary" text="DBA Guide" />
+      <Button variant="secondary" text="Annonce Agenter" url="https://www.dba.dk/min-dbadk/gemte-soegninger/" />
+      <Button variant="secondary" text="Spørgsmål og svar" url="https://support.dba.dk/ArticlesList/all" />
+      <Button variant="secondary" text="Sælgere du følger" url="https://www.dba.dk/min-dbadk/saelgere-jeg-foelger/" />
+      <TertiaryIconButton background="/svg/box.svg" hover="/svg/white-box.svg" text="Køb fragt" variant="tertiary" url="https://www.dba.dk/fragt/pakkelabel" />
+      <TertiaryIconButton background="/svg/headset.svg" hover="/svg/white-headset.svg" text="Kontakt kundeservice" variant="tertiary" url="https://support.dba.dk/" />
+      <Button variant="secondary" text="Kontoindstillinger" url="https://www.dba.dk/min-dbadk/mine-brugeroplysninger/" />
+      <Button variant="secondary" text="DBA Guide" url="https://guide.dba.dk/" />
     </div>
   </section>
   <div class="grid-1-1">
@@ -82,19 +82,12 @@ const moreData = await fetch("https://euedhdrakswqsquhtjkx.supabase.co/rest/v1/p
       align-content: flex-start;
       margin-top: 2rem;
     }
-    /* .grid-1-1 {
-      margin-top: 2rem;
-    } */
   }
 
   @media (min-width: 868px) {
     .profile-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-    }
-
-    .grid {
-      margin-bottom: 0;
     }
 
     .grid-1-1 {

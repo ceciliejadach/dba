@@ -24,17 +24,23 @@ import FavoritNavigationButton from "./FavoritNavigationButton.astro";
     </ul>
     <ul id="mobile_nav">
       <li>
-        <img src="/svg/box.svg" alt="box" />
-        <p>Køb fragt</p>
+        <a href="https://www.dba.dk/fragt/pakkelabel">
+          <img src="/svg/box.svg" alt="box" />
+          <p>Køb fragt</p>
+        </a>
       </li>
 
       <li>
-        <img src="/svg/blue-profile.svg" alt="profile" />
-        <a href="/mitdba">Mit DBA</a>
+        <a href="/mitdba">
+          <img src="/svg/profile.svg" alt="profile" />
+          <p>Mit DBA</p>
+        </a>
       </li>
       <li>
-        <img src="/svg/heart.svg" alt="heart" />
-        <p>Favoritter</p>
+        <a href="/mitdba">
+          <img src="/svg/heart.svg" alt="heart" />
+          <p>Favoritter</p>
+        </a>
       </li>
     </ul>
   </nav>
@@ -147,7 +153,11 @@ import FavoritNavigationButton from "./FavoritNavigationButton.astro";
       z-index: 10;
       padding-top: 10px;
     }
-    #mobile_nav li {
+
+    li {
+      list-style: none;
+    }
+    #mobile_nav li a {
       list-style: none;
       display: grid;
       justify-items: center;

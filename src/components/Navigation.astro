@@ -29,17 +29,23 @@ import FavoritNavigationButton from "./FavoritNavigationButton.astro";
     </ul>
     <ul id="mobile_nav">
       <li>
-        <img src="/svg/box.svg" alt="box" />
-        <a href="https://www.dba.dk/fragt/pakkelabel">Køb fragt</a>
+        <a href="https://www.dba.dk/fragt/pakkelabel">
+          <img src="/svg/box.svg" alt="box" />
+          <p>Køb fragt</p>
+        </a>
       </li>
 
       <li>
-        <img src="/svg/profile.svg" alt="profile" />
-        <a href="/mitdba">Mit DBA</a>
+        <a href="/mitdba">
+          <img src="/svg/profile.svg" alt="profile" />
+          <p>Mit DBA</p>
+        </a>
       </li>
       <li>
-        <img src="/svg/heart.svg" alt="heart" />
-        <a href="/mitdba">Favoritter</a>
+        <a href="/mitdba">
+          <img src="/svg/heart.svg" alt="heart" />
+          <p>Favoritter</p>
+        </a>
       </li>
     </ul>
   </nav>
@@ -113,12 +119,6 @@ import FavoritNavigationButton from "./FavoritNavigationButton.astro";
     background-color: var(--main-white);
   }
 
-  /* @media (min-width: 868px) {
-    .nav_bar {
-      gap: 0;
-    }
-  } */
-
   .nav_bar ul {
     display: flex;
     flex-direction: row;
@@ -159,7 +159,7 @@ import FavoritNavigationButton from "./FavoritNavigationButton.astro";
       z-index: 10;
       padding-top: 10px;
     }
-    #mobile_nav li {
+    #mobile_nav li a {
       list-style: none;
       display: grid;
       justify-items: center;
